@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Cavok.Parsing;
 
 namespace Cavok.Tests;
@@ -89,5 +90,67 @@ public class TafDiagnosticsTests
             bool reported = taf.Diagnostics.Any(d => d.Length > 0 && d.Position == token.Position);
             Assert.True(cursor.IsConsumed(i) || reported, $"token '{token.Text}' was silently dropped");
         }
+    }
+
+    [Fact]
+    public void ChangeGroupParsingIsLinear()
+    {
+        string raw = "TAF EHAM 210440Z 2106/2212 " + string.Join(" ", Enumerable.Repeat("BECMG", 10000));
+
+        var stopwatch = Stopwatch.StartNew();
+        Taf taf = Taf.Parse(raw);
+        stopwatch.Stop();
+
+        Assert.True(stopwatch.Elapsed < TimeSpan.FromSeconds(2), $"took {stopwatch.Elapsed}");
+        Assert.Equal(10000, taf.Changes.Count);
+    }
+
+    [Fact]
+    public void RejectedProbabilityIsNotKept()
+    {
+        Taf taf = Taf.Parse("TAF EHAM 210440Z 2106/2212 27005KT PROB50 2112/2114 BKN005");
+
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, Assert.Single(taf.Diagnostics).Code);
+        TafChange change = Assert.Single(taf.Changes);
+        Assert.Equal(TafChangeKind.Probability, change.Kind);
+        Assert.Null(change.Probability);
+        Assert.NotNull(change.Period);
+    }
+
+    [Fact]
+    public void MalformedFromGroupStillOpensANewChangeBlock()
+    {
+        Taf taf = Taf.Parse("TAF EHAM 210440Z 2106/2212 27005KT 9999 BKN010 FM21140 30010KT 3000 SHRA BKN005");
+
+        Diagnostic diagnostic = Assert.Single(taf.Diagnostics);
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, diagnostic.Code);
+        Assert.Equal("FM21140", diagnostic.Token);
+
+        TafChange change = Assert.Single(taf.Changes);
+        Assert.Equal(TafChangeKind.From, change.Kind);
+        Assert.Null(change.From);
+        Assert.Equal(300, change.Conditions.Wind!.Direction);
+        Assert.Equal(3000, change.Conditions.Visibility!.Meters);
+        Assert.Equal(WeatherType.Rain, Assert.Single(Assert.Single(change.Conditions.Weather).Types));
+        Assert.Equal(500, Assert.Single(change.Conditions.Clouds).HeightFeet);
+
+        Assert.Equal(1000, Assert.Single(taf.Base.Clouds).HeightFeet);
+        Assert.Empty(taf.Base.Weather);
+    }
+
+    [Fact]
+    public void MalformedProbabilityGroupStillOpensANewChangeBlock()
+    {
+        Taf taf = Taf.Parse("TAF EHAM 210440Z 2106/2212 27005KT 9999 PROB3 2112/2114 BKN005");
+
+        Diagnostic diagnostic = Assert.Single(taf.Diagnostics);
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, diagnostic.Code);
+        Assert.Equal("PROB3", diagnostic.Token);
+
+        TafChange change = Assert.Single(taf.Changes);
+        Assert.Null(change.Probability);
+        Assert.Equal(500, Assert.Single(change.Conditions.Clouds).HeightFeet);
+
+        Assert.Empty(taf.Base.Clouds);
     }
 }

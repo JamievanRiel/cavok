@@ -30,8 +30,8 @@ internal static class TafChangeParser
     public static bool IsChangeStart(string text) =>
         text == "BECMG"
         || text == "TEMPO"
-        || (text.Length == 6 && text.StartsWith("PROB", StringComparison.Ordinal))
-        || (text.Length == 8 && text.StartsWith("FM", StringComparison.Ordinal));
+        || text.StartsWith("PROB", StringComparison.Ordinal)
+        || (text.Length >= 3 && text.StartsWith("FM", StringComparison.Ordinal) && Scan.IsDigit(text[2]));
 
     // Reads FMDDHHMM, BECMG DDHH/DDHH, TEMPO DDHH/DDHH, PROB30 [TEMPO] DDHH/DDHH. Always moves past the
     // first token (consumed when valid, skipped with an error otherwise).
@@ -57,17 +57,20 @@ internal static class TafChangeParser
 
         TafChangeKind kind;
         int? probability = null;
+        bool firstReported = false;
         if (text.StartsWith("PROB", StringComparison.Ordinal))
         {
-            probability = Scan.Number(text, 4, 2);
-            if (probability != 30 && probability != 40)
+            int? value = text.Length == 6 ? Scan.Number(text, 4, 2) : null;
+            if (value == 30 || value == 40)
             {
-                diagnostics.Error(DiagnosticCode.InvalidChangeGroup, first);
-                cursor.Skip();
+                probability = value;
+                cursor.Consume();
             }
             else
             {
-                cursor.Consume();
+                diagnostics.Error(DiagnosticCode.InvalidChangeGroup, first);
+                firstReported = true;
+                cursor.Skip();
             }
 
             kind = TafChangeKind.Probability;
@@ -95,7 +98,7 @@ internal static class TafChangeParser
             diagnostics.Error(DiagnosticCode.InvalidValidity, cursor.Current);
             cursor.Skip();
         }
-        else if (!diagnostics.Items.Any(d => d.Position == first.Position))
+        else if (!firstReported)
         {
             diagnostics.Error(DiagnosticCode.InvalidChangeGroup, first);
         }
