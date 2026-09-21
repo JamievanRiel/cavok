@@ -1,0 +1,3 @@
+# Real reports that contain genuinely broken groups (typos, impossible values).
+# Each report is preceded by a comment explaining why it is expected to produce errors.
+# CorpusTests fails when a report listed here no longer produces an error.
