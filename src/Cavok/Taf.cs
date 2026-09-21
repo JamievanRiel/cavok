@@ -1,4 +1,5 @@
 using Cavok.Parsing;
+using Cavok.Text;
 
 namespace Cavok;
 
@@ -82,4 +83,9 @@ public sealed record Taf
 
         return taf;
     }
+
+    /// <summary>Describes the forecast in plain language: the base conditions and one block per change group.</summary>
+    /// <param name="language">The language of the description.</param>
+    /// <returns>The description; lines are separated by <c>\n</c>.</returns>
+    public string Describe(Language language = Language.English) => Describer.Describe(this, language);
 }

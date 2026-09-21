@@ -1,4 +1,5 @@
 using Cavok.Parsing;
+using Cavok.Text;
 
 namespace Cavok;
 
@@ -121,4 +122,9 @@ public sealed record Metar
 
         return metar;
     }
+
+    /// <summary>Describes the report in plain language, one element per line.</summary>
+    /// <param name="language">The language of the description.</param>
+    /// <returns>The description; lines are separated by <c>\n</c>.</returns>
+    public string Describe(Language language = Language.English) => Describer.Describe(this, language);
 }
