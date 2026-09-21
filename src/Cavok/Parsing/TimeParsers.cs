@@ -81,13 +81,13 @@ internal static class TimeParsers
         return new TemperatureForecast(kind, negative ? -value.Value : value.Value, time.Value);
     }
 
+    // Observation/issue times and TAF FM times are 00:00–23:59; hour 24 only occurs in forecast periods (DayHour).
     private static DayTime? DayHourMinute(string s, int start)
     {
         int? day = Scan.Number(s, start, 2);
         int? hour = Scan.Number(s, start + 2, 2);
         int? minute = Scan.Number(s, start + 4, 2);
-        if (day is null || hour is null || minute is null || day < 1 || day > 31 || hour > 24 || minute > 59
-            || (hour == 24 && minute != 0))
+        if (day is null || hour is null || minute is null || day < 1 || day > 31 || hour > 23 || minute > 59)
         {
             return null;
         }

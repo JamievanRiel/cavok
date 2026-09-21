@@ -35,7 +35,7 @@ internal static class RunwayStateParser
         string rest = s.Substring(slash + 1);
         if (rest == "SNOCLO")
         {
-            return new RunwayState { Runway = runway, SnowClosed = true, RawGroup = s };
+            return WithRunway(runway, new RunwayState { SnowClosed = true, RawGroup = s });
         }
 
         if (rest.Length == 6 && rest.StartsWith("CLRD", StringComparison.Ordinal)

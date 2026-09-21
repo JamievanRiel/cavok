@@ -90,6 +90,7 @@ public class SupplementaryParserTests
     [InlineData("SNOCLO", null, true)]
     [InlineData("R/SNOCLO", null, true)]
     [InlineData("R24/SNOCLO", "24", false)]
+    [InlineData("R88/SNOCLO", null, true)]
     public void ClosedDueToSnow(string text, string? runway, bool allRunways)
     {
         RunwayState state = RunwayStateParser.Parse(text)!;
@@ -97,6 +98,16 @@ public class SupplementaryParserTests
         Assert.True(state.SnowClosed);
         Assert.Equal(runway, state.Runway);
         Assert.Equal(allRunways, state.AllRunways);
+    }
+
+    [Fact]
+    public void RepeatedRunwayClosedDueToSnow()
+    {
+        RunwayState state = RunwayStateParser.Parse("R99/SNOCLO")!;
+
+        Assert.True(state.IsRepeated);
+        Assert.Null(state.Runway);
+        Assert.True(state.SnowClosed);
     }
 
     [Fact]

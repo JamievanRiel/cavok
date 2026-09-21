@@ -15,6 +15,7 @@ public class TimeParsersTests
     [InlineData("211160Z")]
     [InlineData("21112Z")]
     [InlineData("2111255Z")]
+    [InlineData("212400Z")]
     public void RejectsInvalidDayTime(string text) => Assert.Null(TimeParsers.ParseDayTime(text));
 
     [Theory]
@@ -31,6 +32,7 @@ public class TimeParsersTests
     [InlineData("FM2114")]
     [InlineData("FM211460")]
     [InlineData("TL211400")]
+    [InlineData("FM212400")]
     public void RejectsInvalidFromGroup(string text) => Assert.Null(TimeParsers.ParseFromGroup(text));
 
     [Fact]
