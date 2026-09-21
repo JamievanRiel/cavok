@@ -1,0 +1,85 @@
+using Cavok.Parsing;
+
+namespace Cavok;
+
+/// <summary>
+/// A parsed terminal aerodrome forecast. Use <see cref="Parse(string)"/> to parse leniently or
+/// <see cref="ParseStrict(string)"/> to throw on errors.
+/// </summary>
+public sealed record Taf
+{
+    /// <summary>The forecast exactly as given to the parser.</summary>
+    public string Raw { get; init; } = "";
+
+    /// <summary>ICAO location indicator; <c>null</c> when missing or invalid.</summary>
+    public string? Station { get; init; }
+
+    /// <summary>Issue day and time (UTC).</summary>
+    public DayTime? IssueTime { get; init; }
+
+    /// <summary>True for an amended forecast (<c>AMD</c>).</summary>
+    public bool IsAmended { get; init; }
+
+    /// <summary>True for a corrected forecast (<c>COR</c>).</summary>
+    public bool IsCorrected { get; init; }
+
+    /// <summary>True when the forecast is cancelled (<c>CNL</c>).</summary>
+    public bool IsCancelled { get; init; }
+
+    /// <summary>True for a missing forecast (<c>NIL</c>).</summary>
+    public bool IsNil { get; init; }
+
+    /// <summary>Validity period.</summary>
+    public ValidityPeriod? Validity { get; init; }
+
+    /// <summary>The initial forecast conditions.</summary>
+    public ForecastConditions Base { get; init; } = new ForecastConditions();
+
+    /// <summary>Change groups in order.</summary>
+    public IReadOnlyList<TafChange> Changes { get; init; } = Array.Empty<TafChange>();
+
+    /// <summary>Maximum and minimum temperature forecasts (<c>TX</c>/<c>TN</c>).</summary>
+    public IReadOnlyList<TemperatureForecast> Temperatures { get; init; } = Array.Empty<TemperatureForecast>();
+
+    /// <summary>Everything after <c>RMK</c>, unparsed.</summary>
+    public string? Remarks { get; init; }
+
+    /// <summary>Problems found while parsing.</summary>
+    public IReadOnlyList<Diagnostic> Diagnostics { get; init; } = Array.Empty<Diagnostic>();
+
+    /// <summary>True when at least one diagnostic is an error.</summary>
+    public bool HasErrors => Diagnostics.Any(d => d.Severity == DiagnosticSeverity.Error);
+
+    /// <summary>
+    /// Parses a TAF. Never throws for bad content: whatever is understood is returned and every problem is
+    /// listed in <see cref="Diagnostics"/>.
+    /// </summary>
+    /// <param name="raw">The forecast, with or without the <c>TAF</c> prefix; line breaks are allowed.</param>
+    /// <returns>The parsed forecast.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="raw"/> is <c>null</c>.</exception>
+    public static Taf Parse(string raw)
+    {
+        if (raw is null)
+        {
+            throw new ArgumentNullException(nameof(raw));
+        }
+
+        return TafParser.Parse(raw);
+    }
+
+    /// <summary>Parses a TAF and throws when it contains errors; warnings are allowed.</summary>
+    /// <param name="raw">The forecast, with or without the <c>TAF</c> prefix.</param>
+    /// <returns>The parsed forecast.</returns>
+    /// <exception cref="ArgumentNullException"><paramref name="raw"/> is <c>null</c>.</exception>
+    /// <exception cref="CavokParseException">The forecast contains at least one error.</exception>
+    public static Taf ParseStrict(string raw)
+    {
+        Taf taf = Parse(raw);
+        if (taf.HasErrors)
+        {
+            throw new CavokParseException(raw, taf.Diagnostics);
+        }
+
+        return taf;
+    }
+}
