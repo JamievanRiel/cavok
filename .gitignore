@@ -1,0 +1,10 @@
+bin/
+obj/
+artifacts/
+TestResults/
+*.user
+.vs/
+.idea/
+docs/_site/
+docs/api/
+*.received.txt
