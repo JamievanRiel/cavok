@@ -152,6 +152,17 @@ public class TafTests
     }
 
     [Fact]
+    public void UsMilitaryAmendmentStatementIsKeptAsRemarks()
+    {
+        Taf taf = Taf.Parse("TAF ETAD 201945Z 2020/2202 30006KT 9999 FEW200 QNH3036INS BECMG 2103/2104 24003KT 9999 BKN120 OVC200 QNH3041INS BECMG 2108/2109 24006KT 9999 SCT200 QNH3043INS TX20/2114Z TN04/2104Z LAST NO AMDS AFT 2020 NEXT 2104");
+
+        Assert.Empty(taf.Diagnostics);
+        Assert.Equal("LAST NO AMDS AFT 2020 NEXT 2104", taf.Remarks);
+        Assert.Null(taf.Changes[1].Conditions.Visibility!.Minimum);
+        Assert.Equal(2, taf.Temperatures.Count);
+    }
+
+    [Fact]
     public void ProbabilityTempoWithFog()
     {
         Taf taf = Taf.Parse("TAF AMD LFRB 210804Z 2108/2212 VRB05KT 9999 BKN007 BKN012 TEMPO 2108/2109 BKN003 BECMG 2110/2112 SCT020 BKN025 BECMG 2114/2116 02010KT TEMPO 2117/2208 2000 BR BKN002 PROB40 TEMPO 2204/2207 0700 FG VV///");

@@ -158,6 +158,15 @@ internal static class TafParser
             return;
         }
 
+        // US military forecasts end with a plain-language statement such as "LAST NO AMDS AFT 2020 NEXT 2104"
+        // (last forecast of the day, no amendments after day 20 20Z, next forecast day 21 04Z); it is kept as a remark.
+        if (text == "LAST" && cursor.PeekText(1) == "NO" && cursor.PeekText(2) == "AMDS")
+        {
+            builder.Remarks = Remarks.From(builder.Raw, token);
+            cursor.ConsumeRest();
+            return;
+        }
+
         if (TimeParsers.ParseTemperatureForecast(text) is TemperatureForecast forecast)
         {
             builder.Temperatures.Add(forecast);

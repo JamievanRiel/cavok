@@ -42,7 +42,10 @@ public sealed record Taf
     /// <summary>Maximum and minimum temperature forecasts (<c>TX</c>/<c>TN</c>).</summary>
     public IReadOnlyList<TemperatureForecast> Temperatures { get; init; } = Array.Empty<TemperatureForecast>();
 
-    /// <summary>Everything after <c>RMK</c>, unparsed.</summary>
+    /// <summary>
+    /// Everything after <c>RMK</c>, unparsed; also the closing statement of US military forecasts such as
+    /// <c>LAST NO AMDS AFT 2020 NEXT 2104</c>.
+    /// </summary>
     public string? Remarks { get; init; }
 
     /// <summary>Problems found while parsing.</summary>
