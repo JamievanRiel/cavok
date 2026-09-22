@@ -4,7 +4,8 @@ internal static class MetarParser
 {
     public const int MaxLength = 65536;
 
-    private const int TrendRank = 16;
+    // Trends follow every group of the body; the colour states are the last.
+    private static readonly int TrendRank = Rank(GroupKind.ColorCode) + 1;
 
     public static Metar Parse(string raw) => Parse(raw, out _);
 
@@ -252,7 +253,7 @@ internal static class MetarParser
         GroupKind.Sea => 12,
         GroupKind.RunwayState => 13,
         GroupKind.ColorCode => 14,
-        _ => 15,
+        _ => throw new ArgumentOutOfRangeException(nameof(kind), kind, "NSW is handled before the body order is checked."),
     };
 
     private sealed class BodyState

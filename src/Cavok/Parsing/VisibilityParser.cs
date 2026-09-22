@@ -2,8 +2,6 @@ namespace Cavok.Parsing;
 
 internal static class VisibilityParser
 {
-    public const double MetersPerStatuteMile = 1609.344;
-
     // Reads a visibility group at the cursor, including the two-token form "1 1/2SM".
     public static Visibility? Read(TokenCursor cursor, out int tokenCount)
     {

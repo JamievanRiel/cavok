@@ -27,9 +27,11 @@ public sealed record Visibility
     /// <summary>True when the visibility is missing (<c>////</c>).</summary>
     public bool IsMissing { get; init; }
 
+    internal const double MetersPerStatuteMile = 1609.344;
+
     /// <summary>The prevailing visibility in metres, converting statute miles.</summary>
     /// <returns>Metres, or <c>null</c> when no prevailing visibility is known.</returns>
-    public double? ToMeters() => Meters ?? StatuteMiles * 1609.344;
+    public double? ToMeters() => Meters ?? StatuteMiles * MetersPerStatuteMile;
 }
 
 /// <summary>Minimum visibility and the direction in which it is observed (<c>1500SW</c>).</summary>

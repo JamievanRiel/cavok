@@ -1,8 +1,8 @@
-namespace Cavok;
+namespace Cavok.Parsing;
 
 internal static class FlightCategoryCalculator
 {
-    private const double Mile = 1609.344;
+    private const double Mile = Visibility.MetersPerStatuteMile;
 
     // The worse of the visibility and the ceiling category; when only one is known it decides. The ceiling
     // is the lowest broken, overcast or vertical-visibility layer with a known height. Reported cloud

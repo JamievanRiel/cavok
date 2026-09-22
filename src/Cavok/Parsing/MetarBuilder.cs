@@ -49,7 +49,6 @@ internal sealed class MetarBuilder
         GroupKind.WindShear => true,
         GroupKind.Sea => Sea is null,
         GroupKind.RunwayState => true,
-        GroupKind.NoSignificantWeather => false,
         _ => Observed.CanAccept(group),
     };
 
