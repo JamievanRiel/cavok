@@ -133,9 +133,9 @@ public class EnglishDescriptionTests
                 L("Clouds", "scattered (3–4/8) at 2,100 ft, scattered (3–4/8) at 4,000 ft, broken (5–7/8) at 32,000 ft"),
                 L("Temperature", "14 °C, dew point 10 °C"),
                 L("QNH", "1025 hPa"),
-                L("Color state", "blue plus, blue plus"),
+                L("Colour state", "blue plus, blue plus"),
                 L("Category", "VFR"),
-                L("Trend", "temporarily: color state white")),
+                L("Trend", "temporarily: colour state white")),
             metar.Describe());
     }
 

@@ -3831,7 +3831,7 @@ Weather:      rain
 Clouds:       scattered (3–4/8) at 2,300 ft, overcast (8/8) at 2,700 ft
 Temperature:  14 °C, dew point 13 °C
 QNH:          1029 hPa
-Color state:  white
+Colour state: white
 Category:     MVFR
 --- nl
 METAR EHLW, waarneming dag 22 om 04:55 UTC (automatisch)
@@ -4907,9 +4907,9 @@ Visibility:   10 km or more
 Clouds:       scattered (3–4/8) at 3,100 ft
 Temperature:  11 °C, dew point 10 °C
 QNH:          1028 hPa
-Color state:  blue plus, blue
+Colour state: blue plus, blue
 Category:     VFR
-Trend:        temporarily: color state blue plus
+Trend:        temporarily: colour state blue plus
 --- nl
 METAR ETMN, waarneming dag 22 om 06:20 UTC
 Wind:         variabel met 1 kt
@@ -4992,7 +4992,7 @@ Visibility:   10 km or more
 Clouds:       few (1–2/8) at 5,500 ft
 Temperature:  16 °C, dew point 10 °C
 QNH:          1028 hPa
-Color state:  blue plus (airfield unusable)
+Colour state: blue plus (airfield unusable)
 Category:     VFR
 --- nl
 METAR ETND, waarneming dag 21 om 08:20 UTC
@@ -5079,7 +5079,7 @@ Visibility:   10 km or more
 Clouds:       scattered (3–4/8) at 3,600 ft
 Temperature:  12 °C, dew point 10 °C
 QNH:          1029 hPa
-Color state:  blue plus (airfield unusable), blue plus
+Colour state: blue plus (airfield unusable), blue plus
 Category:     VFR
 --- nl
 METAR ETND, waarneming dag 22 om 06:20 UTC
@@ -5196,9 +5196,9 @@ RVR:          runway 26: 3,000 m, decreasing
 Weather:      partial fog
 Temperature:  7 °C, dew point 7 °C
 QNH:          1028 hPa
-Color state:  amber, amber
+Colour state: amber, amber
 Category:     LIFR
-Trend:        becoming: color state blue plus
+Trend:        becoming: colour state blue plus
 --- nl
 METAR ETNH, waarneming dag 22 om 06:20 UTC
 Wind:         270° met 4 kt
@@ -5304,9 +5304,9 @@ Visibility:   10 km or more
 Clouds:       scattered (3–4/8) at 3,000 ft
 Temperature:  15 °C, dew point 9 °C
 QNH:          1021 hPa
-Color state:  blue plus, blue plus
+Colour state: blue plus, blue plus
 Category:     VFR
-Trend:        temporarily: color state green
+Trend:        temporarily: colour state green
 --- nl
 METAR ETNL, waarneming dag 21 om 08:20 UTC
 Wind:         320° met 18 kt
@@ -5410,7 +5410,7 @@ Weather:      rain, mist
 Clouds:       broken (5–7/8) at 1,700 ft, overcast (8/8) at 6,000 ft
 Temperature:  18 °C, dew point 16 °C
 QNH:          1022 hPa
-Color state:  yellow
+Colour state: yellow
 Category:     IFR
 --- nl
 METAR ETNN, waarneming dag 20 om 09:20 UTC
@@ -5513,7 +5513,7 @@ Visibility:   10 km or more
 Clouds:       broken (5–7/8) at 4,500 ft
 Temperature:  18 °C, dew point 6 °C
 QNH:          1020 hPa
-Color state:  blue
+Colour state: blue
 Category:     VFR
 --- nl
 METAR ETNW, waarneming dag 20 om 15:20 UTC

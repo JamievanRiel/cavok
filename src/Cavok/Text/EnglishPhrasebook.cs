@@ -45,7 +45,7 @@ internal sealed class EnglishPhrasebook : Phrasebook
         Field.WindShear => "Wind shear",
         Field.Sea => "Sea",
         Field.RunwayState => "Runway state",
-        Field.ColorCode => "Color state",
+        Field.ColorCode => "Colour state",
         Field.FlightCategory => "Category",
         Field.Trend => "Trend",
         Field.Remarks => "Remarks",
@@ -461,7 +461,7 @@ internal sealed class EnglishPhrasebook : Phrasebook
 
     public override string InlineVisibility(string text) => "visibility " + text;
 
-    public override string InlineColorCode(string text) => "color state " + text;
+    public override string InlineColorCode(string text) => "colour state " + text;
 
     private static string DayAndTime(DayTime t) => Invariant($"day {t.Day} at {Clock(t.Hour, t.Minute)} UTC");
 

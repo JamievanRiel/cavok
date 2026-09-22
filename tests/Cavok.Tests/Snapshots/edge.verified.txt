@@ -1003,7 +1003,7 @@ Visibility:   10 km or more
 Clouds:       few (1–2/8) at 5,500 ft, scattered (3–4/8) at 30,000 ft
 Temperature:  14 °C, dew point 10 °C
 QNH:          1027 hPa
-Color state:  blue plus (airfield unusable)
+Colour state: blue plus (airfield unusable)
 Category:     VFR
 --- nl
 METAR ETND, waarneming dag 21 om 07:20 UTC
@@ -1127,9 +1127,9 @@ Weather:      showers in the vicinity
 Clouds:       few (1–2/8) at 1,200 ft, few (1–2/8) at 1,800 ft with towering cumulus, broken (5–7/8) at 5,000 ft
 Temperature:  13 °C, dew point 9 °C
 QNH:          1025 hPa
-Color state:  blue, blue
+Colour state: blue, blue
 Category:     VFR
-Trend:        temporarily: color state white
+Trend:        temporarily: colour state white
 --- nl
 METAR ETSH, waarneming dag 21 om 07:20 UTC
 Wind:         270° met 14 kt
