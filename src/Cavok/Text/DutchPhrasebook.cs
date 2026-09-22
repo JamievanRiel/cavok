@@ -196,7 +196,8 @@ internal sealed class DutchPhrasebook : Phrasebook
         else if (visibility.StatuteMiles is double miles)
         {
             string bound = visibility.IsLessThan ? "minder dan " : visibility.IsMoreThan ? "meer dan " : "";
-            text = bound + Fixed(miles, "0.##") + " SM";
+            // Four decimals show every reportable fraction (sixteenths, 1/16SM = 0,0625) without rounding.
+            text = bound + Fixed(miles, "0.####") + " SM";
         }
         else
         {

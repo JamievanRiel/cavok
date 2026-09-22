@@ -272,6 +272,8 @@ public class EnglishDescriptionTests
     [InlineData("0800", "800 m")]
     [InlineData("M1/4SM", "less than 0.25 SM")]
     [InlineData("1/2SM", "0.5 SM")]
+    [InlineData("1/16SM", "0.0625 SM")]
+    [InlineData("5/8SM", "0.625 SM")]
     public void VisibilityPhrases(string code, string expected) =>
         Assert.Equal(expected, EnglishPhrasebook.Instance.VisibilityText(
             VisibilityParser.ParseMetric(code) ?? VisibilityParser.ParseStatuteMiles(code)!));

@@ -210,6 +210,13 @@ public class DutchDescriptionTests
     public void WindPhrases(string code, string expected) =>
         Assert.Equal(expected, DutchPhrasebook.Instance.WindText(WindParser.Parse(code)!));
 
+    [Theory]
+    [InlineData("M1/4SM", "minder dan 0,25 SM")]
+    [InlineData("1/16SM", "0,0625 SM")]
+    [InlineData("5/8SM", "0,625 SM")]
+    public void StatuteMileVisibilityPhrases(string code, string expected) =>
+        Assert.Equal(expected, DutchPhrasebook.Instance.VisibilityText(VisibilityParser.ParseStatuteMiles(code)!));
+
     [Fact]
     public void MinimumVisibilityPhrase()
     {
