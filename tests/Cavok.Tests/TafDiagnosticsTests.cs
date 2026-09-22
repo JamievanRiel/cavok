@@ -80,6 +80,7 @@ public class TafDiagnosticsTests
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT TX15/2114", DiagnosticCode.InvalidTemperatureForecast)]
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT 30010KT", DiagnosticCode.Duplicate)]
     [InlineData("METAR EHAM 210440Z 2106/2212 27005KT", DiagnosticCode.WrongReportType)]
+    [InlineData("TAF KJFK 211130Z 2112/2218 24012KT P6SM FEW250 WS020/24040KT", DiagnosticCode.InvalidWind)] // not supported yet
     public void ReportsSingleProblems(string raw, DiagnosticCode code) =>
         Assert.Equal(code, Assert.Single(Taf.Parse(raw).Diagnostics).Code);
 

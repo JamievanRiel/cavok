@@ -21,5 +21,5 @@ Becoming between day 21 06:00 and day 21 09:00 UTC:
 - Numbers use fixed formats per language (`1,200 ft` in English, `1.200 ft` in Dutch), independent of the machine's culture.
 - Missing values read "not available" / "niet beschikbaar" — except a wholly missing pressure group (`Q////`) or
   temperature group (`/////`): the model cannot tell that apart from a value that was never reported, so
-  `Pressure`, `Temperature` and `DewPoint` stay `null` and the whole line is left out, by controller ruling.
+  `Pressure`, `Temperature` and `DewPoint` stay `null` and the whole line is left out.
 - Lines are separated by `\n`.

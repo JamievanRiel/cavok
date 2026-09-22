@@ -56,8 +56,9 @@ public sealed record Taf
     }
 
     /// <summary>
-    /// Everything after <c>RMK</c>, unparsed; also the closing statement of US military forecasts such as
-    /// <c>LAST NO AMDS AFT 2020 NEXT 2104</c>.
+    /// Everything after <c>RMK</c> as text, not decoded; also the closing statement of US military forecasts such as
+    /// <c>LAST NO AMDS AFT 2020 NEXT 2104</c>. Runs of whitespace (including line breaks) become one space and a
+    /// trailing <c>=</c> is removed; <c>null</c> when there are no remarks.
     /// </summary>
     public string? Remarks { get; init; }
 

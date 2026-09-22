@@ -5,7 +5,7 @@ namespace Cavok;
 /// (for example <c>211125Z</c>). Reports do not contain the month or year.
 /// </summary>
 /// <param name="Day">Day of the month, 1–31.</param>
-/// <param name="Hour">Hour, 0–24 (24 only occurs in forecast periods).</param>
+/// <param name="Hour">Hour, 0–23 (hour 24 only occurs in forecast periods, see <see cref="DayHour"/>).</param>
 /// <param name="Minute">Minute, 0–59.</param>
 public readonly record struct DayTime(int Day, int Hour, int Minute)
 {
@@ -16,7 +16,10 @@ public readonly record struct DayTime(int Day, int Hour, int Minute)
     /// </summary>
     /// <param name="reference">A moment close to the report, typically the moment it was received.</param>
     /// <returns>The resolved UTC timestamp.</returns>
-    /// <exception cref="ArgumentOutOfRangeException"><see cref="Day"/> is not between 1 and 31.</exception>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// <see cref="Day"/> is not between 1 and 31, or <paramref name="reference"/> (in UTC) lies in January or February of
+    /// year 1 or in December 9999, so that a month around it falls outside the range of <see cref="DateTimeOffset"/>.
+    /// </exception>
     public DateTimeOffset ToDateTimeOffset(DateTimeOffset reference)
     {
         if (Day < 1 || Day > 31)
@@ -57,6 +60,10 @@ public readonly record struct DayHour(int Day, int Hour)
     /// <summary>Resolves to a full UTC timestamp; see <see cref="DayTime.ToDateTimeOffset(DateTimeOffset)"/>.</summary>
     /// <param name="reference">A moment close to the report.</param>
     /// <returns>The resolved UTC timestamp.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// As for <see cref="DayTime.ToDateTimeOffset(DateTimeOffset)"/>: an invalid <see cref="Day"/>, or a
+    /// <paramref name="reference"/> at the very start or end of the range of <see cref="DateTimeOffset"/>.
+    /// </exception>
     public DateTimeOffset ToDateTimeOffset(DateTimeOffset reference) =>
         new DayTime(Day, Hour, 0).ToDateTimeOffset(reference);
 }

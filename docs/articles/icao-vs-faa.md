@@ -1,6 +1,7 @@
 # ICAO and FAA formats
 
-Cavok follows ICAO Annex 3 and WMO FM 15/FM 51 as used in Europe, and also accepts the US (FAA) variants.
+Cavok follows ICAO Annex 3 and WMO FM 15/FM 51 as used in Europe, and also accepts the US (FAA) variants. US TAF
+low-level wind shear groups (`WS020/24040KT`) are not supported yet and are reported as errors.
 
 | Element | ICAO (Europe) | FAA (US) | Cavok |
 |---|---|---|---|

@@ -2,17 +2,17 @@
 
 [![CI](https://github.com/JamievanRiel/cavok/actions/workflows/ci.yml/badge.svg)](https://github.com/JamievanRiel/cavok/actions/workflows/ci.yml)
 [![NuGet](https://img.shields.io/nuget/v/Cavok.svg)](https://www.nuget.org/packages/Cavok)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/JamievanRiel/cavok/blob/main/LICENSE)
 
 A METAR and TAF parser for .NET that treats the European ICAO format as a first-class citizen.
 
 ```csharp
 Metar metar = Metar.Parse("METAR EHAM 211125Z 24012G25KT 200V280 9999 -SHRA FEW012 BKN030CB 12/09 Q1013 TEMPO 4000 SHRA");
 
-metar.Wind.Direction          // 240
-metar.Wind.Gust               // 25 kt
-metar.Clouds[1]               // broken at 3,000 ft, cumulonimbus
-metar.Pressure.Hectopascals   // 1013
+metar.Wind?.Direction         // 240
+metar.Wind?.Gust?.Value       // 25
+metar.Clouds[1].Type          // Cumulonimbus
+metar.Pressure?.Hectopascals  // 1013
 metar.FlightCategory          // Mvfr
 metar.Describe(Language.Dutch)
 ```
@@ -39,7 +39,8 @@ Most METAR libraries are written with US reports in mind. Cavok handles what Eur
 - Missing values from automatic stations (`/////KT`, `////`, `//////CB`, `17///`, `RE//`) without errors
 - Runway visual range, runway state (including `CLRD` and `SNOCLO`), wind shear, sea state and military colour states (`BLU+BLU+`, `BLACKBLU+`, `TEMPO WHT`)
 
-US and other reports parse as well: statute miles (`1 1/2SM`), `A2992`, `CLR`, `RMK`.
+US and other reports parse as well: statute miles (`1 1/2SM`), `A2992`, `CLR`, `RMK`. US TAF low-level wind shear
+groups (`WS020/24040KT`) are not supported yet and are reported as errors.
 
 ## Features
 
@@ -100,4 +101,4 @@ CAVOK_ACCEPT_SNAPSHOTS=1 dotnet test                      # accept intended snap
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/JamievanRiel/cavok/blob/main/LICENSE)

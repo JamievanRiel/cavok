@@ -21,15 +21,15 @@
 | Runway state | `R24/290050`, `R24/CLRD62`, `R/SNOCLO` | `RunwayStates` |
 | Military colour state | `BLU`, `BLU+BLU+`, `BLACKBLU+` | `ColorCodes` |
 | Trend | `NOSIG`, `BECMG FM1030 30015KT`, `TEMPO 4000 SHRA` | `Trends` |
-| Remarks | `RMK …` | `Remarks` (unparsed) |
+| Remarks | `RMK …` | `Remarks` (text, not decoded) |
 
 ## Missing values
 
 Automatic stations send slashes for values they cannot measure. These are not errors: the value is `null` or a
 flag such as `Wind.IsMissing`, `Visibility.IsMissing`, `WeatherPhenomenon.IsNotObservable` or
 `CloudLayer.IsTypeNotObservable` is set. Accepted forms include `/////KT` (wind), `////` and `////SM` (visibility
-missing in metres or statute miles — `Visibility.IsMissing`), `//` (weather) and `//////CB` (a cloud layer whose
-amount, height and type are all unknown). French automatic stations may also send `///CB` or `///TCU` on their own:
+missing in metres or statute miles — `Visibility.IsMissing`), `//` (weather) and `//////CB` (a cumulonimbus layer
+whose amount and height are unknown). French automatic stations may also send `///CB` or `///TCU` on their own:
 a cumulonimbus or towering cumulus was detected but its amount and height were not, so `Cover` and `HeightFeet` are
 `null` while `Type` is set.
 

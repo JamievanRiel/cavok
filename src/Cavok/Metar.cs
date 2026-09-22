@@ -121,7 +121,10 @@ public sealed record Metar
         init => _trends = EquatableArray.From(value);
     }
 
-    /// <summary>Everything after <c>RMK</c>, unparsed; <c>null</c> when there are no remarks.</summary>
+    /// <summary>
+    /// Everything after <c>RMK</c> as text, not decoded: runs of whitespace (including line breaks) become one space and
+    /// a trailing <c>=</c> is removed; <c>null</c> when there are no remarks.
+    /// </summary>
     public string? Remarks { get; init; }
 
     /// <summary>Problems found while parsing.</summary>

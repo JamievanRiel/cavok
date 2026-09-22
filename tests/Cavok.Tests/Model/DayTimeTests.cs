@@ -38,5 +38,22 @@ public class DayTimeTests
     public void InvalidDayThrows() =>
         Assert.Throws<ArgumentOutOfRangeException>(() => new DayTime(32, 0, 0).ToDateTimeOffset(DateTimeOffset.UtcNow));
 
+    [Theory]
+    [InlineData("0001-01-15T00:00:00Z")]
+    [InlineData("0001-02-28T00:00:00Z")]
+    [InlineData("9999-12-15T00:00:00Z")]
+    public void ReferenceAtTheEdgeOfTheDateRangeThrows(string reference)
+    {
+        Assert.Throws<ArgumentOutOfRangeException>(() => new DayTime(15, 12, 0).ToDateTimeOffset(Parse(reference)));
+        Assert.Throws<ArgumentOutOfRangeException>(() => new DayHour(15, 12).ToDateTimeOffset(Parse(reference)));
+    }
+
+    [Fact]
+    public void ReferenceJustInsideTheDateRangeWorks()
+    {
+        Assert.Equal(Parse("0001-03-15T12:00:00Z"), new DayTime(15, 12, 0).ToDateTimeOffset(Parse("0001-03-15T00:00:00Z")));
+        Assert.Equal(Parse("9999-11-15T12:00:00Z"), new DayTime(15, 12, 0).ToDateTimeOffset(Parse("9999-11-15T00:00:00Z")));
+    }
+
     private static DateTimeOffset Parse(string text) => DateTimeOffset.Parse(text, CultureInfo.InvariantCulture);
 }
