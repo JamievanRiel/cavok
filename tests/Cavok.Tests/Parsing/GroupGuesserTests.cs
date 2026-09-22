@@ -21,6 +21,7 @@ public class GroupGuesserTests
     [InlineData("211125", DiagnosticCode.InvalidTime)]
     [InlineData("2106/22O2", DiagnosticCode.InvalidValidity)]
     [InlineData("12/O9", DiagnosticCode.InvalidTemperature)]
+    [InlineData("25/M01Z", DiagnosticCode.InvalidTemperature)]
     [InlineData("-XX", DiagnosticCode.InvalidWeather)]
     [InlineData("VCXX", DiagnosticCode.InvalidWeather)]
     [InlineData("HELLO", DiagnosticCode.UnknownGroup)]

@@ -51,7 +51,8 @@ internal static class GroupGuesser
             return DiagnosticCode.InvalidPressure;
         }
 
-        if (TimeParsers.LooksLikeDayTime(t))
+        // A time group never contains a slash; "25/M01Z" is a temperature group with a stray letter.
+        if (slash < 0 && TimeParsers.LooksLikeDayTime(t))
         {
             return DiagnosticCode.InvalidTime;
         }
