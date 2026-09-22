@@ -10,6 +10,8 @@ internal enum Field
     Clouds,
     Temperature,
     Pressure,
+    Icing,
+    Turbulence,
     RecentWeather,
     WindShear,
     Sea,

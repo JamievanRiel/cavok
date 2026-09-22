@@ -54,6 +54,10 @@ internal abstract class Phrasebook
 
     public abstract string TemperatureForecastText(TemperatureForecast forecast);
 
+    public abstract string IcingText(IcingLayer layer);
+
+    public abstract string TurbulenceText(TurbulenceLayer layer);
+
     public abstract string InlineWind(string text);
 
     public abstract string InlineVisibility(string text);

@@ -88,6 +88,21 @@ public class TafTests
     }
 
     [Fact]
+    public void MilitaryIcingAndTurbulenceGroups()
+    {
+        Taf taf = Taf.Parse("TAF AMD EGUL 181807Z 1818/1919 23010G15KT 8000 -RA BKN030 OVC080 651109 QNH2988INS BECMG 1820/1821 23012G25KT 8000 -RA BKN025 OVC050 651109 510005 QNH2988INS");
+
+        Assert.Empty(taf.Diagnostics);
+        Assert.Equal(new IcingLayer(5, 11000, 9000), Assert.Single(taf.Base.Icing));
+        Assert.Empty(taf.Base.Turbulence);
+        Assert.Equal(29.88, taf.Base.Pressure!.Value.Value, 2);
+        ForecastConditions becoming = Assert.Single(taf.Changes).Conditions;
+        Assert.Equal(new IcingLayer(5, 11000, 9000), Assert.Single(becoming.Icing));
+        Assert.Equal(new TurbulenceLayer(1, 0, 5000), Assert.Single(becoming.Turbulence));
+        Assert.Equal(29.88, becoming.Pressure!.Value.Value, 2);
+    }
+
+    [Fact]
     public void CorrectedForecastWithCavok()
     {
         Taf taf = Taf.Parse("TAF COR LRTC 210750Z 2106/2115 VRB04KT CAVOK BECMG 2109/2111 27010KT SCT040CB TEMPO 2111/2115 VRB15G25KT 5000 TSRA");

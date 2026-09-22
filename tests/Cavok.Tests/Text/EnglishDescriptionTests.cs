@@ -181,6 +181,38 @@ public class EnglishDescriptionTests
     }
 
     [Fact]
+    public void MilitaryTurbulenceGroup()
+    {
+        Taf taf = Taf.Parse("TAF LXGB 201325Z 2015/2022 09015KT 9999 FEW020 PROB30 TEMPO 2015/2016 10018G28KT 520002 PROB30 TEMPO 2019/2022 SCT020");
+
+        Assert.Equal(
+            Lines(
+                "TAF LXGB, issued day 20 at 13:25 UTC, valid from day 20 15:00 to day 20 22:00 UTC",
+                L("Wind", "090° at 15 kt"),
+                L("Visibility", "10 km or more"),
+                L("Clouds", "few (1–2/8) at 2,000 ft"),
+                L("Category", "VFR"),
+                "30% probability, temporarily between day 20 15:00 and day 20 16:00 UTC:",
+                "  " + L("Wind", "100° at 18 kt, gusting 28 kt"),
+                "  " + L("Turbulence", "occasional moderate turbulence in clear air up to 2,000 ft"),
+                "30% probability, temporarily between day 20 19:00 and day 20 22:00 UTC:",
+                "  " + L("Clouds", "scattered (3–4/8) at 2,000 ft"),
+                "  " + L("Category", "VFR")),
+            taf.Describe());
+    }
+
+    [Theory]
+    [InlineData("651109", "moderate icing in cloud from 11,000 to 20,000 ft")]
+    [InlineData("600003", "trace icing up to 3,000 ft")]
+    [InlineData("690500", "severe icing in precipitation from 5,000 ft")]
+    [InlineData("510005", "light turbulence up to 5,000 ft")]
+    [InlineData("591209", "frequent severe turbulence in cloud from 12,000 to 21,000 ft")]
+    public void IcingAndTurbulencePhrases(string code, string expected) =>
+        Assert.Equal(expected, IcingTurbulenceParser.ParseIcing(code) is IcingLayer icing
+            ? EnglishPhrasebook.Instance.IcingText(icing)
+            : EnglishPhrasebook.Instance.TurbulenceText(IcingTurbulenceParser.ParseTurbulence(code)!));
+
+    [Fact]
     public void NilAndCancelledForecasts()
     {
         Assert.Equal(

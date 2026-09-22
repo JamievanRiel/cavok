@@ -127,6 +127,38 @@ public class DutchDescriptionTests
     }
 
     [Fact]
+    public void MilitaryTurbulenceGroup()
+    {
+        Taf taf = Taf.Parse("TAF LXGB 201325Z 2015/2022 09015KT 9999 FEW020 PROB30 TEMPO 2015/2016 10018G28KT 520002 PROB30 TEMPO 2019/2022 SCT020");
+
+        Assert.Equal(
+            Lines(
+                "TAF LXGB, uitgegeven dag 20 om 13:25 UTC, geldig van dag 20 15:00 tot dag 20 22:00 UTC",
+                L("Wind", "090° met 15 kt"),
+                L("Zicht", "10 km of meer"),
+                L("Bewolking", "enkele wolken (1–2/8) op 2.000 ft"),
+                L("Categorie", "VFR"),
+                "30% kans, tijdelijk tussen dag 20 15:00 en dag 20 16:00 UTC:",
+                "  " + L("Wind", "100° met 18 kt, windstoten tot 28 kt"),
+                "  " + L("Turbulentie", "af en toe matige turbulentie in heldere lucht tot 2.000 ft"),
+                "30% kans, tijdelijk tussen dag 20 19:00 en dag 20 22:00 UTC:",
+                "  " + L("Bewolking", "verspreid (3–4/8) op 2.000 ft"),
+                "  " + L("Categorie", "VFR")),
+            taf.Describe(Language.Dutch));
+    }
+
+    [Theory]
+    [InlineData("651109", "matige ijsafzetting in wolken van 11.000 tot 20.000 ft")]
+    [InlineData("600003", "sporen van ijsafzetting tot 3.000 ft")]
+    [InlineData("690500", "zware ijsafzetting in neerslag vanaf 5.000 ft")]
+    [InlineData("510005", "lichte turbulentie tot 5.000 ft")]
+    [InlineData("591209", "vaak zware turbulentie in wolken van 12.000 tot 21.000 ft")]
+    public void IcingAndTurbulencePhrases(string code, string expected) =>
+        Assert.Equal(expected, IcingTurbulenceParser.ParseIcing(code) is IcingLayer icing
+            ? DutchPhrasebook.Instance.IcingText(icing)
+            : DutchPhrasebook.Instance.TurbulenceText(IcingTurbulenceParser.ParseTurbulence(code)!));
+
+    [Fact]
     public void RejectedProbabilityHasNoPercentage()
     {
         Taf taf = Taf.Parse("TAF EHAM 210440Z 2106/2212 27005KT PROB50 2112/2114 BKN005");

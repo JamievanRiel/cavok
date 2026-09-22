@@ -39,6 +39,8 @@ internal sealed class EnglishPhrasebook : Phrasebook
         Field.Clouds => "Clouds",
         Field.Temperature => "Temperature",
         Field.Pressure => "QNH",
+        Field.Icing => "Icing",
+        Field.Turbulence => "Turbulence",
         Field.RecentWeather => "Recent",
         Field.WindShear => "Wind shear",
         Field.Sea => "Sea",
@@ -408,6 +410,44 @@ internal sealed class EnglishPhrasebook : Phrasebook
     public override string TemperatureForecastText(TemperatureForecast forecast) =>
         Celsius(forecast.Celsius) + Invariant($" on day {forecast.Time.Day} at {Clock(forecast.Time.Hour, 0)} UTC");
 
+    public override string IcingText(IcingLayer layer)
+    {
+        string type = layer.Type switch
+        {
+            0 => "trace icing",
+            1 => "light icing",
+            2 => "light icing in cloud",
+            3 => "light icing in precipitation",
+            4 => "moderate icing",
+            5 => "moderate icing in cloud",
+            6 => "moderate icing in precipitation",
+            7 => "severe icing",
+            8 => "severe icing in cloud",
+            9 => "severe icing in precipitation",
+            _ => "?",
+        };
+        return type + " " + LayerText(layer.BaseFeet, layer.ThicknessFeet);
+    }
+
+    public override string TurbulenceText(TurbulenceLayer layer)
+    {
+        string type = layer.Type switch
+        {
+            0 => "no turbulence",
+            1 => "light turbulence",
+            2 => "occasional moderate turbulence in clear air",
+            3 => "frequent moderate turbulence in clear air",
+            4 => "occasional moderate turbulence in cloud",
+            5 => "frequent moderate turbulence in cloud",
+            6 => "occasional severe turbulence in clear air",
+            7 => "frequent severe turbulence in clear air",
+            8 => "occasional severe turbulence in cloud",
+            9 => "frequent severe turbulence in cloud",
+            _ => "?",
+        };
+        return type + " " + LayerText(layer.BaseFeet, layer.ThicknessFeet);
+    }
+
     public override string InlineWind(string text) => "wind " + text;
 
     public override string InlineVisibility(string text) => "visibility " + text;
@@ -465,6 +505,18 @@ internal sealed class EnglishPhrasebook : Phrasebook
         WeatherType.Duststorm => "duststorm",
         _ => "?",
     };
+
+    // "from 11,000 to 20,000 ft", "up to 2,000 ft" (base at the surface) or "from 5,000 ft" (no thickness given).
+    private string LayerText(int baseFeet, int thicknessFeet)
+    {
+        if (thicknessFeet == 0)
+        {
+            return "from " + Number(baseFeet) + " ft";
+        }
+
+        string top = Number(baseFeet + thicknessFeet) + " ft";
+        return baseFeet == 0 ? "up to " + top : "from " + Number(baseFeet) + " to " + top;
+    }
 
     private static string Deposit(int code) => code switch
     {

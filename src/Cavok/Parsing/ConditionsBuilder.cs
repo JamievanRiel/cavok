@@ -1,12 +1,14 @@
 namespace Cavok.Parsing;
 
-// Collects wind, visibility, weather, cloud, colour-state and pressure groups. Used for the observed part
-// of a METAR, for METAR trends and for the base and change groups of a TAF.
+// Collects wind, visibility, weather, cloud, colour-state and pressure groups, and the icing and turbulence groups
+// of military TAFs. Used for the observed part of a METAR, for METAR trends and for the base and change groups of a TAF.
 internal sealed class ConditionsBuilder
 {
     private readonly List<WeatherPhenomenon> _weather = new List<WeatherPhenomenon>();
     private readonly List<CloudLayer> _clouds = new List<CloudLayer>();
     private readonly List<ColorCode> _colorCodes = new List<ColorCode>();
+    private readonly List<IcingLayer> _icing = new List<IcingLayer>();
+    private readonly List<TurbulenceLayer> _turbulence = new List<TurbulenceLayer>();
     private Wind? _wind;
     private WindVariation? _variation;
     private bool _cavok;
@@ -113,6 +115,10 @@ internal sealed class ConditionsBuilder
         GroupChecks.Check(group, first, last, diagnostics);
     }
 
+    public void AddIcing(IcingLayer layer) => _icing.Add(layer);
+
+    public void AddTurbulence(TurbulenceLayer layer) => _turbulence.Add(layer);
+
     public ForecastConditions Build() => new ForecastConditions
     {
         Wind = BuildWind(),
@@ -124,6 +130,8 @@ internal sealed class ConditionsBuilder
         CloudCondition = _cloudCondition,
         ColorCodes = _colorCodes.ToArray(),
         Pressure = _pressure,
+        Icing = _icing.ToArray(),
+        Turbulence = _turbulence.ToArray(),
     };
 
     private bool CanBeMinimum(Group group) =>

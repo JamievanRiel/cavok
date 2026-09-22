@@ -165,6 +165,20 @@ internal static class TafParser
             return;
         }
 
+        if (IcingTurbulenceParser.ParseIcing(text) is IcingLayer icing)
+        {
+            state.Current.AddIcing(icing);
+            cursor.Consume();
+            return;
+        }
+
+        if (IcingTurbulenceParser.ParseTurbulence(text) is TurbulenceLayer turbulence)
+        {
+            state.Current.AddTurbulence(turbulence);
+            cursor.Consume();
+            return;
+        }
+
         if (TafChangeParser.IsChangeStart(text))
         {
             if (state.Header is not null)

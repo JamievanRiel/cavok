@@ -102,6 +102,19 @@ public class TranslationCoverageTests
         }
     }
 
+    [Theory]
+    [MemberData(nameof(Languages))]
+    public void EveryIcingAndTurbulenceCodeHasText(Language language)
+    {
+        Phrasebook p = Phrasebook.For(language);
+
+        for (int code = 0; code <= 9; code++)
+        {
+            AssertText(p.IcingText(new IcingLayer(code, 1000, 2000)));
+            AssertText(p.TurbulenceText(new TurbulenceLayer(code, 1000, 2000)));
+        }
+    }
+
     [Fact]
     public void DutchIsReallyDutch() =>
         Assert.NotEqual(Phrasebook.For(Language.English).Label(Field.Visibility), Phrasebook.For(Language.Dutch).Label(Field.Visibility));

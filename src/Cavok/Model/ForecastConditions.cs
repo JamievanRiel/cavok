@@ -33,6 +33,12 @@ public sealed record ForecastConditions
     /// <summary>Forecast lowest QNH (UK military TAFs, <c>QNH3043INS</c>).</summary>
     public Pressure? Pressure { get; init; }
 
+    /// <summary>Forecast icing layers (military TAFs, group <c>6IchihihitL</c> such as <c>651109</c>).</summary>
+    public IReadOnlyList<IcingLayer> Icing { get; init; } = Array.Empty<IcingLayer>();
+
+    /// <summary>Forecast turbulence layers (military TAFs, group <c>5BhBhBhBtL</c> such as <c>510005</c>).</summary>
+    public IReadOnlyList<TurbulenceLayer> Turbulence { get; init; } = Array.Empty<TurbulenceLayer>();
+
     /// <summary>Flight category computed from the visibility and cloud in this block only; <c>null</c> when neither is given.</summary>
     public FlightCategory? FlightCategory => FlightCategoryCalculator.Compute(Visibility, IsCavok, Clouds, CloudCondition);
 }

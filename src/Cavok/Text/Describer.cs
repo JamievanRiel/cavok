@@ -172,6 +172,16 @@ internal static class Describer
             writer.Add(Field.Pressure, p.PressureText(pressure), indent);
         }
 
+        if (conditions.Icing.Count > 0)
+        {
+            writer.Add(Field.Icing, List(conditions.Icing.Select(p.IcingText)), indent);
+        }
+
+        if (conditions.Turbulence.Count > 0)
+        {
+            writer.Add(Field.Turbulence, List(conditions.Turbulence.Select(p.TurbulenceText)), indent);
+        }
+
         if (conditions.FlightCategory is FlightCategory category)
         {
             writer.Add(Field.FlightCategory, CategoryText(category), indent);
@@ -222,6 +232,9 @@ internal static class Describer
         {
             parts.Add("QNH " + p.PressureText(pressure));
         }
+
+        parts.AddRange(conditions.Icing.Select(p.IcingText));
+        parts.AddRange(conditions.Turbulence.Select(p.TurbulenceText));
 
         return string.Join("; ", parts);
     }

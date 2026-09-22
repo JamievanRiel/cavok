@@ -39,6 +39,8 @@ internal sealed class DutchPhrasebook : Phrasebook
         Field.Clouds => "Bewolking",
         Field.Temperature => "Temperatuur",
         Field.Pressure => "QNH",
+        Field.Icing => "IJsafzetting",
+        Field.Turbulence => "Turbulentie",
         Field.RecentWeather => "Recent weer",
         Field.WindShear => "Windschering",
         Field.Sea => "Zee",
@@ -395,6 +397,44 @@ internal sealed class DutchPhrasebook : Phrasebook
     public override string TemperatureForecastText(TemperatureForecast forecast) =>
         Celsius(forecast.Celsius) + Invariant($" op dag {forecast.Time.Day} om {Clock(forecast.Time.Hour, 0)} UTC");
 
+    public override string IcingText(IcingLayer layer)
+    {
+        string type = layer.Type switch
+        {
+            0 => "sporen van ijsafzetting",
+            1 => "lichte ijsafzetting",
+            2 => "lichte ijsafzetting in wolken",
+            3 => "lichte ijsafzetting in neerslag",
+            4 => "matige ijsafzetting",
+            5 => "matige ijsafzetting in wolken",
+            6 => "matige ijsafzetting in neerslag",
+            7 => "zware ijsafzetting",
+            8 => "zware ijsafzetting in wolken",
+            9 => "zware ijsafzetting in neerslag",
+            _ => "?",
+        };
+        return type + " " + LayerText(layer.BaseFeet, layer.ThicknessFeet);
+    }
+
+    public override string TurbulenceText(TurbulenceLayer layer)
+    {
+        string type = layer.Type switch
+        {
+            0 => "geen turbulentie",
+            1 => "lichte turbulentie",
+            2 => "af en toe matige turbulentie in heldere lucht",
+            3 => "vaak matige turbulentie in heldere lucht",
+            4 => "af en toe matige turbulentie in wolken",
+            5 => "vaak matige turbulentie in wolken",
+            6 => "af en toe zware turbulentie in heldere lucht",
+            7 => "vaak zware turbulentie in heldere lucht",
+            8 => "af en toe zware turbulentie in wolken",
+            9 => "vaak zware turbulentie in wolken",
+            _ => "?",
+        };
+        return type + " " + LayerText(layer.BaseFeet, layer.ThicknessFeet);
+    }
+
     public override string InlineWind(string text) => "wind " + text;
 
     public override string InlineVisibility(string text) => "zicht " + text;
@@ -509,6 +549,18 @@ internal sealed class DutchPhrasebook : Phrasebook
         WeatherType.Duststorm => "stofstorm",
         _ => "?",
     };
+
+    // "van 11.000 tot 20.000 ft", "tot 2.000 ft" (base at the surface) or "vanaf 5.000 ft" (no thickness given).
+    private string LayerText(int baseFeet, int thicknessFeet)
+    {
+        if (thicknessFeet == 0)
+        {
+            return "vanaf " + Number(baseFeet) + " ft";
+        }
+
+        string top = Number(baseFeet + thicknessFeet) + " ft";
+        return baseFeet == 0 ? "tot " + top : "van " + Number(baseFeet) + " tot " + top;
+    }
 
     private static string Deposit(int code) => code switch
     {
