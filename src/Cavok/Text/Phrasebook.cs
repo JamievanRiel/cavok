@@ -17,7 +17,8 @@ internal abstract class Phrasebook
 
     protected abstract NumberFormatInfo Numbers { get; }
 
-    public static Phrasebook For(Language language) => EnglishPhrasebook.Instance;
+    public static Phrasebook For(Language language) =>
+        language == Language.Dutch ? DutchPhrasebook.Instance : EnglishPhrasebook.Instance;
 
     public abstract string Label(Field field);
 
