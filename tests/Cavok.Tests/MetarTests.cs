@@ -71,6 +71,16 @@ public class MetarTests
         Assert.Equal("///", metar.Remarks);
     }
 
+    [Fact]
+    public void MissingStatuteMileVisibilityFromCanadianAutomaticStationsIsNotAnError()
+    {
+        Metar metar = Metar.Parse("METAR CBAR 210900Z AUTO 36009KT ////SM ////// 04/04 A2929 RMK VIS MISG CLD MISG T00400039 SLP925");
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.True(metar.Visibility!.IsMissing);
+        Assert.Null(metar.Visibility.StatuteMiles);
+    }
+
     [Theory]
     [InlineData("METAR LFKS 201430Z AUTO 12005KT 050V160 9999 ///CB 28/20 Q1022", CloudType.Cumulonimbus)]
     [InlineData("METAR LFKC 201330Z AUTO 35010KT 320V020 9999 FEW027/// ///TCU 28/21 Q1023 BECMG NSC", CloudType.ToweringCumulus)]

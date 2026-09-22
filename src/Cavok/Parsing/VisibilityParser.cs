@@ -60,7 +60,7 @@ internal static class VisibilityParser
         };
     }
 
-    // 10SM, P6SM, 1/2SM, M1/4SM
+    // 10SM, P6SM, 1/2SM, M1/4SM, ////SM (missing, North American automatic stations)
     public static Visibility? ParseStatuteMiles(string s)
     {
         if (s.Length < 3 || !s.EndsWith("SM", StringComparison.Ordinal))
@@ -69,6 +69,11 @@ internal static class VisibilityParser
         }
 
         string body = s.Substring(0, s.Length - 2);
+        if (body == "////")
+        {
+            return new Visibility { IsMissing = true };
+        }
+
         bool less = body[0] == 'M';
         bool more = body[0] == 'P';
         if (less || more)

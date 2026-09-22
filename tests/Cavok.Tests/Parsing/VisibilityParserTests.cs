@@ -45,6 +45,16 @@ public class VisibilityParserTests
         Assert.Null(visibility.ToMeters());
     }
 
+    [Fact]
+    public void MissingStatuteMileVisibility()
+    {
+        Visibility visibility = VisibilityParser.ParseStatuteMiles("////SM")!;
+
+        Assert.True(visibility.IsMissing);
+        Assert.Null(visibility.StatuteMiles);
+        Assert.Null(visibility.ToMeters());
+    }
+
     [Theory]
     [InlineData("1500SW", 1500, CompassDirection.SouthWest)]
     [InlineData("4900SE", 4900, CompassDirection.SouthEast)]
