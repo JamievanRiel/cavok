@@ -204,7 +204,8 @@ public class EnglishDescriptionTests
     [Theory]
     [InlineData("651109", "moderate icing in cloud from 11,000 to 20,000 ft")]
     [InlineData("600003", "trace icing up to 3,000 ft")]
-    [InlineData("690500", "severe icing in precipitation from 5,000 ft")]
+    [InlineData("690500", "severe icing in precipitation from 5,000 ft to the cloud tops")]
+    [InlineData("620000", "light icing in cloud from the surface to the cloud tops")]
     [InlineData("510005", "light turbulence up to 5,000 ft")]
     [InlineData("591209", "frequent severe turbulence in cloud from 12,000 to 21,000 ft")]
     public void IcingAndTurbulencePhrases(string code, string expected) =>

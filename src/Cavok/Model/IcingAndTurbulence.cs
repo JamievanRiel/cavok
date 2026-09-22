@@ -9,7 +9,10 @@ namespace Cavok;
 /// cloud, 6 moderate in precipitation, 7 severe, 8 severe in cloud, 9 severe in precipitation.
 /// </param>
 /// <param name="BaseFeet">Height of the base of the layer in feet (reported in hundreds of feet).</param>
-/// <param name="ThicknessFeet">Thickness of the layer in feet (reported in thousands of feet).</param>
+/// <param name="ThicknessFeet">
+/// Thickness of the layer in feet (reported in thousands of feet); 0 means the layer reaches up to the tops of the clouds
+/// (WMO code table 4013).
+/// </param>
 public sealed record IcingLayer(int Type, int BaseFeet, int ThicknessFeet);
 
 /// <summary>
@@ -22,5 +25,8 @@ public sealed record IcingLayer(int Type, int BaseFeet, int ThicknessFeet);
 /// cloud (occasional, frequent).
 /// </param>
 /// <param name="BaseFeet">Height of the base of the layer in feet (reported in hundreds of feet).</param>
-/// <param name="ThicknessFeet">Thickness of the layer in feet (reported in thousands of feet).</param>
+/// <param name="ThicknessFeet">
+/// Thickness of the layer in feet (reported in thousands of feet); 0 means the layer reaches up to the tops of the clouds
+/// (WMO code table 4013).
+/// </param>
 public sealed record TurbulenceLayer(int Type, int BaseFeet, int ThicknessFeet);

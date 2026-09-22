@@ -515,12 +515,13 @@ internal sealed class EnglishPhrasebook : Phrasebook
         _ => "?",
     };
 
-    // "from 11,000 to 20,000 ft", "up to 2,000 ft" (base at the surface) or "from 5,000 ft" (no thickness given).
+    // "from 11,000 to 20,000 ft", "up to 2,000 ft" (base at the surface) or "from 5,000 ft to the cloud tops"
+    // (thickness digit 0, WMO code table 4013).
     private string LayerText(int baseFeet, int thicknessFeet)
     {
         if (thicknessFeet == 0)
         {
-            return "from " + Number(baseFeet) + " ft";
+            return (baseFeet == 0 ? "from the surface" : "from " + Number(baseFeet) + " ft") + " to the cloud tops";
         }
 
         string top = Number(baseFeet + thicknessFeet) + " ft";

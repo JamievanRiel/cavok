@@ -556,12 +556,13 @@ internal sealed class DutchPhrasebook : Phrasebook
         _ => "?",
     };
 
-    // "van 11.000 tot 20.000 ft", "tot 2.000 ft" (base at the surface) or "vanaf 5.000 ft" (no thickness given).
+    // "van 11.000 tot 20.000 ft", "tot 2.000 ft" (base at the surface) or "vanaf 5.000 ft tot de wolkentoppen"
+    // (thickness digit 0, WMO code table 4013).
     private string LayerText(int baseFeet, int thicknessFeet)
     {
         if (thicknessFeet == 0)
         {
-            return "vanaf " + Number(baseFeet) + " ft";
+            return (baseFeet == 0 ? "vanaf het oppervlak" : "vanaf " + Number(baseFeet) + " ft") + " tot de wolkentoppen";
         }
 
         string top = Number(baseFeet + thicknessFeet) + " ft";

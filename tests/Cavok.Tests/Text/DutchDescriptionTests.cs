@@ -150,7 +150,8 @@ public class DutchDescriptionTests
     [Theory]
     [InlineData("651109", "matige ijsafzetting in wolken van 11.000 tot 20.000 ft")]
     [InlineData("600003", "sporen van ijsafzetting tot 3.000 ft")]
-    [InlineData("690500", "zware ijsafzetting in neerslag vanaf 5.000 ft")]
+    [InlineData("690500", "zware ijsafzetting in neerslag vanaf 5.000 ft tot de wolkentoppen")]
+    [InlineData("620000", "lichte ijsafzetting in wolken vanaf het oppervlak tot de wolkentoppen")]
     [InlineData("510005", "lichte turbulentie tot 5.000 ft")]
     [InlineData("591209", "vaak zware turbulentie in wolken van 12.000 tot 21.000 ft")]
     public void IcingAndTurbulencePhrases(string code, string expected) =>

@@ -25,6 +25,8 @@ change group:
   `IcingLayer`: `651109` is moderate icing in cloud from 11,000 ft, 9,000 ft thick (11,000 to 20,000 ft).
 - `5BhBhBhBtL`, for example `520002` — a forecast turbulence layer, parsed into `ForecastConditions.Turbulence` as
   a `TurbulenceLayer`: `520002` is occasional moderate turbulence in clear air from the surface to 2,000 ft.
+- In both groups a thickness digit of 0 means the layer reaches up to the cloud tops (`ThicknessFeet` is 0):
+  `690500` is severe icing in precipitation from 5,000 ft to the cloud tops.
 
 US military forecasts sometimes close with a plain-language statement such as `LAST NO AMDS AFT 2020 NEXT 2104`
 (last forecast of the day, no amendments after day 20 20:00 UTC, next forecast issued day 21 04:00 UTC). Cavok does
