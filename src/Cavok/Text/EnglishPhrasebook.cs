@@ -257,7 +257,10 @@ internal sealed class EnglishPhrasebook : Phrasebook
             return "tornado or waterspout";
         }
 
-        string types = JoinAnd(weather.Types.Select(TypeName).ToList(), "and");
+        // DU on its own is "widespread dust"; raised by the wind (BLDU, DRDU) it is plain "dust".
+        string types = JoinAnd(
+            weather.Types.Select(t => t == WeatherType.Dust && weather.Descriptor is not null ? "dust" : TypeName(t)).ToList(),
+            "and");
         string core = weather.Descriptor switch
         {
             null => types,
