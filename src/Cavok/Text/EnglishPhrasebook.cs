@@ -345,7 +345,7 @@ internal sealed class EnglishPhrasebook : Phrasebook
 
         if (sea.StateOfSea is int state)
         {
-            parts.Add("state of sea " + Int(state));
+            parts.Add("sea state " + Int(state));
         }
 
         if (sea.WaveHeightDecimeters is int height)

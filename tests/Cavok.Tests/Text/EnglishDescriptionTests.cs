@@ -281,7 +281,8 @@ public class EnglishDescriptionTests
     [Theory]
     [InlineData("W18/H14", "sea temperature 18 °C, wave height 1.4 m")]
     [InlineData("W///H25", "sea temperature not available, wave height 2.5 m")]
-    [InlineData("W///S5", "sea temperature not available, state of sea 5")]
+    [InlineData("W///S5", "sea temperature not available, sea state 5")]
+    [InlineData("W13/S6", "sea temperature 13 °C, sea state 6")]
     [InlineData("W///H///", "not available")]
     public void SeaPhrases(string code, string expected) =>
         Assert.Equal(expected, EnglishPhrasebook.Instance.SeaText(SeaParser.Parse(code)!));
