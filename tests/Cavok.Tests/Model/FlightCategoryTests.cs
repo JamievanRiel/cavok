@@ -64,6 +64,62 @@ public class FlightCategoryTests
     public void StatuteMiles(string text, FlightCategory expected) =>
         Assert.Equal(expected, FlightCategoryCalculator.Compute(VisibilityParser.ParseStatuteMiles(text), false, Array.Empty<CloudLayer>(), CloudCondition.Clear));
 
+    [Theory]
+    [InlineData("P5SM", FlightCategory.Vfr)] // more than 5 SM
+    [InlineData("5SM", FlightCategory.Mvfr)]
+    [InlineData("M5SM", FlightCategory.Mvfr)]
+    [InlineData("P3SM", FlightCategory.Mvfr)]
+    [InlineData("3SM", FlightCategory.Mvfr)]
+    [InlineData("M3SM", FlightCategory.Ifr)] // less than 3 SM
+    [InlineData("P1SM", FlightCategory.Ifr)]
+    [InlineData("1SM", FlightCategory.Ifr)]
+    [InlineData("M1SM", FlightCategory.Lifr)] // less than 1 SM
+    public void MoreThanAndLessThanShiftAnExactThreshold(string text, FlightCategory expected) =>
+        Assert.Equal(expected, FlightCategoryCalculator.Compute(VisibilityParser.ParseStatuteMiles(text), false, Array.Empty<CloudLayer>(), CloudCondition.Clear));
+
+    [Fact]
+    public void CeilingOfUnknownHeightBelowTheKnownCeilingsLeavesTheCategoryToVisibility()
+    {
+        CloudLayer[] clouds =
+        {
+            new CloudLayer { Cover = CloudCover.Broken },
+            new CloudLayer { Cover = CloudCover.Overcast, HeightFeet = 2000 },
+        };
+
+        Assert.Equal(FlightCategory.Vfr, FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("9999"), false, clouds, null));
+        Assert.Equal(FlightCategory.Ifr, FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("3000"), false, clouds, null));
+    }
+
+    [Fact]
+    public void CeilingOfUnknownHeightIsNotOverruledByLayersWithoutACeiling()
+    {
+        CloudLayer[] clouds =
+        {
+            new CloudLayer { Cover = CloudCover.Broken },
+            new CloudLayer { Cover = CloudCover.Few, HeightFeet = 1000 },
+        };
+
+        Assert.Null(FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("////"), false, clouds, null));
+        Assert.Null(FlightCategoryCalculator.Compute(null, false, clouds, null));
+        Assert.Equal(FlightCategory.Ifr, FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("3000"), false, clouds, null));
+    }
+
+    [Fact]
+    public void KnownCeilingBelowACeilingOfUnknownHeightStillCounts()
+    {
+        CloudLayer[] clouds =
+        {
+            new CloudLayer { Cover = CloudCover.Broken, HeightFeet = 1000 },
+            new CloudLayer { Cover = CloudCover.Overcast },
+        };
+
+        Assert.Equal(FlightCategory.Mvfr, FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("9999"), false, clouds, null));
+    }
+
+    [Fact]
+    public void ReportedCeilingOfUnknownHeightWithoutVisibilityHasNoCategory() =>
+        Assert.Null(Metar.Parse("METAR EHXX 211125Z AUTO 24005KT //// // BKN/// FEW010 12/09 Q1013").FlightCategory);
+
     [Fact]
     public void UnknownWhenNeitherVisibilityNorCloudIsKnown() =>
         Assert.Null(FlightCategoryCalculator.Compute(VisibilityParser.ParseMetric("////"), false, Array.Empty<CloudLayer>(), null));
