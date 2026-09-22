@@ -32,6 +32,11 @@ jobs:
         env:
           CAVOK_FUZZ_CASES: 10000
 
+      # The steps above test the net8.0 build of the library; this one tests the netstandard2.0 build, the one
+      # .NET Framework applications load.
+      - name: Test the netstandard2.0 build
+        run: dotnet test tests/Cavok.Tests/Cavok.Tests.csproj --configuration Release -p:CavokTestTarget=netstandard2.0
+
       - name: Run samples
         run: dotnet run --project samples/Cavok.Samples --configuration Release --no-build
 

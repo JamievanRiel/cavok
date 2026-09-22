@@ -18,8 +18,13 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <!-- The tests use the net8.0 build of the library. Build with -p:CavokTestTarget=netstandard2.0 to test the
+       netstandard2.0 build instead, the one .NET Framework applications load. -->
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Cavok\Cavok.csproj" />
+    <ProjectReference Include="..\..\src\Cavok\Cavok.csproj">
+      <SetTargetFramework Condition="'$(CavokTestTarget)' != ''">TargetFramework=$(CavokTestTarget)</SetTargetFramework>
+    </ProjectReference>
+    <AssemblyMetadata Include="CavokTestTarget" Value="$(CavokTestTarget)" />
   </ItemGroup>
 
   <ItemGroup>
