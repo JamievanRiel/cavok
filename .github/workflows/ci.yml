@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: Restore
+        run: dotnet restore Cavok.sln
+
+      - name: Check formatting
+        run: dotnet format Cavok.sln --verify-no-changes --no-restore
+
+      - name: Build
+        run: dotnet build Cavok.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test Cavok.sln --configuration Release --no-build
+        env:
+          CAVOK_FUZZ_CASES: 10000
+
+      - name: Run samples
+        run: dotnet run --project samples/Cavok.Samples --configuration Release --no-build
+
+      - name: Pack
+        run: dotnet pack src/Cavok/Cavok.csproj --configuration Release --no-build --output artifacts
