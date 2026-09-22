@@ -58,6 +58,7 @@ public class ParserProperties
     [InlineData("1 1/2SM")]
     [InlineData("TXM2/2114Z")]
     [InlineData("TX15/")]
+    [InlineData("QNH3043INS")]
     public void KnownTrickyInputs(string input) => Assert.True(IsSafe(input));
 
     // xUnit v3 cannot discover/serialize a lone UTF-16 surrogate as [InlineData], so it is covered separately.

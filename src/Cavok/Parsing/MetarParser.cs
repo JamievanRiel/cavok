@@ -179,6 +179,10 @@ internal static class MetarParser
             cursor.Skip();
             return;
         }
+        else if (IsPressureInTheOtherUnit(group, cursor, state))
+        {
+            // QNH in both units ("Q1011 A2985") is national practice in some countries; the first value is kept.
+        }
         else
         {
             int rank = Rank(group.Kind);
@@ -195,12 +199,30 @@ internal static class MetarParser
 
                 builder.Apply(group);
                 GroupChecks.Check(group, token, last, diagnostics);
+                if (group.Kind == GroupKind.Pressure)
+                {
+                    state.PressureIndex = cursor.Index;
+                }
             }
 
             state.Rank = Math.Max(state.Rank, rank);
         }
 
         cursor.Consume(group.TokenCount);
+    }
+
+    // An A group directly after the accepted Q group, or a Q group directly after the accepted A group.
+    private static bool IsPressureInTheOtherUnit(Group group, TokenCursor cursor, BodyState state)
+    {
+        if (group.Kind != GroupKind.Pressure || state.PressureIndex < 0 || state.PressureIndex != cursor.Index - 1)
+        {
+            return false;
+        }
+
+        string first = cursor.Tokens[state.PressureIndex].Text;
+        string second = cursor.Current.Text;
+        return first.Length == 5 && second.Length == 5
+            && ((first[0] == 'Q' && second[0] == 'A') || (first[0] == 'A' && second[0] == 'Q'));
     }
 
     // German military automatic stations send "///" for a colour state they cannot determine
@@ -238,5 +260,8 @@ internal static class MetarParser
         public int Rank { get; set; }
 
         public TrendBuilder? Trend { get; set; }
+
+        // Token index of the accepted pressure group, or -1.
+        public int PressureIndex { get; set; } = -1;
     }
 }

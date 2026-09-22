@@ -241,6 +241,42 @@ public class MetarTests
     }
 
     [Theory]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 A2985 RMK BKN090", 1011)]
+    [InlineData("METAR MSLP 210900Z 08004KT 8000 RA FEW027 BKN060 24/23 Q1009 A2980 NOSIG RMK DSTN CB S SW", 1009)]
+    [InlineData("METAR OMRK 220700Z 23006KT 120V280 CAVOK 39/14 Q1009 A2982", 1009)]
+    public void PressureInBothUnitsKeepsTheFirst(string raw, int hectopascals)
+    {
+        Metar metar = Metar.Parse(raw);
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Equal(new Pressure(hectopascals, PressureUnit.Hectopascals), metar.Pressure);
+    }
+
+    [Fact]
+    public void PressureInInchesThenHectopascals()
+    {
+        Metar metar = Metar.Parse("METAR MGMM 210900Z 00000KT CAVOK 24/23 A2985 Q1011");
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Equal(new Pressure(29.85, PressureUnit.InchesOfMercury), metar.Pressure);
+    }
+
+    [Theory]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 Q1012", "Q1012")]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 A2985 A2986", "A2986")]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 A2985 Q1012", "Q1012")]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 A2985 A2986", "A2986")]
+    [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 RERA A2985", "A2985")]
+    public void SecondPressureInTheSameUnitOrNotDirectlyAfterIsADuplicate(string raw, string duplicate)
+    {
+        Metar metar = Metar.Parse(raw);
+
+        Diagnostic diagnostic = Assert.Single(metar.Diagnostics);
+        Assert.Equal(DiagnosticCode.Duplicate, diagnostic.Code);
+        Assert.Equal(duplicate, diagnostic.Token);
+    }
+
+    [Theory]
     [InlineData("METAR EHAM 211125Z 24005KT CAVOK 12/09 Q1013 NOSIG=")]
     [InlineData("metar eham 211125z 24005kt cavok 12/09 q1013")]
     [InlineData("  METAR EHAM 211125Z\n 24005KT CAVOK\t12/09 Q1013  ")]
