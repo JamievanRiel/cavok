@@ -54,6 +54,20 @@ public class MetarDiagnosticsTests
         Assert.Equal(code, Assert.Single(Metar.Parse(raw).Diagnostics).Code);
 
     [Fact]
+    public void MinimumVisibilityAfterCavokIsNotApplied()
+    {
+        Metar metar = Metar.Parse("METAR EHAM 211125Z 24005KT CAVOK 4000W 12/09 Q1013 TEMPO CAVOK 1500N");
+
+        Assert.True(metar.IsCavok);
+        Assert.Null(metar.Visibility);
+        ForecastConditions trend = Assert.Single(metar.Trends).Conditions!;
+        Assert.True(trend.IsCavok);
+        Assert.Null(trend.Visibility);
+        Assert.Equal(new[] { "4000W", "1500N" }, metar.Diagnostics.Select(d => d.Token));
+        Assert.All(metar.Diagnostics, d => Assert.Equal(DiagnosticCode.Duplicate, d.Code));
+    }
+
+    [Fact]
     public void MissingStationPointsToWhereItWasExpected()
     {
         Metar metar = Metar.Parse("METAR 211125Z 24012KT CAVOK Q1013");

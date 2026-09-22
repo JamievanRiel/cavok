@@ -69,6 +69,35 @@ public class ConditionsBuilderTests
         Assert.Equal(DiagnosticCode.Duplicate, Assert.Single(bag.Items).Code);
     }
 
+    [Theory]
+    [InlineData("CAVOK 4000W", "4000W")]
+    [InlineData("CAVOK 9999 1500", "9999")]
+    public void VisibilityAfterCavokIsADuplicateAndNotApplied(string text, string duplicate)
+    {
+        (ConditionsBuilder builder, DiagnosticBag bag) = Build(text);
+
+        ForecastConditions conditions = builder.Build();
+        Assert.True(conditions.IsCavok);
+        Assert.Null(conditions.Visibility);
+        Diagnostic first = bag.Items[0];
+        Assert.Equal(DiagnosticCode.Duplicate, first.Code);
+        Assert.Equal(duplicate, first.Token);
+        Assert.All(bag.Items, d => Assert.Equal(DiagnosticCode.Duplicate, d.Code));
+    }
+
+    [Fact]
+    public void CavokAfterAMinimumVisibilityIsADuplicate()
+    {
+        (ConditionsBuilder builder, DiagnosticBag bag) = Build("4000W CAVOK");
+
+        ForecastConditions conditions = builder.Build();
+        Assert.False(conditions.IsCavok);
+        Assert.Equal(new MinimumVisibility(4000, CompassDirection.West), conditions.Visibility!.Minimum);
+        Diagnostic diagnostic = Assert.Single(bag.Items);
+        Assert.Equal(DiagnosticCode.Duplicate, diagnostic.Code);
+        Assert.Equal("CAVOK", diagnostic.Token);
+    }
+
     [Fact]
     public void CollectsWeatherCloudsAndColorCodes()
     {

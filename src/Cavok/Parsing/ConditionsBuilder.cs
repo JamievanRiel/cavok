@@ -32,13 +32,15 @@ internal sealed class ConditionsBuilder
         || kind == GroupKind.ColorCode
         || kind == GroupKind.Pressure;
 
+    // CAVOK stands for the whole visibility, so it excludes every other visibility group, a minimum visibility
+    // included (Visibility stays null when IsCavok); whichever comes second is a duplicate.
     public bool CanAccept(Group group) => group.Kind switch
     {
         GroupKind.Wind => _wind is null,
         GroupKind.WindVariation => _variation is null,
-        GroupKind.Cavok => !_cavok && _visibility is null,
+        GroupKind.Cavok => !_cavok && _visibility is null && _minimum is null,
         GroupKind.Visibility => (!_cavok && _visibility is null) || CanBeMinimum(group),
-        GroupKind.MinimumVisibility => _minimum is null,
+        GroupKind.MinimumVisibility => !_cavok && _minimum is null,
         GroupKind.Weather => true,
         GroupKind.NoSignificantWeather => !_noSignificantWeather,
         GroupKind.Cloud => true,

@@ -19,6 +19,18 @@ public class TafDiagnosticsTests
         Assert.Equal(DiagnosticCode.InvalidValidity, Assert.Single(Taf.Parse("TAF EHAM 210440Z 211824 27005KT").Diagnostics).Code);
 
     [Fact]
+    public void MinimumVisibilityAfterCavokIsNotApplied()
+    {
+        Taf taf = Taf.Parse("TAF EHAM 210440Z 2106/2212 27005KT CAVOK 4000W BECMG 2106/2109 CAVOK 1500N");
+
+        Assert.True(taf.Base.IsCavok);
+        Assert.Null(taf.Base.Visibility);
+        Assert.Null(Assert.Single(taf.Changes).Conditions.Visibility);
+        Assert.Equal(new[] { "4000W", "1500N" }, taf.Diagnostics.Select(d => d.Token));
+        Assert.All(taf.Diagnostics, d => Assert.Equal(DiagnosticCode.Duplicate, d.Code));
+    }
+
+    [Fact]
     public void MissingIssueTime()
     {
         Taf taf = Taf.Parse("TAF EHAM 2106/2212 27005KT 9999 FEW035");
