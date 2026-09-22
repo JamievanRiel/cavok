@@ -12,7 +12,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
-      NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+      # Only whether the key is set; the key itself is passed to the push step alone, so the test and pack steps
+      # (which run third-party MSBuild targets) never see it.
+      HAS_NUGET_API_KEY: ${{ secrets.NUGET_API_KEY != '' }}
     steps:
       - uses: actions/checkout@v7
 
@@ -34,7 +36,7 @@ jobs:
       # when it is set.
       - name: NuGet login
         id: login
-        if: env.NUGET_API_KEY == ''
+        if: env.HAS_NUGET_API_KEY != 'true'
         uses: NuGet/login@v1
         with:
           user: ${{ secrets.NUGET_USER }}
@@ -42,6 +44,7 @@ jobs:
       - name: Push to NuGet
         run: dotnet nuget push "artifacts/*.nupkg" --api-key "${NUGET_API_KEY:-$LOGIN_KEY}" --source https://api.nuget.org/v3/index.json --skip-duplicate
         env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
           LOGIN_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
 
       - name: GitHub release
