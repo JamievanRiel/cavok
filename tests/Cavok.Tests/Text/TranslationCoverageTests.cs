@@ -6,6 +6,10 @@ public class TranslationCoverageTests
 {
     public static TheoryData<Language> Languages => new() { Language.English, Language.Dutch };
 
+    [Fact]
+    public void LabelAlignmentCoversEveryField() =>
+        Assert.Equal(Enum.GetValues<Field>().OrderBy(f => f), DescriptionWriter.Fields.OrderBy(f => f));
+
     [Theory]
     [MemberData(nameof(Languages))]
     public void EveryEnumValueHasText(Language language)
