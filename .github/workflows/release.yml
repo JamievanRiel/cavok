@@ -5,18 +5,19 @@ on:
     tags: ['v*']
 
 permissions:
-  contents: write
-  id-token: write
+  contents: read
 
 jobs:
-  release:
+  # Tests and packs with read-only permissions: the test and pack steps run third-party MSBuild targets, so they
+  # get no write token, no OIDC token and no NuGet key.
+  build:
     runs-on: ubuntu-latest
-    env:
-      # Only whether the key is set; the key itself is passed to the push step alone, so the test and pack steps
-      # (which run third-party MSBuild targets) never see it.
-      HAS_NUGET_API_KEY: ${{ secrets.NUGET_API_KEY != '' }}
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - uses: actions/setup-dotnet@v6
         with:
@@ -31,9 +32,35 @@ jobs:
       - name: Pack
         run: dotnet pack src/Cavok/Cavok.csproj --configuration Release --output artifacts -p:Version="$VERSION"
 
+      - uses: actions/upload-artifact@v7
+        with:
+          name: packages
+          path: artifacts/*
+          if-no-files-found: error
+
+  # Publishes the packages built above. Only this job can write to the repository and request an OIDC token.
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # create the GitHub release
+      id-token: write # NuGet trusted publishing
+    env:
+      # Only whether the key is set; the key itself is passed to the push step alone.
+      HAS_NUGET_API_KEY: ${{ secrets.NUGET_API_KEY != '' }}
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: packages
+          path: artifacts
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 9.0.x
+
       # Trusted publishing (no stored key) needs a one-time policy on nuget.org for this repository and
-      # workflow, and the nuget.org user name in the NUGET_USER secret. A NUGET_API_KEY secret is used instead
-      # when it is set.
+      # workflow (release.yml), and the nuget.org user name in the NUGET_USER secret. A NUGET_API_KEY secret is
+      # used instead when it is set.
       - name: NuGet login
         id: login
         if: env.HAS_NUGET_API_KEY != 'true'
@@ -48,6 +75,6 @@ jobs:
           LOGIN_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
 
       - name: GitHub release
-        run: gh release create "$GITHUB_REF_NAME" artifacts/* --title "$GITHUB_REF_NAME" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" artifacts/* --repo "$GITHUB_REPOSITORY" --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
         env:
           GH_TOKEN: ${{ github.token }}
