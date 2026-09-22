@@ -6,6 +6,7 @@ internal static class SnapshotSelector
 {
     private const int MetarCount = 120;
     private const int TafCount = 80;
+    private static readonly HashSet<string> HeaderKeywords = new(StringComparer.Ordinal) { "METAR", "SPECI", "TAF", "AMD", "COR" };
 
     public static void Select(string dir)
     {
@@ -59,6 +60,9 @@ internal static class SnapshotSelector
         string[] tokens = report.Split(' ', StringSplitOptions.RemoveEmptyEntries);
         int remarks = Array.IndexOf(tokens, "RMK");
         IEnumerable<string> body = remarks >= 0 ? tokens.Take(remarks) : tokens;
-        return body.Skip(2).Select(t => new string(t.Select(c => char.IsAsciiDigit(c) ? '9' : c).ToArray()));
+
+        // Skip the whole header: the report keywords ("TAF AMD", "METAR COR", …) and then the station.
+        return body.SkipWhile(HeaderKeywords.Contains).Skip(1)
+            .Select(t => new string(t.Select(c => char.IsAsciiDigit(c) ? '9' : c).ToArray()));
     }
 }
