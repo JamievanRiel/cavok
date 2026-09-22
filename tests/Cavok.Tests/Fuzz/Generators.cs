@@ -53,23 +53,23 @@ internal static class Generators
                     tokens.Insert(i, tokens[i]);
                     break;
                 case 2:
-                {
-                    int j = random.Next(tokens.Count);
-                    (tokens[i], tokens[j]) = (tokens[j], tokens[i]);
-                    break;
-                }
-
-                case 3:
-                {
-                    char[] chars = tokens[i].ToCharArray();
-                    if (chars.Length > 0)
                     {
-                        chars[random.Next(chars.Length)] = MutationCharacters[random.Next(MutationCharacters.Length)];
+                        int j = random.Next(tokens.Count);
+                        (tokens[i], tokens[j]) = (tokens[j], tokens[i]);
+                        break;
                     }
 
-                    tokens[i] = new string(chars);
-                    break;
-                }
+                case 3:
+                    {
+                        char[] chars = tokens[i].ToCharArray();
+                        if (chars.Length > 0)
+                        {
+                            chars[random.Next(chars.Length)] = MutationCharacters[random.Next(MutationCharacters.Length)];
+                        }
+
+                        tokens[i] = new string(chars);
+                        break;
+                    }
 
                 default:
                     tokens[i] = tokens[i].Substring(0, random.Next(tokens[i].Length + 1));

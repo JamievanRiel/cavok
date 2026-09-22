@@ -62,20 +62,20 @@ internal sealed class ConditionsBuilder
                 _cavok = true;
                 break;
             case GroupKind.Visibility:
-            {
-                var visibility = (Visibility)group.Value!;
-                if (_visibility is null && !_cavok)
                 {
-                    _visibility = visibility;
-                }
-                else
-                {
-                    // A second plain visibility group is the minimum visibility without a direction.
-                    _minimum = new MinimumVisibility(visibility.Meters ?? 0, null);
-                }
+                    var visibility = (Visibility)group.Value!;
+                    if (_visibility is null && !_cavok)
+                    {
+                        _visibility = visibility;
+                    }
+                    else
+                    {
+                        // A second plain visibility group is the minimum visibility without a direction.
+                        _minimum = new MinimumVisibility(visibility.Meters ?? 0, null);
+                    }
 
-                break;
-            }
+                    break;
+                }
 
             case GroupKind.MinimumVisibility:
                 _minimum = (MinimumVisibility)group.Value!;
