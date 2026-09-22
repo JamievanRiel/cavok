@@ -47,6 +47,20 @@ public class TafDiagnosticsTests
         Assert.Equal(310, Assert.Single(taf.Changes).Conditions.Wind!.Direction);
     }
 
+    [Fact]
+    public void TruncatedChangePeriodIsASingleInvalidValidity()
+    {
+        Taf taf = Taf.Parse("TAF LIBN 210800Z 2109/2118 34008KT 9999 FEW020TCU SCT025 PROB40 TEMPO 211/2115 TS FEW020CB BKN025");
+
+        Diagnostic diagnostic = Assert.Single(taf.Diagnostics);
+        Assert.Equal(DiagnosticCode.InvalidValidity, diagnostic.Code);
+        Assert.Equal("211/2115", diagnostic.Token);
+        TafChange change = Assert.Single(taf.Changes);
+        Assert.Equal(TafChangeKind.Temporary, change.Kind);
+        Assert.Equal(40, change.Probability);
+        Assert.Null(change.Period);
+    }
+
     [Theory]
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT PROB50 2112/2114 BKN005", DiagnosticCode.InvalidChangeGroup)]
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT FM21140O 30010KT", DiagnosticCode.InvalidChangeGroup)]

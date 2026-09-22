@@ -54,6 +54,9 @@ public class TimeParsersTests
     [Theory]
     [InlineData("211824", true)]
     [InlineData("2106/22O2", true)]
+    [InlineData("211/2115", true)]
+    [InlineData("2111/215", true)]
+    [InlineData("R24/0600", false)]
     [InlineData("9999", false)]
     [InlineData("12/09", false)]
     public void LooksLikePeriod(string text, bool expected) => Assert.Equal(expected, TimeParsers.LooksLikePeriod(text));

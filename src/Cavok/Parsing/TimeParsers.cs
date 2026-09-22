@@ -26,9 +26,11 @@ internal static class TimeParsers
         return from is DayHour f && to is DayHour t ? new ValidityPeriod(f, t) : null;
     }
 
-    // A malformed DDHH/DDHH or the obsolete DDHHHH format.
+    // A malformed DDHH/DDHH (a wrong character, or one digit missing: 211/2115), or the obsolete DDHHHH format.
     public static bool LooksLikePeriod(string s) =>
-        (s.Length == 9 && s[4] == '/' && Scan.CountDigits(s) >= 6) || (s.Length == 6 && Scan.AreDigits(s, 0, 6));
+        (s.Length == 9 && s[4] == '/' && Scan.CountDigits(s) >= 6)
+        || (s.Length == 8 && (s[3] == '/' || s[4] == '/') && Scan.CountDigits(s) == 7)
+        || (s.Length == 6 && Scan.AreDigits(s, 0, 6));
 
     // FMhhmm, TLhhmm, AThhmm (METAR trend)
     public static bool IsTrendTimeShape(string s) =>

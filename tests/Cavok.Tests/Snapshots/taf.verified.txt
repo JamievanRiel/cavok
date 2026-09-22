@@ -7659,21 +7659,12 @@ Tijdelijk tussen dag 22 12:00 en dag 22 15:00 UTC:
   "Diagnostics": [
     {
       "Severity": "Error",
-      "Code": "InvalidChangeGroup",
-      "Id": "CAV015",
-      "Token": "PROB40",
-      "Position": 57,
-      "Length": 6,
-      "Message": "invalid change group \"PROB40\"; expected e.g. FM211400, BECMG 2106/2109, TEMPO 2114/2118 or PROB30"
-    },
-    {
-      "Severity": "Error",
-      "Code": "UnknownGroup",
-      "Id": "CAV001",
+      "Code": "InvalidValidity",
+      "Id": "CAV014",
       "Token": "211/2115",
       "Position": 70,
       "Length": 8,
-      "Message": "unknown group \"211/2115\""
+      "Message": "invalid validity period \"211/2115\"; expected DDHH/DDHH (e.g. 2106/2212)"
     }
   ],
   "HasErrors": true
