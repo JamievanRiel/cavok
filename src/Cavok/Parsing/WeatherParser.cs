@@ -106,7 +106,7 @@ internal static class WeatherParser
             }
         }
 
-        return new WeatherPhenomenon { Intensity = intensity, Descriptor = descriptor, Types = types.ToArray() };
+        return new WeatherPhenomenon { Intensity = intensity, Descriptor = descriptor, Types = types };
     }
 
     private static bool Matches(string s, int start, string code) =>

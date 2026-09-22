@@ -9,6 +9,17 @@ namespace Cavok;
 /// </summary>
 public sealed record Metar
 {
+    // The lists are held as EquatableArray so that the record compares them by content.
+    private readonly EquatableArray<RunwayVisualRange> _runwayVisualRanges = EquatableArray<RunwayVisualRange>.Empty;
+    private readonly EquatableArray<WeatherPhenomenon> _weather = EquatableArray<WeatherPhenomenon>.Empty;
+    private readonly EquatableArray<CloudLayer> _clouds = EquatableArray<CloudLayer>.Empty;
+    private readonly EquatableArray<WeatherPhenomenon> _recentWeather = EquatableArray<WeatherPhenomenon>.Empty;
+    private readonly EquatableArray<WindShear> _windShear = EquatableArray<WindShear>.Empty;
+    private readonly EquatableArray<RunwayState> _runwayStates = EquatableArray<RunwayState>.Empty;
+    private readonly EquatableArray<ColorCode> _colorCodes = EquatableArray<ColorCode>.Empty;
+    private readonly EquatableArray<Trend> _trends = EquatableArray<Trend>.Empty;
+    private readonly EquatableArray<Diagnostic> _diagnostics = EquatableArray<Diagnostic>.Empty;
+
     /// <summary>The report exactly as given to the parser.</summary>
     public string Raw { get; init; } = "";
 
@@ -40,13 +51,25 @@ public sealed record Metar
     public bool IsCavok { get; init; }
 
     /// <summary>Runway visual ranges.</summary>
-    public IReadOnlyList<RunwayVisualRange> RunwayVisualRanges { get; init; } = Array.Empty<RunwayVisualRange>();
+    public IReadOnlyList<RunwayVisualRange> RunwayVisualRanges
+    {
+        get => _runwayVisualRanges;
+        init => _runwayVisualRanges = EquatableArray.From(value);
+    }
 
     /// <summary>Present weather.</summary>
-    public IReadOnlyList<WeatherPhenomenon> Weather { get; init; } = Array.Empty<WeatherPhenomenon>();
+    public IReadOnlyList<WeatherPhenomenon> Weather
+    {
+        get => _weather;
+        init => _weather = EquatableArray.From(value);
+    }
 
     /// <summary>Cloud layers and vertical visibility.</summary>
-    public IReadOnlyList<CloudLayer> Clouds { get; init; } = Array.Empty<CloudLayer>();
+    public IReadOnlyList<CloudLayer> Clouds
+    {
+        get => _clouds;
+        init => _clouds = EquatableArray.From(value);
+    }
 
     /// <summary><c>NSC</c>, <c>NCD</c>, <c>SKC</c> or <c>CLR</c>, if reported.</summary>
     public CloudCondition? CloudCondition { get; init; }
@@ -61,28 +84,52 @@ public sealed record Metar
     public Pressure? Pressure { get; init; }
 
     /// <summary>Recent weather (<c>RE</c> groups).</summary>
-    public IReadOnlyList<WeatherPhenomenon> RecentWeather { get; init; } = Array.Empty<WeatherPhenomenon>();
+    public IReadOnlyList<WeatherPhenomenon> RecentWeather
+    {
+        get => _recentWeather;
+        init => _recentWeather = EquatableArray.From(value);
+    }
 
     /// <summary>Wind shear groups.</summary>
-    public IReadOnlyList<WindShear> WindShear { get; init; } = Array.Empty<WindShear>();
+    public IReadOnlyList<WindShear> WindShear
+    {
+        get => _windShear;
+        init => _windShear = EquatableArray.From(value);
+    }
 
     /// <summary>Sea-surface temperature and state of the sea or wave height.</summary>
     public SeaCondition? Sea { get; init; }
 
     /// <summary>Runway state groups.</summary>
-    public IReadOnlyList<RunwayState> RunwayStates { get; init; } = Array.Empty<RunwayState>();
+    public IReadOnlyList<RunwayState> RunwayStates
+    {
+        get => _runwayStates;
+        init => _runwayStates = EquatableArray.From(value);
+    }
 
     /// <summary>Military colour states outside the trend (for example <c>BLU BLU</c>).</summary>
-    public IReadOnlyList<ColorCode> ColorCodes { get; init; } = Array.Empty<ColorCode>();
+    public IReadOnlyList<ColorCode> ColorCodes
+    {
+        get => _colorCodes;
+        init => _colorCodes = EquatableArray.From(value);
+    }
 
     /// <summary>Trend forecasts (<c>NOSIG</c>, <c>BECMG</c>, <c>TEMPO</c>).</summary>
-    public IReadOnlyList<Trend> Trends { get; init; } = Array.Empty<Trend>();
+    public IReadOnlyList<Trend> Trends
+    {
+        get => _trends;
+        init => _trends = EquatableArray.From(value);
+    }
 
     /// <summary>Everything after <c>RMK</c>, unparsed; <c>null</c> when there are no remarks.</summary>
     public string? Remarks { get; init; }
 
     /// <summary>Problems found while parsing.</summary>
-    public IReadOnlyList<Diagnostic> Diagnostics { get; init; } = Array.Empty<Diagnostic>();
+    public IReadOnlyList<Diagnostic> Diagnostics
+    {
+        get => _diagnostics;
+        init => _diagnostics = EquatableArray.From(value);
+    }
 
     /// <summary>True when at least one diagnostic is an error.</summary>
     public bool HasErrors => Diagnostics.Any(d => d.Severity == DiagnosticSeverity.Error);

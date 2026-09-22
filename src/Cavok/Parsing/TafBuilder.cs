@@ -31,6 +31,7 @@ internal sealed class TafBuilder
 
     public string? Remarks { get; set; }
 
+    // The records copy the lists into EquatableArrays, so the builder's lists are not shared.
     public Taf Build(DiagnosticBag diagnostics) => new Taf
     {
         Raw = Raw,
@@ -42,9 +43,9 @@ internal sealed class TafBuilder
         IsNil = IsNil,
         Validity = Validity,
         Base = Base.Build(),
-        Changes = Changes.ToArray(),
-        Temperatures = Temperatures.ToArray(),
+        Changes = Changes,
+        Temperatures = Temperatures,
         Remarks = Remarks,
-        Diagnostics = diagnostics.Items.ToArray(),
+        Diagnostics = diagnostics.Items,
     };
 }

@@ -63,6 +63,24 @@ public class CorpusTests(ITestOutputHelper output)
     }
 
     [Fact]
+    public void ParsingTwiceGivesEqualReports()
+    {
+        foreach (string raw in CorpusFiles.Lines("metar-eu.txt").Concat(CorpusFiles.Lines("metar-world.txt")))
+        {
+            Metar metar = Metar.Parse(raw);
+            Metar again = Metar.Parse(raw);
+            Assert.True(metar == again && metar.GetHashCode() == again.GetHashCode(), "Not equal when parsed twice: " + raw);
+        }
+
+        foreach (string raw in CorpusFiles.Lines("taf-eu.txt"))
+        {
+            Taf taf = Taf.Parse(raw);
+            Taf again = Taf.Parse(raw);
+            Assert.True(taf == again && taf.GetHashCode() == again.GetHashCode(), "Not equal when parsed twice: " + raw);
+        }
+    }
+
+    [Fact]
     public void KnownIssuesStillHaveErrors()
     {
         foreach (string raw in CorpusFiles.KnownIssues())

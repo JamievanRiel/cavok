@@ -87,6 +87,7 @@ internal sealed class MetarBuilder
         }
     }
 
+    // The records copy the lists into EquatableArrays, so the builder's lists are not shared.
     public Metar Build(DiagnosticBag diagnostics)
     {
         ForecastConditions observed = Observed.Build();
@@ -102,21 +103,21 @@ internal sealed class MetarBuilder
             Wind = observed.Wind,
             Visibility = observed.Visibility,
             IsCavok = observed.IsCavok,
-            RunwayVisualRanges = RunwayVisualRanges.ToArray(),
+            RunwayVisualRanges = RunwayVisualRanges,
             Weather = observed.Weather,
             Clouds = observed.Clouds,
             CloudCondition = observed.CloudCondition,
             Temperature = Temperature?.Temperature,
             DewPoint = Temperature?.DewPoint,
             Pressure = observed.Pressure,
-            RecentWeather = RecentWeather.ToArray(),
-            WindShear = WindShears.ToArray(),
+            RecentWeather = RecentWeather,
+            WindShear = WindShears,
             Sea = Sea,
-            RunwayStates = RunwayStates.ToArray(),
+            RunwayStates = RunwayStates,
             ColorCodes = observed.ColorCodes,
-            Trends = Trends.ToArray(),
+            Trends = Trends,
             Remarks = Remarks,
-            Diagnostics = diagnostics.Items.ToArray(),
+            Diagnostics = diagnostics.Items,
         };
     }
 }

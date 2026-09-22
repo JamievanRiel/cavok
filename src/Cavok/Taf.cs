@@ -9,6 +9,11 @@ namespace Cavok;
 /// </summary>
 public sealed record Taf
 {
+    // The lists are held as EquatableArray so that the record compares them by content.
+    private readonly EquatableArray<TafChange> _changes = EquatableArray<TafChange>.Empty;
+    private readonly EquatableArray<TemperatureForecast> _temperatures = EquatableArray<TemperatureForecast>.Empty;
+    private readonly EquatableArray<Diagnostic> _diagnostics = EquatableArray<Diagnostic>.Empty;
+
     /// <summary>The forecast exactly as given to the parser.</summary>
     public string Raw { get; init; } = "";
 
@@ -37,10 +42,18 @@ public sealed record Taf
     public ForecastConditions Base { get; init; } = new ForecastConditions();
 
     /// <summary>Change groups in order.</summary>
-    public IReadOnlyList<TafChange> Changes { get; init; } = Array.Empty<TafChange>();
+    public IReadOnlyList<TafChange> Changes
+    {
+        get => _changes;
+        init => _changes = EquatableArray.From(value);
+    }
 
     /// <summary>Maximum and minimum temperature forecasts (<c>TX</c>/<c>TN</c>).</summary>
-    public IReadOnlyList<TemperatureForecast> Temperatures { get; init; } = Array.Empty<TemperatureForecast>();
+    public IReadOnlyList<TemperatureForecast> Temperatures
+    {
+        get => _temperatures;
+        init => _temperatures = EquatableArray.From(value);
+    }
 
     /// <summary>
     /// Everything after <c>RMK</c>, unparsed; also the closing statement of US military forecasts such as
@@ -49,7 +62,11 @@ public sealed record Taf
     public string? Remarks { get; init; }
 
     /// <summary>Problems found while parsing.</summary>
-    public IReadOnlyList<Diagnostic> Diagnostics { get; init; } = Array.Empty<Diagnostic>();
+    public IReadOnlyList<Diagnostic> Diagnostics
+    {
+        get => _diagnostics;
+        init => _diagnostics = EquatableArray.From(value);
+    }
 
     /// <summary>True when at least one diagnostic is an error.</summary>
     public bool HasErrors => Diagnostics.Any(d => d.Severity == DiagnosticSeverity.Error);

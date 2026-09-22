@@ -1,3 +1,5 @@
+using Cavok.Parsing;
+
 namespace Cavok;
 
 /// <summary>Intensity or proximity of a weather phenomenon.</summary>
@@ -114,6 +116,9 @@ public enum WeatherType
 /// <summary>A present or recent weather group such as <c>-SHRA</c>, <c>+TSRAGS</c> or <c>VCFG</c>.</summary>
 public sealed record WeatherPhenomenon
 {
+    // The lists are held as EquatableArray so that the record compares them by content.
+    private readonly EquatableArray<WeatherType> _types = EquatableArray<WeatherType>.Empty;
+
     /// <summary>Intensity or proximity.</summary>
     public WeatherIntensity Intensity { get; init; } = WeatherIntensity.Moderate;
 
@@ -121,7 +126,11 @@ public sealed record WeatherPhenomenon
     public WeatherDescriptor? Descriptor { get; init; }
 
     /// <summary>Weather types in reported order; may be empty (<c>TS</c>, <c>VCSH</c>).</summary>
-    public IReadOnlyList<WeatherType> Types { get; init; } = Array.Empty<WeatherType>();
+    public IReadOnlyList<WeatherType> Types
+    {
+        get => _types;
+        init => _types = EquatableArray.From(value);
+    }
 
     /// <summary>True for <c>//</c>: not observable by an automatic station.</summary>
     public bool IsNotObservable { get; init; }

@@ -119,19 +119,20 @@ internal sealed class ConditionsBuilder
 
     public void AddTurbulence(TurbulenceLayer layer) => _turbulence.Add(layer);
 
+    // The records copy the lists into EquatableArrays, so the builder's lists are not shared.
     public ForecastConditions Build() => new ForecastConditions
     {
         Wind = BuildWind(),
         Visibility = BuildVisibility(),
         IsCavok = _cavok,
-        Weather = _weather.ToArray(),
+        Weather = _weather,
         NoSignificantWeather = _noSignificantWeather,
-        Clouds = _clouds.ToArray(),
+        Clouds = _clouds,
         CloudCondition = _cloudCondition,
-        ColorCodes = _colorCodes.ToArray(),
+        ColorCodes = _colorCodes,
         Pressure = _pressure,
-        Icing = _icing.ToArray(),
-        Turbulence = _turbulence.ToArray(),
+        Icing = _icing,
+        Turbulence = _turbulence,
     };
 
     private bool CanBeMinimum(Group group) =>
