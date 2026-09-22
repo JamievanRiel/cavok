@@ -1,0 +1,14 @@
+- name: Getting started
+  href: getting-started.md
+- name: METAR
+  href: metar.md
+- name: TAF
+  href: taf.md
+- name: Diagnostics
+  href: diagnostics.md
+- name: Flight category
+  href: flight-category.md
+- name: Descriptions
+  href: descriptions.md
+- name: ICAO and FAA formats
+  href: icao-vs-faa.md
