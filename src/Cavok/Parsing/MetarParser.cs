@@ -152,6 +152,13 @@ internal static class MetarParser
             return;
         }
 
+        if (IsMissingColorState(text, state))
+        {
+            state.Rank = Rank(GroupKind.ColorCode);
+            cursor.Consume();
+            return;
+        }
+
         Group? group = GroupReader.Read(cursor);
         if (group is null)
         {
@@ -195,6 +202,15 @@ internal static class MetarParser
 
         cursor.Consume(group.TokenCount);
     }
+
+    // German military automatic stations send "///" for a colour state they cannot determine
+    // ("… Q1023 ///"). In the colour-state position, after the pressure and supplementary groups and before any
+    // trend, it is a missing colour state: nothing to record. Elsewhere "///" keeps its other meanings.
+    private static bool IsMissingColorState(string text, BodyState state) =>
+        text == "///"
+        && state.Trend is null
+        && state.Rank >= Rank(GroupKind.Pressure)
+        && state.Rank <= Rank(GroupKind.ColorCode);
 
     // Position of each group in the ICAO order of a METAR body.
     private static int Rank(GroupKind kind) => kind switch

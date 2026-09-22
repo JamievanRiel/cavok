@@ -116,6 +116,31 @@ public class MetarTests
         Assert.Equal(ColorState.Blue, Assert.Single(Assert.Single(metar.Trends).Conditions!.ColorCodes).State);
     }
 
+    [Theory]
+    [InlineData("METAR ETGG 210820Z AUTO 30026KT 9999 // ////// 15/09 Q1023 ///")]
+    [InlineData("METAR ETNS 200920Z AUTO 28017KT //// // ////// 16/13 Q1013 ///")]
+    public void MissingColorStateFromGermanMilitaryAutomaticStations(string raw)
+    {
+        Metar metar = Metar.Parse(raw);
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Empty(metar.ColorCodes);
+        Assert.NotNull(metar.Temperature);
+        Assert.NotNull(metar.DewPoint);
+        Assert.NotNull(metar.Pressure);
+    }
+
+    [Fact]
+    public void LoneSlashesOutsideTheColorStatePositionAreUnchanged()
+    {
+        Metar metar = Metar.Parse("METAR ENSE 201220Z AUTO 30035KT 9999 /// ///// Q//// W///S6");
+
+        Diagnostic diagnostic = Assert.Single(metar.Diagnostics);
+        Assert.Equal(DiagnosticCode.Duplicate, diagnostic.Code);
+        Assert.Equal("/////", diagnostic.Token);
+        Assert.Empty(metar.ColorCodes);
+    }
+
     [Fact]
     public void DutchMilitaryAutomaticReport() =>
         Assert.Empty(Metar.Parse("METAR EHKD 210755Z AUTO 30010KT 260V330 9999 SCT030 SCT036 17/10 Q1029 BLU NOSIG").Diagnostics);
