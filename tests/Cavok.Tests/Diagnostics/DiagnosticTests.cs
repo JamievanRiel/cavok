@@ -44,6 +44,27 @@ public class DiagnosticTests
     }
 
     [Fact]
+    public void ControlCharactersInTheTokenAreShownAsSpacesInTheMessage()
+    {
+        Metar metar = Metar.Parse("METAR EHAM 211125Z 24012KT X\u001B[2JY 10SM 1\n1/2SM");
+
+        Assert.Equal(2, metar.Diagnostics.Count);
+        Diagnostic unknown = metar.Diagnostics[0];
+        Diagnostic duplicate = metar.Diagnostics[1];
+        Assert.Equal("X\u001B[2JY", unknown.Token);
+        Assert.Equal("1\n1/2SM", duplicate.Token);
+        Assert.Equal("unknown group \"X [2JY\"", unknown.Message);
+        Assert.Equal("duplicate group \"1 1/2SM\"; the first occurrence is used", duplicate.Message);
+        Assert.Equal("dubbele groep \"1 1/2SM\"; de eerste wordt gebruikt", duplicate.Describe(Language.Dutch));
+        foreach (Diagnostic diagnostic in metar.Diagnostics)
+        {
+            string[] lines = diagnostic.ToString().Split('\n');
+            Assert.Equal(3, lines.Length);
+            Assert.DoesNotContain(lines, line => line.Any(char.IsControl));
+        }
+    }
+
+    [Fact]
     public void MissingElementsPointAtWhereTheyWereExpected()
     {
         var diagnostic = new Diagnostic(DiagnosticSeverity.Error, DiagnosticCode.MissingStation, "", 6, 0, "METAR 211125Z");

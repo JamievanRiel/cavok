@@ -45,8 +45,8 @@ public sealed record Diagnostic
 
     /// <summary>Describes the problem in the given language.</summary>
     /// <param name="language">The language of the description.</param>
-    /// <returns>A one-line description.</returns>
-    public string Describe(Language language) => DiagnosticMessages.Format(Code, Token, language);
+    /// <returns>A one-line description; control characters in the quoted token are shown as spaces.</returns>
+    public string Describe(Language language) => DiagnosticMessages.Format(Code, Flatten(Token), language);
 
     /// <summary>Formats the diagnostic with the report and a caret line pointing at the offending group.</summary>
     /// <returns>Three lines separated by <c>\n</c>, or one line when the report is empty.</returns>
@@ -78,6 +78,7 @@ public sealed record Diagnostic
         return text.ToString();
     }
 
+    // Control characters (line breaks, ESC sequences) become spaces, so they cannot break or restyle the output.
     private static string Flatten(string text)
     {
         char[] chars = text.ToCharArray();
