@@ -6,6 +6,7 @@ if (args.Length == 0 || args[0] is "-h" or "--help")
     Console.WriteLine();
     Console.WriteLine("Commands:");
     Console.WriteLine("  fetch    download METARs and TAFs from aviationweather.gov and merge them into the corpus");
+    Console.WriteLine("  triage   parse the corpus and list the diagnostics by code and token shape");
     return 0;
 }
 
@@ -16,6 +17,9 @@ switch (args[0])
 {
     case "fetch":
         await CorpusFetcher.FetchAsync(dir);
+        return 0;
+    case "triage":
+        CorpusTriage.Run(dir);
         return 0;
     default:
         Console.Error.WriteLine($"Unknown command '{args[0]}'. Run without arguments for help.");
