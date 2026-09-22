@@ -217,6 +217,14 @@ public class DutchDescriptionTests
     public void StatuteMileVisibilityPhrases(string code, string expected) =>
         Assert.Equal(expected, DutchPhrasebook.Instance.VisibilityText(VisibilityParser.ParseStatuteMiles(code)!));
 
+    [Theory]
+    [InlineData("W18/H14", "zeewatertemperatuur 18 °C, golfhoogte 1,4 m")]
+    [InlineData("W///H25", "zeewatertemperatuur niet beschikbaar, golfhoogte 2,5 m")]
+    [InlineData("W///S5", "zeewatertemperatuur niet beschikbaar, zeegang 5")]
+    [InlineData("W///H///", "niet beschikbaar")]
+    public void SeaPhrases(string code, string expected) =>
+        Assert.Equal(expected, DutchPhrasebook.Instance.SeaText(SeaParser.Parse(code)!));
+
     [Fact]
     public void MinimumVisibilityPhrase()
     {

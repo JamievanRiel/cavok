@@ -278,6 +278,14 @@ public class EnglishDescriptionTests
         Assert.Equal(expected, EnglishPhrasebook.Instance.VisibilityText(
             VisibilityParser.ParseMetric(code) ?? VisibilityParser.ParseStatuteMiles(code)!));
 
+    [Theory]
+    [InlineData("W18/H14", "sea temperature 18 °C, wave height 1.4 m")]
+    [InlineData("W///H25", "sea temperature not available, wave height 2.5 m")]
+    [InlineData("W///S5", "sea temperature not available, state of sea 5")]
+    [InlineData("W///H///", "not available")]
+    public void SeaPhrases(string code, string expected) =>
+        Assert.Equal(expected, EnglishPhrasebook.Instance.SeaText(SeaParser.Parse(code)!));
+
     [Fact]
     public void MinimumVisibilityPhrase()
     {

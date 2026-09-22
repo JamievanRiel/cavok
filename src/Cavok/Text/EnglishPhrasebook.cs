@@ -332,11 +332,16 @@ internal sealed class EnglishPhrasebook : Phrasebook
 
     public override string SeaText(SeaCondition sea)
     {
-        var parts = new List<string>();
-        if (sea.SeaTemperature is int temperature)
+        if (sea.SeaTemperature is null && sea.StateOfSea is null && sea.WaveHeightDecimeters is null)
         {
-            parts.Add("sea temperature " + Celsius(temperature));
+            return NotAvailable;
         }
+
+        // The group always carries the sea temperature, so null means it was reported missing (W///S5).
+        var parts = new List<string>
+        {
+            "sea temperature " + (sea.SeaTemperature is int temperature ? Celsius(temperature) : NotAvailable),
+        };
 
         if (sea.StateOfSea is int state)
         {
@@ -348,7 +353,7 @@ internal sealed class EnglishPhrasebook : Phrasebook
             parts.Add("wave height " + Fixed(height / 10.0, "0.0") + " m");
         }
 
-        return parts.Count == 0 ? NotAvailable : string.Join(", ", parts);
+        return string.Join(", ", parts);
     }
 
     public override string RunwayStateText(RunwayState state)
