@@ -5,8 +5,9 @@ if (args.Length == 0 || args[0] is "-h" or "--help")
     Console.WriteLine("Usage: dotnet run --project tools/Cavok.Corpus -- <command> [--dir <corpus directory>]");
     Console.WriteLine();
     Console.WriteLine("Commands:");
-    Console.WriteLine("  fetch    download METARs and TAFs from aviationweather.gov and merge them into the corpus");
-    Console.WriteLine("  triage   parse the corpus and list the diagnostics by code and token shape");
+    Console.WriteLine("  fetch              download METARs and TAFs from aviationweather.gov and merge them into the corpus");
+    Console.WriteLine("  triage             parse the corpus and list the diagnostics by code and token shape");
+    Console.WriteLine("  select-snapshots   pick a diverse subset of the corpus for the snapshot tests");
     return 0;
 }
 
@@ -20,6 +21,9 @@ switch (args[0])
         return 0;
     case "triage":
         CorpusTriage.Run(dir);
+        return 0;
+    case "select-snapshots":
+        SnapshotSelector.Select(dir);
         return 0;
     default:
         Console.Error.WriteLine($"Unknown command '{args[0]}'. Run without arguments for help.");

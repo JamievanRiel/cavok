@@ -1,0 +1,2795 @@
+=== METAR EHAM 211125Z 24012G25KT 200V280 9999 -SHRA FEW012 BKN030CB 12/09 Q1013 TEMPO 4000 SHRA
+{
+  "Raw": "METAR EHAM 211125Z 24012G25KT 200V280 9999 -SHRA FEW012 BKN030CB 12/09 Q1013 TEMPO 4000 SHRA",
+  "Type": "Metar",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 240,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 12,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "Gust": {
+      "Value": 25,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "VariableFrom": 200,
+    "VariableTo": 280,
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Light",
+      "Descriptor": "Showers",
+      "Types": [
+        "Rain"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 1200,
+      "IsTypeNotObservable": false
+    },
+    {
+      "Cover": "Broken",
+      "HeightFeet": 3000,
+      "Type": "Cumulonimbus",
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 12,
+  "DewPoint": 9,
+  "Pressure": {
+    "Value": 1013,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1013,
+    "InchesOfMercury": 29.913861073296342
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [
+    {
+      "Kind": "Temporary",
+      "Conditions": {
+        "Visibility": {
+          "Meters": 4000,
+          "IsTenKmOrMore": false,
+          "IsLessThan": false,
+          "IsMoreThan": false,
+          "NoDirectionalVariation": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [
+          {
+            "Intensity": "Moderate",
+            "Descriptor": "Showers",
+            "Types": [
+              "Rain"
+            ],
+            "IsNotObservable": false
+          }
+        ],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Ifr"
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Mvfr"
+}
+--- en
+METAR EHAM, observed day 21 at 11:25 UTC
+Wind:         240° at 12 kt, gusting 25 kt, varying between 200° and 280°
+Visibility:   10 km or more
+Weather:      light rain showers
+Clouds:       few (1–2/8) at 1,200 ft, broken (5–7/8) at 3,000 ft with cumulonimbus
+Temperature:  12 °C, dew point 9 °C
+QNH:          1013 hPa
+Category:     MVFR
+Trend:        temporarily: visibility 4,000 m; rain showers
+--- nl
+METAR EHAM, waarneming dag 21 om 11:25 UTC
+Wind:         240° met 12 kt, windstoten tot 25 kt, variërend tussen 200° en 280°
+Zicht:        10 km of meer
+Weer:         lichte regenbuien
+Bewolking:    enkele wolken (1–2/8) op 1.200 ft, gebroken (5–7/8) op 3.000 ft met cumulonimbus
+Temperatuur:  12 °C, dauwpunt 9 °C
+QNH:          1013 hPa
+Categorie:    MVFR
+Trend:        tijdelijk: zicht 4.000 m; regenbuien
+
+=== METAR EHAM 211125Z NIL
+{
+  "Raw": "METAR EHAM 211125Z NIL",
+  "Type": "Metar",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": true,
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [],
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+METAR EHAM, observed day 21 at 11:25 UTC
+No report available
+--- nl
+METAR EHAM, waarneming dag 21 om 11:25 UTC
+Geen bericht beschikbaar
+
+=== SPECI EHAM 211140Z COR 27015G35KT 1500 +TSRAGR BKN008CB 15/13 Q1008 BECMG AT1200 9999 NSW NSC
+{
+  "Raw": "SPECI EHAM 211140Z COR 27015G35KT 1500 +TSRAGR BKN008CB 15/13 Q1008 BECMG AT1200 9999 NSW NSC",
+  "Type": "Speci",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 40
+  },
+  "IsAuto": false,
+  "IsCorrected": true,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 270,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 15,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "Gust": {
+      "Value": 35,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 1500,
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Heavy",
+      "Descriptor": "Thunderstorm",
+      "Types": [
+        "Rain",
+        "Hail"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Broken",
+      "HeightFeet": 800,
+      "Type": "Cumulonimbus",
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 15,
+  "DewPoint": 13,
+  "Pressure": {
+    "Value": 1008,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1008,
+    "InchesOfMercury": 29.766211216073753
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [
+    {
+      "Kind": "Becoming",
+      "At": {
+        "Hour": 12,
+        "Minute": 0
+      },
+      "Conditions": {
+        "Visibility": {
+          "Meters": 10000,
+          "IsTenKmOrMore": true,
+          "IsLessThan": false,
+          "IsMoreThan": false,
+          "NoDirectionalVariation": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": true,
+        "Clouds": [],
+        "CloudCondition": "NoSignificantCloud",
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Vfr"
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Lifr"
+}
+--- en
+SPECI EHAM, observed day 21 at 11:40 UTC (corrected)
+Wind:         270° at 15 kt, gusting 35 kt
+Visibility:   1,500 m
+Weather:      heavy thunderstorm with rain and hail
+Clouds:       broken (5–7/8) at 800 ft with cumulonimbus
+Temperature:  15 °C, dew point 13 °C
+QNH:          1008 hPa
+Category:     LIFR
+Trend:        becoming at 12:00: visibility 10 km or more; no significant weather; no significant cloud
+--- nl
+SPECI EHAM, waarneming dag 21 om 11:40 UTC (gecorrigeerd)
+Wind:         270° met 15 kt, windstoten tot 35 kt
+Zicht:        1.500 m
+Weer:         zware onweersbuien met regen en hagel
+Bewolking:    gebroken (5–7/8) op 800 ft met cumulonimbus
+Temperatuur:  15 °C, dauwpunt 13 °C
+QNH:          1008 hPa
+Categorie:    LIFR
+Trend:        geleidelijk om 12:00: zicht 10 km of meer; geen significant weer; geen significante bewolking
+
+=== METAR EGLL 210550Z 00000KT 0300 R27L/0550V0800U R27R/P1500N R09L/M0050D FG VV001 09/09 Q1020 BECMG FM0700 TL0900 1500 BR
+{
+  "Raw": "METAR EGLL 210550Z 00000KT 0300 R27L/0550V0800U R27R/P1500N R09L/M0050D FG VV001 09/09 Q1020 BECMG FM0700 TL0900 1500 BR",
+  "Type": "Metar",
+  "Station": "EGLL",
+  "Time": {
+    "Day": 21,
+    "Hour": 5,
+    "Minute": 50
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 0,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 0,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": true,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 300,
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [
+    {
+      "Runway": "27L",
+      "Value": 550,
+      "VariableMax": 800,
+      "Tendency": "Up",
+      "IsFeet": false,
+      "IsMissing": false
+    },
+    {
+      "Runway": "27R",
+      "Value": 1500,
+      "Qualifier": "Above",
+      "Tendency": "NoChange",
+      "IsFeet": false,
+      "IsMissing": false
+    },
+    {
+      "Runway": "09L",
+      "Value": 50,
+      "Qualifier": "Below",
+      "Tendency": "Down",
+      "IsFeet": false,
+      "IsMissing": false
+    }
+  ],
+  "Weather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [
+        "Fog"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "VerticalVisibility",
+      "HeightFeet": 100,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 9,
+  "DewPoint": 9,
+  "Pressure": {
+    "Value": 1020,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1020,
+    "InchesOfMercury": 30.120570873407964
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [
+    {
+      "Kind": "Becoming",
+      "From": {
+        "Hour": 7,
+        "Minute": 0
+      },
+      "Until": {
+        "Hour": 9,
+        "Minute": 0
+      },
+      "Conditions": {
+        "Visibility": {
+          "Meters": 1500,
+          "IsTenKmOrMore": false,
+          "IsLessThan": false,
+          "IsMoreThan": false,
+          "NoDirectionalVariation": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [
+          {
+            "Intensity": "Moderate",
+            "Types": [
+              "Mist"
+            ],
+            "IsNotObservable": false
+          }
+        ],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Lifr"
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Lifr"
+}
+--- en
+METAR EGLL, observed day 21 at 05:50 UTC
+Wind:         calm
+Visibility:   300 m
+RVR:          runway 27L: between 550 m and 800 m, increasing
+RVR:          runway 27R: more than 1,500 m, no change
+RVR:          runway 09L: less than 50 m, decreasing
+Weather:      fog
+Clouds:       sky obscured, vertical visibility 100 ft
+Temperature:  9 °C, dew point 9 °C
+QNH:          1020 hPa
+Category:     LIFR
+Trend:        becoming from 07:00 until 09:00: visibility 1,500 m; mist
+--- nl
+METAR EGLL, waarneming dag 21 om 05:50 UTC
+Wind:         windstil
+Zicht:        300 m
+Baanzicht:    baan 27L: tussen 550 m en 800 m, toenemend
+Baanzicht:    baan 27R: meer dan 1.500 m, geen verandering
+Baanzicht:    baan 09L: minder dan 50 m, afnemend
+Weer:         mist
+Bewolking:    lucht onzichtbaar, verticaal zicht 100 ft
+Temperatuur:  9 °C, dauwpunt 9 °C
+QNH:          1020 hPa
+Categorie:    LIFR
+Trend:        geleidelijk vanaf 07:00 tot 09:00: zicht 1.500 m; nevel
+
+=== METAR ULLI 211130Z 36005MPS 9999 -SN OVC010 M02/M04 Q1003 RESN WS R28L R28L/590160 NOSIG
+{
+  "Raw": "METAR ULLI 211130Z 36005MPS 9999 -SN OVC010 M02/M04 Q1003 RESN WS R28L R28L/590160 NOSIG",
+  "Type": "Metar",
+  "Station": "ULLI",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 30
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 360,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 5,
+      "Unit": "MetersPerSecond",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Light",
+      "Types": [
+        "Snow"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Overcast",
+      "HeightFeet": 1000,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": -2,
+  "DewPoint": -4,
+  "Pressure": {
+    "Value": 1003,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1003,
+    "InchesOfMercury": 29.618561358851164
+  },
+  "RecentWeather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [
+        "Snow"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "WindShear": [
+    {
+      "AllRunways": false,
+      "Runway": "28L"
+    }
+  ],
+  "RunwayStates": [
+    {
+      "Runway": "28L",
+      "AllRunways": false,
+      "IsRepeated": false,
+      "SnowClosed": false,
+      "Cleared": false,
+      "Deposit": 5,
+      "Extent": 9,
+      "Depth": 1,
+      "Friction": 60,
+      "RawGroup": "R28L/590160"
+    }
+  ],
+  "ColorCodes": [],
+  "Trends": [
+    {
+      "Kind": "NoSignificantChange"
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Mvfr"
+}
+--- en
+METAR ULLI, observed day 21 at 11:30 UTC
+Wind:         360° at 5 m/s
+Visibility:   10 km or more
+Weather:      light snow
+Clouds:       overcast (8/8) at 1,000 ft
+Temperature:  -2 °C, dew point -4 °C
+QNH:          1003 hPa
+Recent:       snow
+Wind shear:   runway 28L
+Runway state: runway 28L: wet snow, covering 51–100%, depth 1 mm, friction coefficient 0.60
+Category:     MVFR
+Trend:        no significant change
+--- nl
+METAR ULLI, waarneming dag 21 om 11:30 UTC
+Wind:         360° met 5 m/s
+Zicht:        10 km of meer
+Weer:         lichte sneeuw
+Bewolking:    geheel bewolkt (8/8) op 1.000 ft
+Temperatuur:  -2 °C, dauwpunt -4 °C
+QNH:          1003 hPa
+Recent weer:  sneeuw
+Windschering: baan 28L
+Baantoestand: baan 28L: natte sneeuw, bedekking 51–100%, diepte 1 mm, wrijvingscoëfficiënt 0,60
+Categorie:    MVFR
+Trend:        geen significante verandering
+
+=== METAR UUEE 211130Z 18007MPS 3000 -SHSN BKN012 M05/M07 Q0998 R88/290050 R24/CLRD62 R/SNOCLO
+{
+  "Raw": "METAR UUEE 211130Z 18007MPS 3000 -SHSN BKN012 M05/M07 Q0998 R88/290050 R24/CLRD62 R/SNOCLO",
+  "Type": "Metar",
+  "Station": "UUEE",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 30
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 180,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 7,
+      "Unit": "MetersPerSecond",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 3000,
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Light",
+      "Descriptor": "Showers",
+      "Types": [
+        "Snow"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Broken",
+      "HeightFeet": 1200,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": -5,
+  "DewPoint": -7,
+  "Pressure": {
+    "Value": 998,
+    "Unit": "Hectopascals",
+    "Hectopascals": 998,
+    "InchesOfMercury": 29.470911501628578
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [
+    {
+      "AllRunways": true,
+      "IsRepeated": false,
+      "SnowClosed": false,
+      "Cleared": false,
+      "Deposit": 2,
+      "Extent": 9,
+      "Depth": 0,
+      "Friction": 50,
+      "RawGroup": "R88/290050"
+    },
+    {
+      "Runway": "24",
+      "AllRunways": false,
+      "IsRepeated": false,
+      "SnowClosed": false,
+      "Cleared": true,
+      "Friction": 62,
+      "RawGroup": "R24/CLRD62"
+    },
+    {
+      "AllRunways": true,
+      "IsRepeated": false,
+      "SnowClosed": true,
+      "Cleared": false,
+      "RawGroup": "R/SNOCLO"
+    }
+  ],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Ifr"
+}
+--- en
+METAR UUEE, observed day 21 at 11:30 UTC
+Wind:         180° at 7 m/s
+Visibility:   3,000 m
+Weather:      light snow showers
+Clouds:       broken (5–7/8) at 1,200 ft
+Temperature:  -5 °C, dew point -7 °C
+QNH:          998 hPa
+Runway state: all runways: wet or water patches, covering 51–100%, depth less than 1 mm, friction coefficient 0.50
+Runway state: runway 24: contamination cleared, friction coefficient 0.62
+Runway state: aerodrome closed due to snow
+Category:     IFR
+--- nl
+METAR UUEE, waarneming dag 21 om 11:30 UTC
+Wind:         180° met 7 m/s
+Zicht:        3.000 m
+Weer:         lichte sneeuwbuien
+Bewolking:    gebroken (5–7/8) op 1.200 ft
+Temperatuur:  -5 °C, dauwpunt -7 °C
+QNH:          998 hPa
+Baantoestand: alle banen: nat of plassen, bedekking 51–100%, diepte minder dan 1 mm, wrijvingscoëfficiënt 0,50
+Baantoestand: baan 24: verontreiniging verwijderd, wrijvingscoëfficiënt 0,62
+Baantoestand: luchthaven gesloten wegens sneeuw
+Categorie:    IFR
+
+=== METAR LIBQ 210755Z AUTO /////KT //// // ///////// 15/10 Q1027 RMK ///
+{
+  "Raw": "METAR LIBQ 210755Z AUTO /////KT //// // ///////// 15/10 Q1027 RMK ///",
+  "Type": "Metar",
+  "Station": "LIBQ",
+  "Time": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 55
+  },
+  "IsAuto": true,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "IsVariable": false,
+    "IsCalm": false,
+    "IsMissing": true
+  },
+  "Visibility": {
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": true
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [],
+      "IsNotObservable": true
+    }
+  ],
+  "Clouds": [
+    {
+      "IsTypeNotObservable": true
+    }
+  ],
+  "Temperature": 15,
+  "DewPoint": 10,
+  "Pressure": {
+    "Value": 1027,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1027,
+    "InchesOfMercury": 30.32728067351959
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Remarks": "///",
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+METAR LIBQ, observed day 21 at 07:55 UTC (automated)
+Wind:         not available
+Visibility:   not available
+Weather:      not observable
+Clouds:       not available
+Temperature:  15 °C, dew point 10 °C
+QNH:          1027 hPa
+Remarks:      ///
+--- nl
+METAR LIBQ, waarneming dag 21 om 07:55 UTC (automatisch)
+Wind:         niet beschikbaar
+Zicht:        niet beschikbaar
+Weer:         niet waarneembaar
+Bewolking:    niet beschikbaar
+Temperatuur:  15 °C, dauwpunt 10 °C
+QNH:          1027 hPa
+Opmerkingen:  ///
+
+=== METAR EHJR 210755Z AUTO 31011KT //// // ///////// 16/11 Q1030 RE// W18/H14
+{
+  "Raw": "METAR EHJR 210755Z AUTO 31011KT //// // ///////// 16/11 Q1030 RE// W18/H14",
+  "Type": "Metar",
+  "Station": "EHJR",
+  "Time": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 55
+  },
+  "IsAuto": true,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 310,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 11,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": true
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [],
+      "IsNotObservable": true
+    }
+  ],
+  "Clouds": [
+    {
+      "IsTypeNotObservable": true
+    }
+  ],
+  "Temperature": 16,
+  "DewPoint": 11,
+  "Pressure": {
+    "Value": 1030,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1030,
+    "InchesOfMercury": 30.415870587853142
+  },
+  "RecentWeather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [],
+      "IsNotObservable": true
+    }
+  ],
+  "WindShear": [],
+  "Sea": {
+    "SeaTemperature": 18,
+    "WaveHeightDecimeters": 14
+  },
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+METAR EHJR, observed day 21 at 07:55 UTC (automated)
+Wind:         310° at 11 kt
+Visibility:   not available
+Weather:      not observable
+Clouds:       not available
+Temperature:  16 °C, dew point 11 °C
+QNH:          1030 hPa
+Recent:       not observable
+Sea:          sea temperature 18 °C, wave height 1.4 m
+--- nl
+METAR EHJR, waarneming dag 21 om 07:55 UTC (automatisch)
+Wind:         310° met 11 kt
+Zicht:        niet beschikbaar
+Weer:         niet waarneembaar
+Bewolking:    niet beschikbaar
+Temperatuur:  16 °C, dauwpunt 11 °C
+QNH:          1030 hPa
+Recent weer:  niet waarneembaar
+Zee:          zeewatertemperatuur 18 °C, golfhoogte 1,4 m
+
+=== METAR ENQC 210750Z AUTO 33017KT 9999 BKN018/// 12/// Q//// W///S5
+{
+  "Raw": "METAR ENQC 210750Z AUTO 33017KT 9999 BKN018/// 12/// Q//// W///S5",
+  "Type": "Metar",
+  "Station": "ENQC",
+  "Time": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 50
+  },
+  "IsAuto": true,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 330,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 17,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [
+    {
+      "Cover": "Broken",
+      "HeightFeet": 1800,
+      "IsTypeNotObservable": true
+    }
+  ],
+  "Temperature": 12,
+  "RecentWeather": [],
+  "WindShear": [],
+  "Sea": {
+    "StateOfSea": 5
+  },
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Mvfr"
+}
+--- en
+METAR ENQC, observed day 21 at 07:50 UTC (automated)
+Wind:         330° at 17 kt
+Visibility:   10 km or more
+Clouds:       broken (5–7/8) at 1,800 ft
+Temperature:  12 °C, dew point not available
+Sea:          sea temperature not available, sea state 5
+Category:     MVFR
+--- nl
+METAR ENQC, waarneming dag 21 om 07:50 UTC (automatisch)
+Wind:         330° met 17 kt
+Zicht:        10 km of meer
+Bewolking:    gebroken (5–7/8) op 1.800 ft
+Temperatuur:  12 °C, dauwpunt niet beschikbaar
+Zee:          zeewatertemperatuur niet beschikbaar, zeegang 5
+Categorie:    MVFR
+
+=== METAR ETND 210720Z 26009KT 9999 FEW055 SCT300 14/10 Q1027 BLACKBLU+
+{
+  "Raw": "METAR ETND 210720Z 26009KT 9999 FEW055 SCT300 14/10 Q1027 BLACKBLU+",
+  "Type": "Metar",
+  "Station": "ETND",
+  "Time": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 20
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 260,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 9,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 5500,
+      "IsTypeNotObservable": false
+    },
+    {
+      "Cover": "Scattered",
+      "HeightFeet": 30000,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 14,
+  "DewPoint": 10,
+  "Pressure": {
+    "Value": 1027,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1027,
+    "InchesOfMercury": 30.32728067351959
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [
+    {
+      "State": "BluePlus",
+      "IsBlack": true
+    }
+  ],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR ETND, observed day 21 at 07:20 UTC
+Wind:         260° at 9 kt
+Visibility:   10 km or more
+Clouds:       few (1–2/8) at 5,500 ft, scattered (3–4/8) at 30,000 ft
+Temperature:  14 °C, dew point 10 °C
+QNH:          1027 hPa
+Color state:  blue plus (airfield unusable)
+Category:     VFR
+--- nl
+METAR ETND, waarneming dag 21 om 07:20 UTC
+Wind:         260° met 9 kt
+Zicht:        10 km of meer
+Bewolking:    enkele wolken (1–2/8) op 5.500 ft, verspreid (3–4/8) op 30.000 ft
+Temperatuur:  14 °C, dauwpunt 10 °C
+QNH:          1027 hPa
+Kleurcode:    blauw plus (vliegveld onbruikbaar)
+Categorie:    VFR
+
+=== METAR ETSH 210720Z 27014KT 9999 VCSH FEW012 FEW018TCU BKN050 13/09 Q1025 BLU BLU TEMPO WHT
+{
+  "Raw": "METAR ETSH 210720Z 27014KT 9999 VCSH FEW012 FEW018TCU BKN050 13/09 Q1025 BLU BLU TEMPO WHT",
+  "Type": "Metar",
+  "Station": "ETSH",
+  "Time": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 20
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 270,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 14,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "InVicinity",
+      "Descriptor": "Showers",
+      "Types": [],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 1200,
+      "IsTypeNotObservable": false
+    },
+    {
+      "Cover": "Few",
+      "HeightFeet": 1800,
+      "Type": "ToweringCumulus",
+      "IsTypeNotObservable": false
+    },
+    {
+      "Cover": "Broken",
+      "HeightFeet": 5000,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 13,
+  "DewPoint": 9,
+  "Pressure": {
+    "Value": 1025,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1025,
+    "InchesOfMercury": 30.268220730630553
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [
+    {
+      "State": "Blue",
+      "IsBlack": false
+    },
+    {
+      "State": "Blue",
+      "IsBlack": false
+    }
+  ],
+  "Trends": [
+    {
+      "Kind": "Temporary",
+      "Conditions": {
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [
+          {
+            "State": "White",
+            "IsBlack": false
+          }
+        ],
+        "Icing": [],
+        "Turbulence": []
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR ETSH, observed day 21 at 07:20 UTC
+Wind:         270° at 14 kt
+Visibility:   10 km or more
+Weather:      showers in the vicinity
+Clouds:       few (1–2/8) at 1,200 ft, few (1–2/8) at 1,800 ft with towering cumulus, broken (5–7/8) at 5,000 ft
+Temperature:  13 °C, dew point 9 °C
+QNH:          1025 hPa
+Color state:  blue, blue
+Category:     VFR
+Trend:        temporarily: color state white
+--- nl
+METAR ETSH, waarneming dag 21 om 07:20 UTC
+Wind:         270° met 14 kt
+Zicht:        10 km of meer
+Weer:         buien in de omgeving
+Bewolking:    enkele wolken (1–2/8) op 1.200 ft, enkele wolken (1–2/8) op 1.800 ft met torenvormige cumulus, gebroken (5–7/8) op 5.000 ft
+Temperatuur:  13 °C, dauwpunt 9 °C
+QNH:          1025 hPa
+Kleurcode:    blauw, blauw
+Categorie:    VFR
+Trend:        tijdelijk: kleurcode wit
+
+=== METAR LEBB 210800Z 11003KT 070V150 9999 4900SE FEW005 16/16 Q1029 NOSIG
+{
+  "Raw": "METAR LEBB 210800Z 11003KT 070V150 9999 4900SE FEW005 16/16 Q1029 NOSIG",
+  "Type": "Metar",
+  "Station": "LEBB",
+  "Time": {
+    "Day": 21,
+    "Hour": 8,
+    "Minute": 0
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 110,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 3,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "VariableFrom": 70,
+    "VariableTo": 150,
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "Minimum": {
+      "Meters": 4900,
+      "Direction": "SouthEast"
+    },
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 500,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 16,
+  "DewPoint": 16,
+  "Pressure": {
+    "Value": 1029,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1029,
+    "InchesOfMercury": 30.386340616408624
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [
+    {
+      "Kind": "NoSignificantChange"
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR LEBB, observed day 21 at 08:00 UTC
+Wind:         110° at 3 kt, varying between 070° and 150°
+Visibility:   10 km or more, minimum 4,900 m to the southeast
+Clouds:       few (1–2/8) at 500 ft
+Temperature:  16 °C, dew point 16 °C
+QNH:          1029 hPa
+Category:     VFR
+Trend:        no significant change
+--- nl
+METAR LEBB, waarneming dag 21 om 08:00 UTC
+Wind:         110° met 3 kt, variërend tussen 070° en 150°
+Zicht:        10 km of meer, minimaal 4.900 m in het zuidoosten
+Bewolking:    enkele wolken (1–2/8) op 500 ft
+Temperatuur:  16 °C, dauwpunt 16 °C
+QNH:          1029 hPa
+Categorie:    VFR
+Trend:        geen significante verandering
+
+=== METAR BIKF 211200Z 27049G65KT 0800 +SN BLSN VV005 M03/M04 Q0971 WS ALL RWY
+{
+  "Raw": "METAR BIKF 211200Z 27049G65KT 0800 +SN BLSN VV005 M03/M04 Q0971 WS ALL RWY",
+  "Type": "Metar",
+  "Station": "BIKF",
+  "Time": {
+    "Day": 21,
+    "Hour": 12,
+    "Minute": 0
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 270,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 49,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "Gust": {
+      "Value": 65,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 800,
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Heavy",
+      "Types": [
+        "Snow"
+      ],
+      "IsNotObservable": false
+    },
+    {
+      "Intensity": "Moderate",
+      "Descriptor": "Blowing",
+      "Types": [
+        "Snow"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "VerticalVisibility",
+      "HeightFeet": 500,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": -3,
+  "DewPoint": -4,
+  "Pressure": {
+    "Value": 971,
+    "Unit": "Hectopascals",
+    "Hectopascals": 971,
+    "InchesOfMercury": 28.673602272626603
+  },
+  "RecentWeather": [],
+  "WindShear": [
+    {
+      "AllRunways": true
+    }
+  ],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Lifr"
+}
+--- en
+METAR BIKF, observed day 21 at 12:00 UTC
+Wind:         270° at 49 kt, gusting 65 kt
+Visibility:   800 m
+Weather:      heavy snow, blowing snow
+Clouds:       sky obscured, vertical visibility 500 ft
+Temperature:  -3 °C, dew point -4 °C
+QNH:          971 hPa
+Wind shear:   all runways
+Category:     LIFR
+--- nl
+METAR BIKF, waarneming dag 21 om 12:00 UTC
+Wind:         270° met 49 kt, windstoten tot 65 kt
+Zicht:        800 m
+Weer:         zware sneeuw, hoog opwaaiende sneeuw
+Bewolking:    lucht onzichtbaar, verticaal zicht 500 ft
+Temperatuur:  -3 °C, dauwpunt -4 °C
+QNH:          971 hPa
+Windschering: alle banen
+Categorie:    LIFR
+
+=== METAR LFPG 211200Z 270P49MPS 9999NDV NCD 18/10 Q1015
+{
+  "Raw": "METAR LFPG 211200Z 270P49MPS 9999NDV NCD 18/10 Q1015",
+  "Type": "Metar",
+  "Station": "LFPG",
+  "Time": {
+    "Day": 21,
+    "Hour": 12,
+    "Minute": 0
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 270,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 49,
+      "Unit": "MetersPerSecond",
+      "IsAbove": true
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": true,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [],
+  "CloudCondition": "NoCloudDetected",
+  "Temperature": 18,
+  "DewPoint": 10,
+  "Pressure": {
+    "Value": 1015,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1015,
+    "InchesOfMercury": 29.972921016185378
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR LFPG, observed day 21 at 12:00 UTC
+Wind:         270° at more than 49 m/s
+Visibility:   10 km or more (no directional variation)
+Clouds:       no cloud detected
+Temperature:  18 °C, dew point 10 °C
+QNH:          1015 hPa
+Category:     VFR
+--- nl
+METAR LFPG, waarneming dag 21 om 12:00 UTC
+Wind:         270° met meer dan 49 m/s
+Zicht:        10 km of meer (geen richtingsvariatie)
+Bewolking:    geen bewolking waargenomen
+Temperatuur:  18 °C, dauwpunt 10 °C
+QNH:          1015 hPa
+Categorie:    VFR
+
+=== SPECI KRUT 210809Z AUTO 00000KT 2 1/2SM BR OVC002 11/11 A3009 RMK AO2 VIS 1 1/4V5 $
+{
+  "Raw": "SPECI KRUT 210809Z AUTO 00000KT 2 1/2SM BR OVC002 11/11 A3009 RMK AO2 VIS 1 1/4V5 $",
+  "Type": "Speci",
+  "Station": "KRUT",
+  "Time": {
+    "Day": 21,
+    "Hour": 8,
+    "Minute": 9
+  },
+  "IsAuto": true,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 0,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 0,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": true,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "StatuteMiles": 2.5,
+    "IsTenKmOrMore": false,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Moderate",
+      "Types": [
+        "Mist"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Overcast",
+      "HeightFeet": 200,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 11,
+  "DewPoint": 11,
+  "Pressure": {
+    "Value": 30.09,
+    "Unit": "InchesOfMercury",
+    "Hectopascals": 1018.964751,
+    "InchesOfMercury": 30.09
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Remarks": "AO2 VIS 1 1/4V5 $",
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Lifr"
+}
+--- en
+SPECI KRUT, observed day 21 at 08:09 UTC (automated)
+Wind:         calm
+Visibility:   2.5 SM
+Weather:      mist
+Clouds:       overcast (8/8) at 200 ft
+Temperature:  11 °C, dew point 11 °C
+QNH:          30.09 inHg
+Category:     LIFR
+Remarks:      AO2 VIS 1 1/4V5 $
+--- nl
+SPECI KRUT, waarneming dag 21 om 08:09 UTC (automatisch)
+Wind:         windstil
+Zicht:        2,5 SM
+Weer:         nevel
+Bewolking:    geheel bewolkt (8/8) op 200 ft
+Temperatuur:  11 °C, dauwpunt 11 °C
+QNH:          30,09 inHg
+Categorie:    LIFR
+Opmerkingen:  AO2 VIS 1 1/4V5 $
+
+=== METAR KJFK 211151Z 31008KT M1/4SM R04R/0600V1000FT FZFG VV002 M01/M01 A3012 RMK AO2
+{
+  "Raw": "METAR KJFK 211151Z 31008KT M1/4SM R04R/0600V1000FT FZFG VV002 M01/M01 A3012 RMK AO2",
+  "Type": "Metar",
+  "Station": "KJFK",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 51
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 310,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 8,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "StatuteMiles": 0.25,
+    "IsTenKmOrMore": false,
+    "IsLessThan": true,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [
+    {
+      "Runway": "04R",
+      "Value": 600,
+      "VariableMax": 1000,
+      "IsFeet": true,
+      "IsMissing": false
+    }
+  ],
+  "Weather": [
+    {
+      "Intensity": "Moderate",
+      "Descriptor": "Freezing",
+      "Types": [
+        "Fog"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "VerticalVisibility",
+      "HeightFeet": 200,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": -1,
+  "DewPoint": -1,
+  "Pressure": {
+    "Value": 30.12,
+    "Unit": "InchesOfMercury",
+    "Hectopascals": 1019.980668,
+    "InchesOfMercury": 30.12
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Remarks": "AO2",
+  "Diagnostics": [],
+  "HasErrors": false,
+  "FlightCategory": "Lifr"
+}
+--- en
+METAR KJFK, observed day 21 at 11:51 UTC
+Wind:         310° at 8 kt
+Visibility:   less than 0.25 SM
+RVR:          runway 04R: between 600 ft and 1,000 ft
+Weather:      freezing fog
+Clouds:       sky obscured, vertical visibility 200 ft
+Temperature:  -1 °C, dew point -1 °C
+QNH:          30.12 inHg
+Category:     LIFR
+Remarks:      AO2
+--- nl
+METAR KJFK, waarneming dag 21 om 11:51 UTC
+Wind:         310° met 8 kt
+Zicht:        minder dan 0,25 SM
+Baanzicht:    baan 04R: tussen 600 ft en 1.000 ft
+Weer:         aanvriezende mist
+Bewolking:    lucht onzichtbaar, verticaal zicht 200 ft
+Temperatuur:  -1 °C, dauwpunt -1 °C
+QNH:          30,12 inHg
+Categorie:    LIFR
+Opmerkingen:  AO2
+
+=== METAR EHAM 211125Z 24012KT 2400O -RA FEW012 12/09 Q1013
+{
+  "Raw": "METAR EHAM 211125Z 24012KT 2400O -RA FEW012 12/09 Q1013",
+  "Type": "Metar",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 240,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 12,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [
+    {
+      "Intensity": "Light",
+      "Types": [
+        "Rain"
+      ],
+      "IsNotObservable": false
+    }
+  ],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 1200,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 12,
+  "DewPoint": 9,
+  "Pressure": {
+    "Value": 1013,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1013,
+    "InchesOfMercury": 29.913861073296342
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [
+    {
+      "Severity": "Error",
+      "Code": "InvalidVisibility",
+      "Id": "CAV004",
+      "Token": "2400O",
+      "Position": 27,
+      "Length": 5,
+      "Message": "invalid visibility group \"2400O\"; expected 4 digits (e.g. 0800, 9999)"
+    }
+  ],
+  "HasErrors": true,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR EHAM, observed day 21 at 11:25 UTC
+Wind:         240° at 12 kt
+Weather:      light rain
+Clouds:       few (1–2/8) at 1,200 ft
+Temperature:  12 °C, dew point 9 °C
+QNH:          1013 hPa
+Category:     VFR
+--- nl
+METAR EHAM, waarneming dag 21 om 11:25 UTC
+Wind:         240° met 12 kt
+Weer:         lichte regen
+Bewolking:    enkele wolken (1–2/8) op 1.200 ft
+Temperatuur:  12 °C, dauwpunt 9 °C
+QNH:          1013 hPa
+Categorie:    VFR
+
+=== METAR EHAM 211125Z 24012KT 9999 12/09 FEW012 Q1013
+{
+  "Raw": "METAR EHAM 211125Z 24012KT 9999 12/09 FEW012 Q1013",
+  "Type": "Metar",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 240,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 12,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [
+    {
+      "Cover": "Few",
+      "HeightFeet": 1200,
+      "IsTypeNotObservable": false
+    }
+  ],
+  "Temperature": 12,
+  "DewPoint": 9,
+  "Pressure": {
+    "Value": 1013,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1013,
+    "InchesOfMercury": 29.913861073296342
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [
+    {
+      "Severity": "Warning",
+      "Code": "OutOfOrder",
+      "Id": "CAV021",
+      "Token": "FEW012",
+      "Position": 38,
+      "Length": 6,
+      "Message": "group \"FEW012\" is out of the expected order"
+    }
+  ],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR EHAM, observed day 21 at 11:25 UTC
+Wind:         240° at 12 kt
+Visibility:   10 km or more
+Clouds:       few (1–2/8) at 1,200 ft
+Temperature:  12 °C, dew point 9 °C
+QNH:          1013 hPa
+Category:     VFR
+--- nl
+METAR EHAM, waarneming dag 21 om 11:25 UTC
+Wind:         240° met 12 kt
+Zicht:        10 km of meer
+Bewolking:    enkele wolken (1–2/8) op 1.200 ft
+Temperatuur:  12 °C, dauwpunt 9 °C
+QNH:          1013 hPa
+Categorie:    VFR
+
+=== METAR EHAM 211125Z 24012KT 25015KT 9999 Q1013
+{
+  "Raw": "METAR EHAM 211125Z 24012KT 25015KT 9999 Q1013",
+  "Type": "Metar",
+  "Station": "EHAM",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 240,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 12,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "Visibility": {
+    "Meters": 10000,
+    "IsTenKmOrMore": true,
+    "IsLessThan": false,
+    "IsMoreThan": false,
+    "NoDirectionalVariation": false,
+    "IsMissing": false
+  },
+  "IsCavok": false,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [],
+  "Pressure": {
+    "Value": 1013,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1013,
+    "InchesOfMercury": 29.913861073296342
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [
+    {
+      "Severity": "Warning",
+      "Code": "Duplicate",
+      "Id": "CAV022",
+      "Token": "25015KT",
+      "Position": 27,
+      "Length": 7,
+      "Message": "duplicate group \"25015KT\"; the first occurrence is used"
+    }
+  ],
+  "HasErrors": false,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR EHAM, observed day 21 at 11:25 UTC
+Wind:         240° at 12 kt
+Visibility:   10 km or more
+QNH:          1013 hPa
+Category:     VFR
+--- nl
+METAR EHAM, waarneming dag 21 om 11:25 UTC
+Wind:         240° met 12 kt
+Zicht:        10 km of meer
+QNH:          1013 hPa
+Categorie:    VFR
+
+=== METAR 211125Z 24012G10KT CAVOK 10/12 Q1013
+{
+  "Raw": "METAR 211125Z 24012G10KT CAVOK 10/12 Q1013",
+  "Type": "Metar",
+  "Time": {
+    "Day": 21,
+    "Hour": 11,
+    "Minute": 25
+  },
+  "IsAuto": false,
+  "IsCorrected": false,
+  "IsNil": false,
+  "Wind": {
+    "Direction": 240,
+    "IsVariable": false,
+    "Speed": {
+      "Value": 12,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "Gust": {
+      "Value": 10,
+      "Unit": "Knots",
+      "IsAbove": false
+    },
+    "IsCalm": false,
+    "IsMissing": false
+  },
+  "IsCavok": true,
+  "RunwayVisualRanges": [],
+  "Weather": [],
+  "Clouds": [],
+  "Temperature": 10,
+  "DewPoint": 12,
+  "Pressure": {
+    "Value": 1013,
+    "Unit": "Hectopascals",
+    "Hectopascals": 1013,
+    "InchesOfMercury": 29.913861073296342
+  },
+  "RecentWeather": [],
+  "WindShear": [],
+  "RunwayStates": [],
+  "ColorCodes": [],
+  "Trends": [],
+  "Diagnostics": [
+    {
+      "Severity": "Error",
+      "Code": "MissingStation",
+      "Id": "CAV018",
+      "Token": "",
+      "Position": 6,
+      "Length": 0,
+      "Message": "station identifier is missing"
+    },
+    {
+      "Severity": "Warning",
+      "Code": "GustNotAboveSpeed",
+      "Id": "CAV023",
+      "Token": "24012G10KT",
+      "Position": 14,
+      "Length": 10,
+      "Message": "gust in \"24012G10KT\" is not higher than the mean wind speed"
+    },
+    {
+      "Severity": "Warning",
+      "Code": "DewPointAboveTemperature",
+      "Id": "CAV024",
+      "Token": "10/12",
+      "Position": 31,
+      "Length": 5,
+      "Message": "dew point in \"10/12\" is higher than the temperature"
+    }
+  ],
+  "HasErrors": true,
+  "FlightCategory": "Vfr"
+}
+--- en
+METAR unknown station, observed day 21 at 11:25 UTC
+Wind:         240° at 12 kt, gusting 10 kt
+Visibility:   CAVOK: 10 km or more, no cloud below 5,000 ft and no significant weather
+Temperature:  10 °C, dew point 12 °C
+QNH:          1013 hPa
+Category:     VFR
+--- nl
+METAR onbekend station, waarneming dag 21 om 11:25 UTC
+Wind:         240° met 12 kt, windstoten tot 10 kt
+Zicht:        CAVOK: 10 km of meer, geen bewolking onder 5.000 ft en geen significant weer
+Temperatuur:  10 °C, dauwpunt 12 °C
+QNH:          1013 hPa
+Categorie:    VFR
+
+=== TAF EHAM 210440Z 2106/2212 27005KT 9999 FEW035 BECMG 2106/2109 31011KT PROB30 TEMPO 2114/2118 TSRA TX19/2114Z TNM02/2205Z
+{
+  "Raw": "TAF EHAM 210440Z 2106/2212 27005KT 9999 FEW035 BECMG 2106/2109 31011KT PROB30 TEMPO 2114/2118 TSRA TX19/2114Z TNM02/2205Z",
+  "Station": "EHAM",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 4,
+    "Minute": 40
+  },
+  "IsAmended": false,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": false,
+  "Validity": {
+    "From": {
+      "Day": 21,
+      "Hour": 6
+    },
+    "To": {
+      "Day": 22,
+      "Hour": 12
+    }
+  },
+  "Base": {
+    "Wind": {
+      "Direction": 270,
+      "IsVariable": false,
+      "Speed": {
+        "Value": 5,
+        "Unit": "Knots",
+        "IsAbove": false
+      },
+      "IsCalm": false,
+      "IsMissing": false
+    },
+    "Visibility": {
+      "Meters": 10000,
+      "IsTenKmOrMore": true,
+      "IsLessThan": false,
+      "IsMoreThan": false,
+      "NoDirectionalVariation": false,
+      "IsMissing": false
+    },
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [
+      {
+        "Cover": "Few",
+        "HeightFeet": 3500,
+        "IsTypeNotObservable": false
+      }
+    ],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": [],
+    "FlightCategory": "Vfr"
+  },
+  "Changes": [
+    {
+      "Kind": "Becoming",
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 6
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 9
+        }
+      },
+      "Conditions": {
+        "Wind": {
+          "Direction": 310,
+          "IsVariable": false,
+          "Speed": {
+            "Value": 11,
+            "Unit": "Knots",
+            "IsAbove": false
+          },
+          "IsCalm": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": []
+      }
+    },
+    {
+      "Kind": "Temporary",
+      "Probability": 30,
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 14
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 18
+        }
+      },
+      "Conditions": {
+        "IsCavok": false,
+        "Weather": [
+          {
+            "Intensity": "Moderate",
+            "Descriptor": "Thunderstorm",
+            "Types": [
+              "Rain"
+            ],
+            "IsNotObservable": false
+          }
+        ],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": []
+      }
+    }
+  ],
+  "Temperatures": [
+    {
+      "Kind": "Maximum",
+      "Celsius": 19,
+      "Time": {
+        "Day": 21,
+        "Hour": 14
+      }
+    },
+    {
+      "Kind": "Minimum",
+      "Celsius": -2,
+      "Time": {
+        "Day": 22,
+        "Hour": 5
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF EHAM, issued day 21 at 04:40 UTC, valid from day 21 06:00 to day 22 12:00 UTC
+Wind:         270° at 5 kt
+Visibility:   10 km or more
+Clouds:       few (1–2/8) at 3,500 ft
+Category:     VFR
+Max temp:     19 °C on day 21 at 14:00 UTC
+Min temp:     -2 °C on day 22 at 05:00 UTC
+Becoming between day 21 06:00 and day 21 09:00 UTC:
+  Wind:         310° at 11 kt
+30% probability, temporarily between day 21 14:00 and day 21 18:00 UTC:
+  Weather:      thunderstorm with rain
+--- nl
+TAF EHAM, uitgegeven dag 21 om 04:40 UTC, geldig van dag 21 06:00 tot dag 22 12:00 UTC
+Wind:         270° met 5 kt
+Zicht:        10 km of meer
+Bewolking:    enkele wolken (1–2/8) op 3.500 ft
+Categorie:    VFR
+Max. temp.:   19 °C op dag 21 om 14:00 UTC
+Min. temp.:   -2 °C op dag 22 om 05:00 UTC
+Geleidelijk tussen dag 21 06:00 en dag 21 09:00 UTC:
+  Wind:         310° met 11 kt
+30% kans, tijdelijk tussen dag 21 14:00 en dag 21 18:00 UTC:
+  Weer:         onweersbuien met regen
+
+=== TAF AMD EFKI 210745Z 2107/2115 27005KT 9999 FEW007 PROB30 2107/2109 BKN009
+{
+  "Raw": "TAF AMD EFKI 210745Z 2107/2115 27005KT 9999 FEW007 PROB30 2107/2109 BKN009",
+  "Station": "EFKI",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 7,
+    "Minute": 45
+  },
+  "IsAmended": true,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": false,
+  "Validity": {
+    "From": {
+      "Day": 21,
+      "Hour": 7
+    },
+    "To": {
+      "Day": 21,
+      "Hour": 15
+    }
+  },
+  "Base": {
+    "Wind": {
+      "Direction": 270,
+      "IsVariable": false,
+      "Speed": {
+        "Value": 5,
+        "Unit": "Knots",
+        "IsAbove": false
+      },
+      "IsCalm": false,
+      "IsMissing": false
+    },
+    "Visibility": {
+      "Meters": 10000,
+      "IsTenKmOrMore": true,
+      "IsLessThan": false,
+      "IsMoreThan": false,
+      "NoDirectionalVariation": false,
+      "IsMissing": false
+    },
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [
+      {
+        "Cover": "Few",
+        "HeightFeet": 700,
+        "IsTypeNotObservable": false
+      }
+    ],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": [],
+    "FlightCategory": "Vfr"
+  },
+  "Changes": [
+    {
+      "Kind": "Probability",
+      "Probability": 30,
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 7
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 9
+        }
+      },
+      "Conditions": {
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [
+          {
+            "Cover": "Broken",
+            "HeightFeet": 900,
+            "IsTypeNotObservable": false
+          }
+        ],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Ifr"
+      }
+    }
+  ],
+  "Temperatures": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF EFKI, issued day 21 at 07:45 UTC, valid from day 21 07:00 to day 21 15:00 UTC (amended)
+Wind:         270° at 5 kt
+Visibility:   10 km or more
+Clouds:       few (1–2/8) at 700 ft
+Category:     VFR
+30% probability between day 21 07:00 and day 21 09:00 UTC:
+  Clouds:       broken (5–7/8) at 900 ft
+  Category:     IFR
+--- nl
+TAF EFKI, uitgegeven dag 21 om 07:45 UTC, geldig van dag 21 07:00 tot dag 21 15:00 UTC (gewijzigd)
+Wind:         270° met 5 kt
+Zicht:        10 km of meer
+Bewolking:    enkele wolken (1–2/8) op 700 ft
+Categorie:    VFR
+30% kans tussen dag 21 07:00 en dag 21 09:00 UTC:
+  Bewolking:    gebroken (5–7/8) op 900 ft
+  Categorie:    IFR
+
+=== TAF KCON 210808Z 2108/2206 35002KT P6SM BKN015 TEMPO 2108/2109 BKN004 FM211100 35002KT P6SM VCFG SCT002 BKN050
+{
+  "Raw": "TAF KCON 210808Z 2108/2206 35002KT P6SM BKN015 TEMPO 2108/2109 BKN004 FM211100 35002KT P6SM VCFG SCT002 BKN050",
+  "Station": "KCON",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 8,
+    "Minute": 8
+  },
+  "IsAmended": false,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": false,
+  "Validity": {
+    "From": {
+      "Day": 21,
+      "Hour": 8
+    },
+    "To": {
+      "Day": 22,
+      "Hour": 6
+    }
+  },
+  "Base": {
+    "Wind": {
+      "Direction": 350,
+      "IsVariable": false,
+      "Speed": {
+        "Value": 2,
+        "Unit": "Knots",
+        "IsAbove": false
+      },
+      "IsCalm": false,
+      "IsMissing": false
+    },
+    "Visibility": {
+      "StatuteMiles": 6,
+      "IsTenKmOrMore": false,
+      "IsLessThan": false,
+      "IsMoreThan": true,
+      "NoDirectionalVariation": false,
+      "IsMissing": false
+    },
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [
+      {
+        "Cover": "Broken",
+        "HeightFeet": 1500,
+        "IsTypeNotObservable": false
+      }
+    ],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": [],
+    "FlightCategory": "Mvfr"
+  },
+  "Changes": [
+    {
+      "Kind": "Temporary",
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 8
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 9
+        }
+      },
+      "Conditions": {
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [
+          {
+            "Cover": "Broken",
+            "HeightFeet": 400,
+            "IsTypeNotObservable": false
+          }
+        ],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Lifr"
+      }
+    },
+    {
+      "Kind": "From",
+      "From": {
+        "Day": 21,
+        "Hour": 11,
+        "Minute": 0
+      },
+      "Conditions": {
+        "Wind": {
+          "Direction": 350,
+          "IsVariable": false,
+          "Speed": {
+            "Value": 2,
+            "Unit": "Knots",
+            "IsAbove": false
+          },
+          "IsCalm": false,
+          "IsMissing": false
+        },
+        "Visibility": {
+          "StatuteMiles": 6,
+          "IsTenKmOrMore": false,
+          "IsLessThan": false,
+          "IsMoreThan": true,
+          "NoDirectionalVariation": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [
+          {
+            "Intensity": "InVicinity",
+            "Types": [
+              "Fog"
+            ],
+            "IsNotObservable": false
+          }
+        ],
+        "NoSignificantWeather": false,
+        "Clouds": [
+          {
+            "Cover": "Scattered",
+            "HeightFeet": 200,
+            "IsTypeNotObservable": false
+          },
+          {
+            "Cover": "Broken",
+            "HeightFeet": 5000,
+            "IsTypeNotObservable": false
+          }
+        ],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Vfr"
+      }
+    }
+  ],
+  "Temperatures": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF KCON, issued day 21 at 08:08 UTC, valid from day 21 08:00 to day 22 06:00 UTC
+Wind:         350° at 2 kt
+Visibility:   more than 6 SM
+Clouds:       broken (5–7/8) at 1,500 ft
+Category:     MVFR
+Temporarily between day 21 08:00 and day 21 09:00 UTC:
+  Clouds:       broken (5–7/8) at 400 ft
+  Category:     LIFR
+From day 21 11:00 UTC:
+  Wind:         350° at 2 kt
+  Visibility:   more than 6 SM
+  Weather:      fog in the vicinity
+  Clouds:       scattered (3–4/8) at 200 ft, broken (5–7/8) at 5,000 ft
+  Category:     VFR
+--- nl
+TAF KCON, uitgegeven dag 21 om 08:08 UTC, geldig van dag 21 08:00 tot dag 22 06:00 UTC
+Wind:         350° met 2 kt
+Zicht:        meer dan 6 SM
+Bewolking:    gebroken (5–7/8) op 1.500 ft
+Categorie:    MVFR
+Tijdelijk tussen dag 21 08:00 en dag 21 09:00 UTC:
+  Bewolking:    gebroken (5–7/8) op 400 ft
+  Categorie:    LIFR
+Vanaf dag 21 11:00 UTC:
+  Wind:         350° met 2 kt
+  Zicht:        meer dan 6 SM
+  Weer:         mist in de omgeving
+  Bewolking:    verspreid (3–4/8) op 200 ft, gebroken (5–7/8) op 5.000 ft
+  Categorie:    VFR
+
+=== TAF EGUN 210800Z 2108/2214 24008KT 9999 SCT200 QNH3043INS BECMG 2116/2117 VRB06KT 9999 SCT080 QNH3042INS TX19/2114Z TN10/2204Z
+{
+  "Raw": "TAF EGUN 210800Z 2108/2214 24008KT 9999 SCT200 QNH3043INS BECMG 2116/2117 VRB06KT 9999 SCT080 QNH3042INS TX19/2114Z TN10/2204Z",
+  "Station": "EGUN",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 8,
+    "Minute": 0
+  },
+  "IsAmended": false,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": false,
+  "Validity": {
+    "From": {
+      "Day": 21,
+      "Hour": 8
+    },
+    "To": {
+      "Day": 22,
+      "Hour": 14
+    }
+  },
+  "Base": {
+    "Wind": {
+      "Direction": 240,
+      "IsVariable": false,
+      "Speed": {
+        "Value": 8,
+        "Unit": "Knots",
+        "IsAbove": false
+      },
+      "IsCalm": false,
+      "IsMissing": false
+    },
+    "Visibility": {
+      "Meters": 10000,
+      "IsTenKmOrMore": true,
+      "IsLessThan": false,
+      "IsMoreThan": false,
+      "NoDirectionalVariation": false,
+      "IsMissing": false
+    },
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [
+      {
+        "Cover": "Scattered",
+        "HeightFeet": 20000,
+        "IsTypeNotObservable": false
+      }
+    ],
+    "ColorCodes": [],
+    "Pressure": {
+      "Value": 30.43,
+      "Unit": "InchesOfMercury",
+      "Hectopascals": 1030.478477,
+      "InchesOfMercury": 30.43
+    },
+    "Icing": [],
+    "Turbulence": [],
+    "FlightCategory": "Vfr"
+  },
+  "Changes": [
+    {
+      "Kind": "Becoming",
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 16
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 17
+        }
+      },
+      "Conditions": {
+        "Wind": {
+          "IsVariable": true,
+          "Speed": {
+            "Value": 6,
+            "Unit": "Knots",
+            "IsAbove": false
+          },
+          "IsCalm": false,
+          "IsMissing": false
+        },
+        "Visibility": {
+          "Meters": 10000,
+          "IsTenKmOrMore": true,
+          "IsLessThan": false,
+          "IsMoreThan": false,
+          "NoDirectionalVariation": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [
+          {
+            "Cover": "Scattered",
+            "HeightFeet": 8000,
+            "IsTypeNotObservable": false
+          }
+        ],
+        "ColorCodes": [],
+        "Pressure": {
+          "Value": 30.42,
+          "Unit": "InchesOfMercury",
+          "Hectopascals": 1030.139838,
+          "InchesOfMercury": 30.42
+        },
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Vfr"
+      }
+    }
+  ],
+  "Temperatures": [
+    {
+      "Kind": "Maximum",
+      "Celsius": 19,
+      "Time": {
+        "Day": 21,
+        "Hour": 14
+      }
+    },
+    {
+      "Kind": "Minimum",
+      "Celsius": 10,
+      "Time": {
+        "Day": 22,
+        "Hour": 4
+      }
+    }
+  ],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF EGUN, issued day 21 at 08:00 UTC, valid from day 21 08:00 to day 22 14:00 UTC
+Wind:         240° at 8 kt
+Visibility:   10 km or more
+Clouds:       scattered (3–4/8) at 20,000 ft
+QNH:          30.43 inHg
+Category:     VFR
+Max temp:     19 °C on day 21 at 14:00 UTC
+Min temp:     10 °C on day 22 at 04:00 UTC
+Becoming between day 21 16:00 and day 21 17:00 UTC:
+  Wind:         variable at 6 kt
+  Visibility:   10 km or more
+  Clouds:       scattered (3–4/8) at 8,000 ft
+  QNH:          30.42 inHg
+  Category:     VFR
+--- nl
+TAF EGUN, uitgegeven dag 21 om 08:00 UTC, geldig van dag 21 08:00 tot dag 22 14:00 UTC
+Wind:         240° met 8 kt
+Zicht:        10 km of meer
+Bewolking:    verspreid (3–4/8) op 20.000 ft
+QNH:          30,43 inHg
+Categorie:    VFR
+Max. temp.:   19 °C op dag 21 om 14:00 UTC
+Min. temp.:   10 °C op dag 22 om 04:00 UTC
+Geleidelijk tussen dag 21 16:00 en dag 21 17:00 UTC:
+  Wind:         variabel met 6 kt
+  Zicht:        10 km of meer
+  Bewolking:    verspreid (3–4/8) op 8.000 ft
+  QNH:          30,42 inHg
+  Categorie:    VFR
+
+=== TAF EHAM 210440Z NIL
+{
+  "Raw": "TAF EHAM 210440Z NIL",
+  "Station": "EHAM",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 4,
+    "Minute": 40
+  },
+  "IsAmended": false,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": true,
+  "Base": {
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": []
+  },
+  "Changes": [],
+  "Temperatures": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF EHAM, issued day 21 at 04:40 UTC
+No report available
+--- nl
+TAF EHAM, uitgegeven dag 21 om 04:40 UTC
+Geen bericht beschikbaar
+
+=== TAF AMD EHAM 210600Z 2106/2212 CNL
+{
+  "Raw": "TAF AMD EHAM 210600Z 2106/2212 CNL",
+  "Station": "EHAM",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 6,
+    "Minute": 0
+  },
+  "IsAmended": true,
+  "IsCorrected": false,
+  "IsCancelled": true,
+  "IsNil": false,
+  "Validity": {
+    "From": {
+      "Day": 21,
+      "Hour": 6
+    },
+    "To": {
+      "Day": 22,
+      "Hour": 12
+    }
+  },
+  "Base": {
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": []
+  },
+  "Changes": [],
+  "Temperatures": [],
+  "Diagnostics": [],
+  "HasErrors": false
+}
+--- en
+TAF EHAM, issued day 21 at 06:00 UTC, valid from day 21 06:00 to day 22 12:00 UTC (amended)
+Forecast cancelled
+--- nl
+TAF EHAM, uitgegeven dag 21 om 06:00 UTC, geldig van dag 21 06:00 tot dag 22 12:00 UTC (gewijzigd)
+Verwachting geannuleerd
+
+=== TAF EHAM 210440Z 211824 27005KT OCV030 BECMG 31011KT PROB50 2112/2114 BKN005 RMK TEST
+{
+  "Raw": "TAF EHAM 210440Z 211824 27005KT OCV030 BECMG 31011KT PROB50 2112/2114 BKN005 RMK TEST",
+  "Station": "EHAM",
+  "IssueTime": {
+    "Day": 21,
+    "Hour": 4,
+    "Minute": 40
+  },
+  "IsAmended": false,
+  "IsCorrected": false,
+  "IsCancelled": false,
+  "IsNil": false,
+  "Base": {
+    "Wind": {
+      "Direction": 270,
+      "IsVariable": false,
+      "Speed": {
+        "Value": 5,
+        "Unit": "Knots",
+        "IsAbove": false
+      },
+      "IsCalm": false,
+      "IsMissing": false
+    },
+    "IsCavok": false,
+    "Weather": [],
+    "NoSignificantWeather": false,
+    "Clouds": [],
+    "ColorCodes": [],
+    "Icing": [],
+    "Turbulence": []
+  },
+  "Changes": [
+    {
+      "Kind": "Becoming",
+      "Conditions": {
+        "Wind": {
+          "Direction": 310,
+          "IsVariable": false,
+          "Speed": {
+            "Value": 11,
+            "Unit": "Knots",
+            "IsAbove": false
+          },
+          "IsCalm": false,
+          "IsMissing": false
+        },
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": []
+      }
+    },
+    {
+      "Kind": "Probability",
+      "Period": {
+        "From": {
+          "Day": 21,
+          "Hour": 12
+        },
+        "To": {
+          "Day": 21,
+          "Hour": 14
+        }
+      },
+      "Conditions": {
+        "IsCavok": false,
+        "Weather": [],
+        "NoSignificantWeather": false,
+        "Clouds": [
+          {
+            "Cover": "Broken",
+            "HeightFeet": 500,
+            "IsTypeNotObservable": false
+          }
+        ],
+        "ColorCodes": [],
+        "Icing": [],
+        "Turbulence": [],
+        "FlightCategory": "Ifr"
+      }
+    }
+  ],
+  "Temperatures": [],
+  "Remarks": "TEST",
+  "Diagnostics": [
+    {
+      "Severity": "Error",
+      "Code": "InvalidValidity",
+      "Id": "CAV014",
+      "Token": "211824",
+      "Position": 17,
+      "Length": 6,
+      "Message": "invalid validity period \"211824\"; expected DDHH/DDHH (e.g. 2106/2212)"
+    },
+    {
+      "Severity": "Error",
+      "Code": "UnknownGroup",
+      "Id": "CAV001",
+      "Token": "OCV030",
+      "Position": 32,
+      "Length": 6,
+      "Message": "unknown group \"OCV030\""
+    },
+    {
+      "Severity": "Error",
+      "Code": "InvalidChangeGroup",
+      "Id": "CAV015",
+      "Token": "BECMG",
+      "Position": 39,
+      "Length": 5,
+      "Message": "invalid change group \"BECMG\"; expected e.g. FM211400, BECMG 2106/2109, TEMPO 2114/2118 or PROB30"
+    },
+    {
+      "Severity": "Error",
+      "Code": "InvalidChangeGroup",
+      "Id": "CAV015",
+      "Token": "PROB50",
+      "Position": 53,
+      "Length": 6,
+      "Message": "invalid change group \"PROB50\"; expected e.g. FM211400, BECMG 2106/2109, TEMPO 2114/2118 or PROB30"
+    }
+  ],
+  "HasErrors": true
+}
+--- en
+TAF EHAM, issued day 21 at 04:40 UTC
+Wind:         270° at 5 kt
+Becoming:
+  Wind:         310° at 11 kt
+Probability between day 21 12:00 and day 21 14:00 UTC:
+  Clouds:       broken (5–7/8) at 500 ft
+  Category:     IFR
+Remarks:      TEST
+--- nl
+TAF EHAM, uitgegeven dag 21 om 04:40 UTC
+Wind:         270° met 5 kt
+Geleidelijk:
+  Wind:         310° met 11 kt
+Kans tussen dag 21 12:00 en dag 21 14:00 UTC:
+  Bewolking:    gebroken (5–7/8) op 500 ft
+  Categorie:    IFR
+Opmerkingen:  TEST
