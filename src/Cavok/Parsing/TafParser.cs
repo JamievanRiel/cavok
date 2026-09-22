@@ -139,10 +139,7 @@ internal static class TafParser
             }
         }
 
-        if (state.Header is not null)
-        {
-            builder.Changes.Add(state.Header.Build(state.Current));
-        }
+        CloseChange(builder, state);
     }
 
     // Condition groups go to the block that is currently open: the base forecast or the last change group.
@@ -188,13 +185,27 @@ internal static class TafParser
             return;
         }
 
-        if (TafChangeParser.IsChangeStart(text))
+        if (text == "INTER")
         {
-            if (state.Header is not null)
+            // Australian INTER groups are not supported: the block is reported once, on INTER (its period is
+            // taken along), and its groups are parsed into a block that is thrown away, so they neither change the
+            // block before it nor become a change group. The next change group ends it as usual.
+            CloseChange(builder, state);
+            diagnostics.Error(DiagnosticCode.InvalidChangeGroup, token);
+            cursor.Skip();
+            string? period = cursor.PeekText();
+            if (period is not null && (TimeParsers.ParsePeriod(period) is not null || TimeParsers.LooksLikePeriod(period)))
             {
-                builder.Changes.Add(state.Header.Build(state.Current));
+                cursor.Consume();
             }
 
+            state.Current = new ConditionsBuilder();
+            return;
+        }
+
+        if (TafChangeParser.IsChangeStart(text))
+        {
+            CloseChange(builder, state);
             state.Header = TafChangeParser.ReadHeader(cursor, diagnostics);
             state.Current = new ConditionsBuilder();
             return;
@@ -211,6 +222,16 @@ internal static class TafParser
 
         diagnostics.Error(group is null ? GroupGuesser.Guess(text, taf: true) : DiagnosticCode.UnknownGroup, token);
         cursor.Skip();
+    }
+
+    // Adds the open change group, if any, to the forecast.
+    private static void CloseChange(TafBuilder builder, BodyState state)
+    {
+        if (state.Header is not null)
+        {
+            builder.Changes.Add(state.Header.Build(state.Current));
+            state.Header = null;
+        }
     }
 
     private sealed class BodyState

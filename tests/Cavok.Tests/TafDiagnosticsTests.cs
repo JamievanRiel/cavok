@@ -91,9 +91,54 @@ public class TafDiagnosticsTests
     public void ParseStrictThrowsOnErrors() =>
         Assert.Throws<CavokParseException>(() => Taf.ParseStrict("TAF EHAM 210440Z 27005KT"));
 
+    [Fact]
+    public void InterBlockIsReportedOnceAndNotApplied()
+    {
+        Taf taf = Taf.Parse("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 INTER 2112/2114 4000 SHRA");
+
+        Diagnostic diagnostic = Assert.Single(taf.Diagnostics);
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, diagnostic.Code);
+        Assert.Equal("INTER", diagnostic.Token);
+        Assert.Empty(taf.Changes);
+        Assert.True(taf.Base.Visibility!.IsTenKmOrMore);
+        Assert.Null(taf.Base.Visibility.Minimum);
+        Assert.Empty(taf.Base.Weather);
+        Assert.Equal(1200, Assert.Single(taf.Base.Clouds).HeightFeet);
+    }
+
+    [Fact]
+    public void InterBlockEndsAtTheNextChangeGroup()
+    {
+        Taf taf = Taf.Parse(
+            "TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 TEMPO 2108/2110 5000 RA INTER 2112/2114 4000 SHRA BECMG 2114/2116 30015KT");
+
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, Assert.Single(taf.Diagnostics).Code);
+        Assert.Equal(2, taf.Changes.Count);
+        TafChange tempo = taf.Changes[0];
+        Assert.Equal(TafChangeKind.Temporary, tempo.Kind);
+        Assert.Equal(5000, tempo.Conditions.Visibility!.Meters);
+        Assert.Null(tempo.Conditions.Visibility.Minimum);
+        Assert.Equal(WeatherType.Rain, Assert.Single(Assert.Single(tempo.Conditions.Weather).Types));
+        TafChange becoming = taf.Changes[1];
+        Assert.Equal(TafChangeKind.Becoming, becoming.Kind);
+        Assert.Equal(300, becoming.Conditions.Wind!.Direction);
+        Assert.Empty(becoming.Conditions.Weather);
+    }
+
+    [Fact]
+    public void InterWithoutPeriodIsReportedOnce()
+    {
+        Taf taf = Taf.Parse("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 INTER 4000 SHRA");
+
+        Assert.Equal("INTER", Assert.Single(taf.Diagnostics).Token);
+        Assert.Empty(taf.Base.Weather);
+    }
+
     [Theory]
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT OCV030 BECMG 31011KT PROB50 XX RMK A B")]
     [InlineData("METAR TAF 2106/2212 CNL 12/09 FM21140O")]
+    [InlineData("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 INTER 2112/2114 4000 SHRA XX 520002 TX15/2114Z")]
+    [InlineData("TAF YSSY 210500Z 2106/2212 INTER 211/2114 INTER")]
     public void EveryTokenIsConsumedOrReported(string raw)
     {
         Taf taf = TafParser.Parse(raw, out TokenCursor cursor);
