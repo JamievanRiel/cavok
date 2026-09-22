@@ -1,5 +1,7 @@
 name: Docs
 
+# Deploys on pushes to main and on release tags. The github-pages environment only allows the default branch by
+# default: add a deployment branch/tag rule for `v*` tags (Settings > Environments > github-pages) or tag deploys fail.
 on:
   push:
     branches: [main]
@@ -8,16 +10,18 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
+# One deployment at a time; a running deployment is never cancelled half-way.
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read # configure-pages reads the Pages site settings
     steps:
       - uses: actions/checkout@v7
 
@@ -38,6 +42,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
