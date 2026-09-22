@@ -71,6 +71,20 @@ public class MetarTests
         Assert.Equal("///", metar.Remarks);
     }
 
+    [Theory]
+    [InlineData("METAR LFKS 201430Z AUTO 12005KT 050V160 9999 ///CB 28/20 Q1022", CloudType.Cumulonimbus)]
+    [InlineData("METAR LFKC 201330Z AUTO 35010KT 320V020 9999 FEW027/// ///TCU 28/21 Q1023 BECMG NSC", CloudType.ToweringCumulus)]
+    public void ConvectiveCloudWithoutAmountOrHeightFromFrenchAutomaticStations(string raw, CloudType type)
+    {
+        Metar metar = Metar.Parse(raw);
+
+        Assert.Empty(metar.Diagnostics);
+        CloudLayer layer = metar.Clouds[metar.Clouds.Count - 1];
+        Assert.Null(layer.Cover);
+        Assert.Null(layer.HeightFeet);
+        Assert.Equal(type, layer.Type);
+    }
+
     [Fact]
     public void RecentWeatherAndSeaState()
     {

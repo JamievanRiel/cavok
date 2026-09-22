@@ -11,9 +11,18 @@ internal static class CloudParser
         _ => null,
     };
 
-    // (FEW|SCT|BKN|OVC|///)(ddd|///)(CB|TCU|///)? or VV(ddd|///)
+    // (FEW|SCT|BKN|OVC|///)(ddd|///)(CB|TCU|///)? or VV(ddd|///); also ///CB and ///TCU, sent by French automatic
+    // stations when a cumulonimbus or towering cumulus is detected but its amount and height are not.
     public static CloudLayer? ParseLayer(string s)
     {
+        switch (s)
+        {
+            case "///CB":
+                return new CloudLayer { Type = CloudType.Cumulonimbus };
+            case "///TCU":
+                return new CloudLayer { Type = CloudType.ToweringCumulus };
+        }
+
         if (s.Length < 5)
         {
             return null;

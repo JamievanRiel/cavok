@@ -13,6 +13,8 @@ public class CloudParserTests
     [InlineData("VV///", CloudCover.VerticalVisibility, null, null)]
     [InlineData("///015", null, 1500, null)]
     [InlineData("//////CB", null, null, CloudType.Cumulonimbus)]
+    [InlineData("///CB", null, null, CloudType.Cumulonimbus)]
+    [InlineData("///TCU", null, null, CloudType.ToweringCumulus)]
     public void ParsesLayers(string text, CloudCover? cover, int? height, CloudType? type)
     {
         CloudLayer layer = CloudParser.ParseLayer(text)!;
@@ -54,6 +56,8 @@ public class CloudParserTests
     [InlineData("BKN0O5")]
     [InlineData("VV")]
     [InlineData("NSW")]
+    [InlineData("////CB")]
+    [InlineData("///")]
     public void RejectsInvalidGroups(string text)
     {
         Assert.Null(CloudParser.ParseLayer(text));
