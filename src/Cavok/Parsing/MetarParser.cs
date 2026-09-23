@@ -182,7 +182,13 @@ internal static class MetarParser
         }
         else if (IsPressureInTheOtherUnit(group, cursor, state))
         {
-            // QNH in both units ("Q1011 A2985") is national practice in some countries; the first value is kept.
+            // QNH in both units ("Q1011 A2985") is national practice in some countries; the first value is kept,
+            // unless it is missing ("Q//// A2985").
+            if (group.Value is not null && Scan.AreSlashes(cursor.Tokens[state.PressureIndex].Text, 1, 4))
+            {
+                builder.Apply(group);
+                GroupChecks.Check(group, token, last, diagnostics);
+            }
         }
         else
         {

@@ -261,6 +261,33 @@ public class MetarTests
         Assert.Equal(new Pressure(29.85, PressureUnit.InchesOfMercury), metar.Pressure);
     }
 
+    [Fact]
+    public void MissingHectopascalsThenInches()
+    {
+        Metar metar = Metar.Parse("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q//// A2985");
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Equal(new Pressure(29.85, PressureUnit.InchesOfMercury), metar.Pressure);
+    }
+
+    [Fact]
+    public void MissingInchesThenHectopascals()
+    {
+        Metar metar = Metar.Parse("METAR MGMM 210900Z 00000KT CAVOK 24/23 A//// Q1011");
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Equal(new Pressure(1011, PressureUnit.Hectopascals), metar.Pressure);
+    }
+
+    [Fact]
+    public void HectopascalsThenMissingInches()
+    {
+        Metar metar = Metar.Parse("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 A////");
+
+        Assert.Empty(metar.Diagnostics);
+        Assert.Equal(new Pressure(1011, PressureUnit.Hectopascals), metar.Pressure);
+    }
+
     [Theory]
     [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 Q1011 Q1012", "Q1012")]
     [InlineData("METAR MGMM 210900Z 00000KT CAVOK 24/23 A2985 A2986", "A2986")]

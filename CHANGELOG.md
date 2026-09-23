@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- A missing QNH followed by the other unit (`Q//// A2985`) now keeps the second value instead of dropping it
+
 ## 0.1.0
 
 First release.
