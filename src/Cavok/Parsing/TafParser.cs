@@ -187,19 +187,13 @@ internal static class TafParser
 
         if (text == "INTER")
         {
-            // Australian INTER groups are not supported: the block is reported once, on INTER (its period is
-            // taken along), and its groups are parsed into a block that is thrown away, so they neither change the
-            // block before it nor become a change group. The next change group ends it as usual.
-            CloseChange(builder, state);
-            diagnostics.Error(DiagnosticCode.InvalidChangeGroup, token);
-            cursor.Skip();
-            string? period = cursor.PeekText();
-            if (period is not null && (TimeParsers.ParsePeriod(period) is not null || TimeParsers.LooksLikePeriod(period)))
-            {
-                cursor.Consume();
-            }
+            SkipInterBlock(cursor, builder, diagnostics, state, 1);
+            return;
+        }
 
-            state.Current = new ConditionsBuilder();
+        if (text.StartsWith("PROB", StringComparison.Ordinal) && cursor.PeekText(1) == "INTER")
+        {
+            SkipInterBlock(cursor, builder, diagnostics, state, 2);
             return;
         }
 
@@ -222,6 +216,27 @@ internal static class TafParser
 
         diagnostics.Error(group is null ? GroupGuesser.Guess(text, taf: true) : DiagnosticCode.UnknownGroup, token);
         cursor.Skip();
+    }
+
+    // Australian INTER groups ("INTER 2112/2114", "PROB30 INTER 2112/2114") are not supported: the block is
+    // reported once, on its keywords (its period is taken along), and its groups are parsed into a block that is
+    // thrown away, so they neither change the block before it nor become a change group. The next change group
+    // ends it as usual.
+    private static void SkipInterBlock(
+        TokenCursor cursor, TafBuilder builder, DiagnosticBag diagnostics, BodyState state, int keywords)
+    {
+        CloseChange(builder, state);
+        diagnostics.Error(DiagnosticCode.InvalidChangeGroup, cursor.Current, cursor.Tokens[cursor.Index + keywords - 1]);
+        cursor.Skip();
+        cursor.Consume(keywords - 1);
+
+        string? period = cursor.PeekText();
+        if (period is not null && (TimeParsers.ParsePeriod(period) is not null || TimeParsers.LooksLikePeriod(period)))
+        {
+            cursor.Consume();
+        }
+
+        state.Current = new ConditionsBuilder();
     }
 
     // Adds the open change group, if any, to the forecast.

@@ -148,10 +148,39 @@ public class TafDiagnosticsTests
     }
 
     [Theory]
+    [InlineData("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 PROB30 INTER 2112/2114 4000 SHRA")]
+    [InlineData("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 PROB40 INTER 4000 SHRA")]
+    public void ProbabilityInterBlockIsReportedOnceAndNotApplied(string raw)
+    {
+        Taf taf = Taf.Parse(raw);
+
+        Diagnostic diagnostic = Assert.Single(taf.Diagnostics);
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, diagnostic.Code);
+        Assert.StartsWith("PROB", diagnostic.Token);
+        Assert.Empty(taf.Changes);
+        Assert.True(taf.Base.Visibility!.IsTenKmOrMore);
+        Assert.Empty(taf.Base.Weather);
+    }
+
+    [Fact]
+    public void ProbabilityInterBlockEndsAtTheNextChangeGroup()
+    {
+        Taf taf = Taf.Parse(
+            "TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 PROB30 INTER 2112/2114 4000 SHRA BECMG 2114/2116 30015KT");
+
+        Assert.Equal(DiagnosticCode.InvalidChangeGroup, Assert.Single(taf.Diagnostics).Code);
+        TafChange becoming = Assert.Single(taf.Changes);
+        Assert.Equal(TafChangeKind.Becoming, becoming.Kind);
+        Assert.Equal(300, becoming.Conditions.Wind!.Direction);
+        Assert.Empty(becoming.Conditions.Weather);
+    }
+
+    [Theory]
     [InlineData("TAF EHAM 210440Z 2106/2212 27005KT OCV030 BECMG 31011KT PROB50 XX RMK A B")]
     [InlineData("METAR TAF 2106/2212 CNL 12/09 FM21140O")]
     [InlineData("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 INTER 2112/2114 4000 SHRA XX 520002 TX15/2114Z")]
     [InlineData("TAF YSSY 210500Z 2106/2212 INTER 211/2114 INTER")]
+    [InlineData("TAF YSSY 210500Z 2106/2212 27010KT 9999 FEW012 PROB30 INTER 2112/2114 4000 SHRA XX")]
     public void EveryTokenIsConsumedOrReported(string raw)
     {
         Taf taf = TafParser.Parse(raw, out TokenCursor cursor);
