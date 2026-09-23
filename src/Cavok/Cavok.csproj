@@ -13,7 +13,7 @@
 
   <PropertyGroup Label="Package">
     <PackageId>Cavok</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Jamie van Riel</Authors>
     <Description>METAR and TAF parser for .NET with first-class support for the European ICAO format: CAVOK, QNH in hPa, NOSIG/BECMG/TEMPO trends, FM/BECMG/TEMPO/PROB30/PROB40 change groups and missing values from automatic stations. Precise diagnostics, flight categories and plain-language descriptions in English and Dutch. No dependencies.</Description>
     <PackageTags>metar;taf;speci;aviation;weather;icao;aeronautical;parser;flight-category</PackageTags>

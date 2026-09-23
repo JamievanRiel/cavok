@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.1.1
 
 - A missing QNH followed by the other unit (`Q//// A2985`) now keeps the second value instead of dropping it
 - `PROB30 INTER` and `PROB40 INTER` blocks are reported once and ignored, like `INTER`, instead of adding an empty change group
