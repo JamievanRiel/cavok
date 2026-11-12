@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Metric convenience properties alongside the imperial values: `CloudLayer.HeightMeters`, `RunwayVisualRange.ValueMeters` and `VariableMaxMeters`, `IcingLayer`/`TurbulenceLayer` `BaseMeters` and `ThicknessMeters`, `SeaCondition.WaveHeightMeters`
+- `Speed.ToMetersPerSecond()` and `Speed.ToKilometersPerHour()` next to `ToKnots()`
+
 ## 0.1.1
 
 - A missing QNH followed by the other unit (`Q//// A2985`) now keeps the second value instead of dropping it

@@ -47,6 +47,7 @@
     {
       "Cover": "Overcast",
       "HeightFeet": 3900,
+      "HeightMeters": 1188.72,
       "IsTypeNotObservable": true
     }
   ],
@@ -127,11 +128,13 @@ Categorie:    VFR
     {
       "Cover": "Scattered",
       "HeightFeet": 3800,
+      "HeightMeters": 1158.24,
       "IsTypeNotObservable": true
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 4400,
+      "HeightMeters": 1341.1200000000001,
       "IsTypeNotObservable": true
     }
   ],
@@ -226,11 +229,13 @@ Categorie:    VFR
     {
       "Cover": "Broken",
       "HeightFeet": 2600,
+      "HeightMeters": 792.48,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 3100,
+      "HeightMeters": 944.88,
       "IsTypeNotObservable": false
     }
   ],
@@ -327,11 +332,13 @@ Opmerkingen:  AO2 SNE0155UPB10E16SNB16 CIG 025 RWY26 SLP084 P0000 60000 T1007103
     {
       "Cover": "Scattered",
       "HeightFeet": 2000,
+      "HeightMeters": 609.6,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 2600,
+      "HeightMeters": 792.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -418,11 +425,13 @@ Categorie:    MVFR
     {
       "Cover": "Few",
       "HeightFeet": 1800,
+      "HeightMeters": 548.64,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 2500,
+      "HeightMeters": 762,
       "IsTypeNotObservable": false
     }
   ],
@@ -504,6 +513,7 @@ Categorie:    MVFR
     {
       "Runway": "10",
       "Value": 1500,
+      "ValueMeters": 1500,
       "Qualifier": "Above",
       "Tendency": "Up",
       "IsFeet": false,
@@ -531,6 +541,7 @@ Categorie:    MVFR
     {
       "Cover": "Broken",
       "HeightFeet": 800,
+      "HeightMeters": 243.84,
       "IsTypeNotObservable": false
     }
   ],
@@ -923,11 +934,13 @@ Categorie:    VFR
     {
       "Cover": "Scattered",
       "HeightFeet": 300,
+      "HeightMeters": 91.44,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 400,
+      "HeightMeters": 121.92,
       "IsTypeNotObservable": false
     }
   ],
@@ -962,11 +975,13 @@ Categorie:    VFR
           {
             "Cover": "Scattered",
             "HeightFeet": 900,
+            "HeightMeters": 274.32,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 1500,
+            "HeightMeters": 457.20000000000005,
             "IsTypeNotObservable": false
           }
         ],
@@ -1055,11 +1070,13 @@ Trend:        geleidelijk: zicht 10 km of meer; geen significant weer; verspreid
     {
       "Cover": "Few",
       "HeightFeet": 1600,
+      "HeightMeters": 487.68,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 3100,
+      "HeightMeters": 944.88,
       "IsTypeNotObservable": false
     },
     {
@@ -1152,6 +1169,7 @@ Categorie:    MVFR
     {
       "Cover": "Scattered",
       "HeightFeet": 4600,
+      "HeightMeters": 1402.0800000000002,
       "IsTypeNotObservable": false
     },
     {
@@ -1281,6 +1299,7 @@ Trend:        tijdelijk: wind 300° met 20 kt, windstoten tot 30 kt
     {
       "Cover": "Few",
       "HeightFeet": 3600,
+      "HeightMeters": 1097.28,
       "IsTypeNotObservable": false
     },
     {
@@ -1435,11 +1454,13 @@ Trend:        tijdelijk: wind 290° met 20 kt, windstoten tot 35 kt; zicht 4.500
     {
       "Cover": "Few",
       "HeightFeet": 2700,
+      "HeightMeters": 822.96,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 3800,
+      "HeightMeters": 1158.24,
       "IsTypeNotObservable": false
     },
     {
@@ -1594,11 +1615,13 @@ Trend:        tijdelijk: wind 290° met 20 kt, windstoten tot 35 kt; zicht 4.500
     {
       "Cover": "Few",
       "HeightFeet": 1600,
+      "HeightMeters": 487.68,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 1900,
+      "HeightMeters": 579.12,
       "Type": "ToweringCumulus",
       "IsTypeNotObservable": false
     }
@@ -1685,6 +1708,7 @@ Categorie:    MVFR
   "Clouds": [
     {
       "HeightFeet": 3600,
+      "HeightMeters": 1097.28,
       "IsTypeNotObservable": true
     }
   ],
@@ -1764,6 +1788,7 @@ Categorie:    IFR
     {
       "Runway": "27",
       "Value": 50,
+      "ValueMeters": 50,
       "Qualifier": "Below",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -1781,6 +1806,7 @@ Categorie:    IFR
     {
       "Cover": "Few",
       "HeightFeet": 2900,
+      "HeightMeters": 883.9200000000001,
       "IsTypeNotObservable": true
     }
   ],
@@ -1862,6 +1888,7 @@ Categorie:    VFR
     {
       "Runway": "04L",
       "Value": 700,
+      "ValueMeters": 700,
       "Tendency": "Down",
       "IsFeet": false,
       "IsMissing": false
@@ -1869,6 +1896,7 @@ Categorie:    VFR
     {
       "Runway": "15",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -1877,6 +1905,7 @@ Categorie:    VFR
     {
       "Runway": "22L",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -1885,6 +1914,7 @@ Categorie:    VFR
     {
       "Runway": "22R",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -1905,6 +1935,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 100,
+      "HeightMeters": 30.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -1931,6 +1962,7 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 300,
+            "HeightMeters": 91.44,
             "IsTypeNotObservable": false
           }
         ],
@@ -2011,6 +2043,7 @@ Trend:        tijdelijk: gebroken (5–7/8) op 300 ft
     {
       "Runway": "30",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "Down",
       "IsFeet": false,
@@ -2103,6 +2136,7 @@ Categorie:    LIFR
     {
       "Runway": "12",
       "Value": 900,
+      "ValueMeters": 900,
       "IsFeet": false,
       "IsMissing": false
     }
@@ -2120,6 +2154,7 @@ Categorie:    LIFR
     {
       "Cover": "Broken",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -2211,6 +2246,7 @@ Categorie:    LIFR
     {
       "Cover": "Broken",
       "HeightFeet": 2600,
+      "HeightMeters": 792.48,
       "IsTypeNotObservable": false
     },
     {
@@ -2303,6 +2339,7 @@ Categorie:    MVFR
     {
       "Runway": "23R",
       "Value": 900,
+      "ValueMeters": 900,
       "IsFeet": false,
       "IsMissing": false
     }
@@ -2397,6 +2434,7 @@ Categorie:    VFR
     {
       "Runway": "23R",
       "Value": 550,
+      "ValueMeters": 550,
       "Tendency": "NoChange",
       "IsFeet": false,
       "IsMissing": false
@@ -2416,6 +2454,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 800,
+      "HeightMeters": 243.84,
       "IsTypeNotObservable": false
     }
   ],
@@ -2498,6 +2537,7 @@ Categorie:    MVFR
     {
       "Runway": "30",
       "Value": 400,
+      "ValueMeters": 400,
       "Tendency": "NoChange",
       "IsFeet": false,
       "IsMissing": false
@@ -2524,6 +2564,7 @@ Categorie:    MVFR
     {
       "Cover": "Overcast",
       "HeightFeet": 100,
+      "HeightMeters": 30.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -2610,6 +2651,7 @@ Categorie:    LIFR
     {
       "Cover": "Broken",
       "HeightFeet": 600,
+      "HeightMeters": 182.88,
       "IsTypeNotObservable": false
     }
   ],
@@ -2700,11 +2742,13 @@ Categorie:    IFR
     {
       "Cover": "Few",
       "HeightFeet": 0,
+      "HeightMeters": 0,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 500,
+      "HeightMeters": 152.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -2787,16 +2831,19 @@ Categorie:    IFR
     {
       "Cover": "Broken",
       "HeightFeet": 600,
+      "HeightMeters": 182.88,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 1300,
+      "HeightMeters": 396.24,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 2600,
+      "HeightMeters": 792.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -2881,6 +2928,7 @@ Categorie:    IFR
     {
       "Cover": "Broken",
       "HeightFeet": 300,
+      "HeightMeters": 91.44,
       "IsTypeNotObservable": false
     }
   ],
@@ -2965,16 +3013,19 @@ Categorie:    LIFR
     {
       "Cover": "Few",
       "HeightFeet": 100,
+      "HeightMeters": 30.48,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Few",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -3079,6 +3130,7 @@ Categorie:    LIFR
     {
       "Cover": "Overcast",
       "HeightFeet": 300,
+      "HeightMeters": 91.44,
       "IsTypeNotObservable": true
     }
   ],
@@ -3194,6 +3246,7 @@ Categorie:    LIFR
     {
       "Cover": "Few",
       "HeightFeet": 0,
+      "HeightMeters": 0,
       "IsTypeNotObservable": false
     }
   ],
@@ -3308,11 +3361,13 @@ Opmerkingen:  RED BECMG BLU
     {
       "Cover": "Scattered",
       "HeightFeet": 1400,
+      "HeightMeters": 426.72,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 2200,
+      "HeightMeters": 670.5600000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -3434,11 +3489,13 @@ Trend:        tijdelijk
     {
       "Cover": "Scattered",
       "HeightFeet": 2200,
+      "HeightMeters": 670.5600000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 3800,
+      "HeightMeters": 1158.24,
       "IsTypeNotObservable": false
     }
   ],
@@ -3526,6 +3583,7 @@ Categorie:    VFR
     {
       "Cover": "Broken",
       "HeightFeet": 600,
+      "HeightMeters": 182.88,
       "IsTypeNotObservable": false
     }
   ],
@@ -3612,11 +3670,13 @@ Categorie:    IFR
     {
       "Cover": "Scattered",
       "HeightFeet": 2300,
+      "HeightMeters": 701.0400000000001,
       "IsTypeNotObservable": true
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 2900,
+      "HeightMeters": 883.9200000000001,
       "IsTypeNotObservable": true
     }
   ],
@@ -3631,7 +3691,8 @@ Categorie:    IFR
   "RecentWeather": [],
   "WindShear": [],
   "Sea": {
-    "WaveHeightDecimeters": 25
+    "WaveHeightDecimeters": 25,
+    "WaveHeightMeters": 2.5
   },
   "RunwayStates": [],
   "ColorCodes": [],
@@ -3704,6 +3765,7 @@ Categorie:    IFR
     {
       "Cover": "Few",
       "HeightFeet": 3000,
+      "HeightMeters": 914.4000000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -3793,11 +3855,13 @@ Categorie:    VFR
     {
       "Cover": "Scattered",
       "HeightFeet": 2300,
+      "HeightMeters": 701.0400000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 2700,
+      "HeightMeters": 822.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -3888,16 +3952,19 @@ Categorie:    MVFR
     {
       "Cover": "Few",
       "HeightFeet": 2700,
+      "HeightMeters": 822.96,
       "IsTypeNotObservable": true
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 3200,
+      "HeightMeters": 975.36,
       "IsTypeNotObservable": true
     },
     {
       "Cover": "Broken",
       "HeightFeet": 3700,
+      "HeightMeters": 1127.76,
       "IsTypeNotObservable": true
     }
   ],
@@ -3919,7 +3986,8 @@ Categorie:    MVFR
   "WindShear": [],
   "Sea": {
     "SeaTemperature": 19,
-    "WaveHeightDecimeters": 12
+    "WaveHeightDecimeters": 12,
+    "WaveHeightMeters": 1.2
   },
   "RunwayStates": [],
   "ColorCodes": [],
@@ -4005,7 +4073,8 @@ Categorie:    VFR
   "WindShear": [],
   "Sea": {
     "SeaTemperature": 20,
-    "WaveHeightDecimeters": 9
+    "WaveHeightDecimeters": 9,
+    "WaveHeightMeters": 0.9
   },
   "RunwayStates": [],
   "ColorCodes": [],
@@ -4079,11 +4148,13 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 1500,
+      "HeightMeters": 457.20000000000005,
       "IsTypeNotObservable": true
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 3000,
+      "HeightMeters": 914.4000000000001,
       "IsTypeNotObservable": true
     }
   ],
@@ -4104,7 +4175,8 @@ Categorie:    VFR
   ],
   "WindShear": [],
   "Sea": {
-    "WaveHeightDecimeters": 7
+    "WaveHeightDecimeters": 7,
+    "WaveHeightMeters": 0.7
   },
   "RunwayStates": [],
   "ColorCodes": [],
@@ -4186,11 +4258,13 @@ Categorie:    MVFR
     {
       "Cover": "Few",
       "HeightFeet": 500,
+      "HeightMeters": 152.4,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 2600,
+      "HeightMeters": 792.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -4290,6 +4364,7 @@ Categorie:    MVFR
     {
       "Cover": "Overcast",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": true
     }
   ],
@@ -4375,6 +4450,7 @@ Categorie:    LIFR
     {
       "Cover": "Scattered",
       "HeightFeet": 2000,
+      "HeightMeters": 609.6,
       "Type": "ToweringCumulus",
       "IsTypeNotObservable": false
     }
@@ -4468,6 +4544,7 @@ Categorie:    VFR
     {
       "Cover": "Overcast",
       "HeightFeet": 2000,
+      "HeightMeters": 609.6,
       "IsTypeNotObservable": true
     }
   ],
@@ -4651,6 +4728,7 @@ Categorie:    VFR
     {
       "Cover": "Broken",
       "HeightFeet": 2000,
+      "HeightMeters": 609.6,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     }
@@ -4853,6 +4931,7 @@ Opmerkingen:  AO2 SLP204 T02330189 TSNO $
     {
       "Cover": "Scattered",
       "HeightFeet": 3100,
+      "HeightMeters": 944.88,
       "IsTypeNotObservable": false
     }
   ],
@@ -4960,6 +5039,7 @@ Trend:        tijdelijk: kleurcode blauw plus
     {
       "Cover": "Few",
       "HeightFeet": 5500,
+      "HeightMeters": 1676.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -5043,6 +5123,7 @@ Categorie:    VFR
     {
       "Cover": "Scattered",
       "HeightFeet": 3600,
+      "HeightMeters": 1097.28,
       "IsTypeNotObservable": false
     }
   ],
@@ -5128,6 +5209,7 @@ Categorie:    VFR
     {
       "Runway": "26",
       "Value": 3000,
+      "ValueMeters": 3000,
       "Tendency": "Down",
       "IsFeet": false,
       "IsMissing": false
@@ -5250,6 +5332,7 @@ Trend:        geleidelijk: kleurcode blauw plus
     {
       "Cover": "Scattered",
       "HeightFeet": 3000,
+      "HeightMeters": 914.4000000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -5372,11 +5455,13 @@ Trend:        tijdelijk: kleurcode groen
     {
       "Cover": "Broken",
       "HeightFeet": 1700,
+      "HeightMeters": 518.1600000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 6000,
+      "HeightMeters": 1828.8000000000002,
       "IsTypeNotObservable": false
     }
   ],
@@ -5462,6 +5547,7 @@ Categorie:    IFR
     {
       "Cover": "Broken",
       "HeightFeet": 4500,
+      "HeightMeters": 1371.6000000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -5565,6 +5651,7 @@ Categorie:    VFR
     {
       "Runway": "18",
       "Value": 1100,
+      "ValueMeters": 1100,
       "Tendency": "Up",
       "IsFeet": false,
       "IsMissing": false
@@ -5590,6 +5677,7 @@ Categorie:    VFR
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -5686,12 +5774,14 @@ Trend:        geen significante verandering
     {
       "Cover": "Scattered",
       "HeightFeet": 1700,
+      "HeightMeters": 518.1600000000001,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 2300,
+      "HeightMeters": 701.0400000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -5801,6 +5891,7 @@ Trend:        tijdelijk: onweer
     {
       "Runway": "32R",
       "Value": 550,
+      "ValueMeters": 550,
       "Tendency": "Down",
       "IsFeet": false,
       "IsMissing": false
@@ -5819,6 +5910,7 @@ Trend:        tijdelijk: onweer
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -5918,6 +6010,7 @@ Categorie:    LIFR
     {
       "Cover": "Overcast",
       "HeightFeet": 13000,
+      "HeightMeters": 3962.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -6006,16 +6099,19 @@ Opmerkingen:  AO2 SLPNO 60002 T01060101 $
     {
       "Cover": "Broken",
       "HeightFeet": 300,
+      "HeightMeters": 91.44,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 3000,
+      "HeightMeters": 914.4000000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 5500,
+      "HeightMeters": 1676.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -6105,6 +6201,7 @@ Opmerkingen:  A01
     {
       "Cover": "Overcast",
       "HeightFeet": 600,
+      "HeightMeters": 182.88,
       "IsTypeNotObservable": false
     }
   ],
@@ -6194,6 +6291,7 @@ Opmerkingen:  AO2 CIG 005V011 SLP148 P0000 60012 T0178 53013 $
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 100,
+      "HeightMeters": 30.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -6275,17 +6373,20 @@ Opmerkingen:  STARS DMLY VSBL
     {
       "Cover": "Few",
       "HeightFeet": 4000,
+      "HeightMeters": 1219.2,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 6400,
+      "HeightMeters": 1950.72,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 9000,
+      "HeightMeters": 2743.2000000000003,
       "IsTypeNotObservable": false
     }
   ],
@@ -6385,6 +6486,7 @@ Trend:        geleidelijk vanaf 04:30: geen significant weer
     {
       "Runway": "31",
       "Value": 900,
+      "ValueMeters": 900,
       "Tendency": "NoChange",
       "IsFeet": false,
       "IsMissing": false
@@ -6392,6 +6494,7 @@ Trend:        geleidelijk vanaf 04:30: geen significant weer
     {
       "Runway": "13",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "IsFeet": false,
       "IsMissing": false
@@ -6489,6 +6592,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 2700,
+      "HeightMeters": 822.96,
       "IsTypeNotObservable": true
     },
     {
@@ -6613,6 +6717,7 @@ Trend:        geleidelijk: geen significante bewolking
           {
             "Cover": "Broken",
             "HeightFeet": 3500,
+            "HeightMeters": 1066.8,
             "IsTypeNotObservable": false
           }
         ],
@@ -6722,17 +6827,20 @@ Trend:        geleidelijk: wind 240° met 10 kt
     {
       "Cover": "Few",
       "HeightFeet": 1800,
+      "HeightMeters": 548.64,
       "Type": "ToweringCumulus",
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 2500,
+      "HeightMeters": 762,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 7000,
+      "HeightMeters": 2133.6,
       "IsTypeNotObservable": false
     }
   ],
@@ -6830,16 +6938,19 @@ Categorie:    MVFR
     {
       "Cover": "Few",
       "HeightFeet": 3300,
+      "HeightMeters": 1005.84,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 5300,
+      "HeightMeters": 1615.44,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 13600,
+      "HeightMeters": 4145.280000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -6927,11 +7038,13 @@ Opmerkingen:  BLU
     {
       "Cover": "Few",
       "HeightFeet": 3300,
+      "HeightMeters": 1005.84,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 5300,
+      "HeightMeters": 1615.44,
       "IsTypeNotObservable": false
     }
   ],
@@ -7120,6 +7233,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 2400,
+      "HeightMeters": 731.52,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     }
@@ -7164,6 +7278,7 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 1500,
+            "HeightMeters": 457.20000000000005,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -7523,6 +7638,7 @@ Categorie:    VFR
     {
       "Cover": "Scattered",
       "HeightFeet": 2900,
+      "HeightMeters": 883.9200000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -7693,6 +7809,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 500,
+      "HeightMeters": 152.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -7792,6 +7909,7 @@ Opmerkingen:  OBST OBSC QFE758
     {
       "Cover": "Overcast",
       "HeightFeet": 2100,
+      "HeightMeters": 640.08,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     }
@@ -7955,6 +8073,7 @@ Trend:        geen significante verandering
     {
       "Cover": "Scattered",
       "HeightFeet": 10000,
+      "HeightMeters": 3048,
       "IsTypeNotObservable": false
     }
   ],
@@ -8153,17 +8272,20 @@ Trend:        geen significante verandering
     {
       "Cover": "Scattered",
       "HeightFeet": 1600,
+      "HeightMeters": 487.68,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Few",
       "HeightFeet": 2500,
+      "HeightMeters": 762,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 9000,
+      "HeightMeters": 2743.2000000000003,
       "IsTypeNotObservable": false
     }
   ],
@@ -8278,6 +8400,7 @@ Trend:        tijdelijk tot 07:30: zicht 2.000 m; onweersbuien met regen
     {
       "Cover": "Scattered",
       "HeightFeet": 4000,
+      "HeightMeters": 1219.2,
       "IsTypeNotObservable": false
     }
   ],
@@ -8368,16 +8491,19 @@ Trend:        geen significante verandering
     {
       "Cover": "Few",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 2200,
+      "HeightMeters": 670.5600000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Overcast",
       "HeightFeet": 4500,
+      "HeightMeters": 1371.6000000000001,
       "IsTypeNotObservable": false
     }
   ],
@@ -8457,6 +8583,7 @@ Opmerkingen:  AO2 UPB59 SLP077 TSNO $
     {
       "Runway": "09R",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -8465,6 +8592,7 @@ Opmerkingen:  AO2 UPB59 SLP077 TSNO $
     {
       "Runway": "27L",
       "Value": 1800,
+      "ValueMeters": 1800,
       "Tendency": "Up",
       "IsFeet": false,
       "IsMissing": false
@@ -8548,6 +8676,7 @@ Categorie:    MVFR
     {
       "Runway": "09R",
       "Value": 2000,
+      "ValueMeters": 2000,
       "Qualifier": "Above",
       "Tendency": "Down",
       "IsFeet": false,
@@ -8556,6 +8685,7 @@ Categorie:    MVFR
     {
       "Runway": "27L",
       "Value": 1900,
+      "ValueMeters": 1900,
       "Tendency": "Down",
       "IsFeet": false,
       "IsMissing": false
@@ -8649,6 +8779,7 @@ Categorie:    LIFR
     {
       "Runway": "09R",
       "Value": 1800,
+      "ValueMeters": 1800,
       "Tendency": "Up",
       "IsFeet": false,
       "IsMissing": false
@@ -8656,6 +8787,7 @@ Categorie:    LIFR
     {
       "Runway": "27L",
       "Value": 1300,
+      "ValueMeters": 1300,
       "Tendency": "NoChange",
       "IsFeet": false,
       "IsMissing": false
@@ -8751,11 +8883,13 @@ Categorie:    IFR
     {
       "Cover": "Few",
       "HeightFeet": 4500,
+      "HeightMeters": 1371.6000000000001,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 38000,
+      "HeightMeters": 11582.400000000001,
       "IsTypeNotObservable": false
     }
   ],
