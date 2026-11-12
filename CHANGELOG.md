@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- The library now targets .NET Standard 2.0 and .NET 10 (was .NET 8); tests, samples and tooling build on .NET 10
 - Metric convenience properties alongside the imperial values: `CloudLayer.HeightMeters`, `RunwayVisualRange.ValueMeters` and `VariableMaxMeters`, `IcingLayer`/`TurbulenceLayer` `BaseMeters` and `ThicknessMeters`, `SeaCondition.WaveHeightMeters`
 - `Speed.ToMetersPerSecond()` and `Speed.ToKilometersPerHour()` next to `ToKnots()`
 
