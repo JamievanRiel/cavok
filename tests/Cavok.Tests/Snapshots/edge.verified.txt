@@ -53,11 +53,13 @@
     {
       "Cover": "Few",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 3000,
+      "HeightMeters": 914.4000000000001,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     }
@@ -217,6 +219,7 @@ Geen bericht beschikbaar
     {
       "Cover": "Broken",
       "HeightFeet": 800,
+      "HeightMeters": 243.84,
       "Type": "Cumulonimbus",
       "IsTypeNotObservable": false
     }
@@ -323,7 +326,9 @@ Trend:        geleidelijk om 12:00: zicht 10 km of meer; geen significant weer; 
     {
       "Runway": "27L",
       "Value": 550,
+      "ValueMeters": 550,
       "VariableMax": 800,
+      "VariableMaxMeters": 800,
       "Tendency": "Up",
       "IsFeet": false,
       "IsMissing": false
@@ -331,6 +336,7 @@ Trend:        geleidelijk om 12:00: zicht 10 km of meer; geen significant weer; 
     {
       "Runway": "27R",
       "Value": 1500,
+      "ValueMeters": 1500,
       "Qualifier": "Above",
       "Tendency": "NoChange",
       "IsFeet": false,
@@ -339,6 +345,7 @@ Trend:        geleidelijk om 12:00: zicht 10 km of meer; geen significant weer; 
     {
       "Runway": "09L",
       "Value": 50,
+      "ValueMeters": 50,
       "Qualifier": "Below",
       "Tendency": "Down",
       "IsFeet": false,
@@ -358,6 +365,7 @@ Trend:        geleidelijk om 12:00: zicht 10 km of meer; geen significant weer; 
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 100,
+      "HeightMeters": 30.48,
       "IsTypeNotObservable": false
     }
   ],
@@ -490,6 +498,7 @@ Trend:        geleidelijk vanaf 07:00 tot 09:00: zicht 1.500 m; nevel
     {
       "Cover": "Overcast",
       "HeightFeet": 1000,
+      "HeightMeters": 304.8,
       "IsTypeNotObservable": false
     }
   ],
@@ -615,6 +624,7 @@ Trend:        geen significante verandering
     {
       "Cover": "Broken",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     }
   ],
@@ -826,7 +836,8 @@ Opmerkingen:  ///
   "WindShear": [],
   "Sea": {
     "SeaTemperature": 18,
-    "WaveHeightDecimeters": 14
+    "WaveHeightDecimeters": 14,
+    "WaveHeightMeters": 1.4
   },
   "RunwayStates": [],
   "ColorCodes": [],
@@ -894,6 +905,7 @@ Zee:          zeewatertemperatuur 18 °C, golfhoogte 1,4 m
     {
       "Cover": "Broken",
       "HeightFeet": 1800,
+      "HeightMeters": 548.64,
       "IsTypeNotObservable": true
     }
   ],
@@ -966,11 +978,13 @@ Categorie:    MVFR
     {
       "Cover": "Few",
       "HeightFeet": 5500,
+      "HeightMeters": 1676.4,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Scattered",
       "HeightFeet": 30000,
+      "HeightMeters": 9144,
       "IsTypeNotObservable": false
     }
   ],
@@ -1061,17 +1075,20 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Few",
       "HeightFeet": 1800,
+      "HeightMeters": 548.64,
       "Type": "ToweringCumulus",
       "IsTypeNotObservable": false
     },
     {
       "Cover": "Broken",
       "HeightFeet": 5000,
+      "HeightMeters": 1524,
       "IsTypeNotObservable": false
     }
   ],
@@ -1187,6 +1204,7 @@ Trend:        tijdelijk: kleurcode wit
     {
       "Cover": "Few",
       "HeightFeet": 500,
+      "HeightMeters": 152.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -1290,6 +1308,7 @@ Trend:        geen significante verandering
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 500,
+      "HeightMeters": 152.4,
       "IsTypeNotObservable": false
     }
   ],
@@ -1453,6 +1472,7 @@ Categorie:    VFR
     {
       "Cover": "Overcast",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -1532,7 +1552,9 @@ Opmerkingen:  AO2 VIS 1 1/4V5 $
     {
       "Runway": "04R",
       "Value": 600,
+      "ValueMeters": 182.88,
       "VariableMax": 1000,
+      "VariableMaxMeters": 304.8,
       "IsFeet": true,
       "IsMissing": false
     }
@@ -1551,6 +1573,7 @@ Opmerkingen:  AO2 VIS 1 1/4V5 $
     {
       "Cover": "VerticalVisibility",
       "HeightFeet": 200,
+      "HeightMeters": 60.96,
       "IsTypeNotObservable": false
     }
   ],
@@ -1634,6 +1657,7 @@ Opmerkingen:  AO2
     {
       "Cover": "Few",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     }
   ],
@@ -1720,6 +1744,7 @@ Categorie:    VFR
     {
       "Cover": "Few",
       "HeightFeet": 1200,
+      "HeightMeters": 365.76,
       "IsTypeNotObservable": false
     }
   ],
@@ -1983,6 +2008,7 @@ Categorie:    VFR
       {
         "Cover": "Few",
         "HeightFeet": 3500,
+        "HeightMeters": 1066.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -2154,6 +2180,7 @@ Geleidelijk tussen dag 21 06:00 en dag 21 09:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 700,
+        "HeightMeters": 213.36,
         "IsTypeNotObservable": false
       }
     ],
@@ -2184,6 +2211,7 @@ Geleidelijk tussen dag 21 06:00 en dag 21 09:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 900,
+            "HeightMeters": 274.32,
             "IsTypeNotObservable": false
           }
         ],
@@ -2267,6 +2295,7 @@ Categorie:    VFR
       {
         "Cover": "Broken",
         "HeightFeet": 1500,
+        "HeightMeters": 457.20000000000005,
         "IsTypeNotObservable": false
       }
     ],
@@ -2296,6 +2325,7 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 400,
+            "HeightMeters": 121.92,
             "IsTypeNotObservable": false
           }
         ],
@@ -2347,11 +2377,13 @@ Categorie:    VFR
           {
             "Cover": "Scattered",
             "HeightFeet": 200,
+            "HeightMeters": 60.96,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 5000,
+            "HeightMeters": 1524,
             "IsTypeNotObservable": false
           }
         ],
@@ -2447,6 +2479,7 @@ Vanaf dag 21 11:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 20000,
+        "HeightMeters": 6096,
         "IsTypeNotObservable": false
       }
     ],
@@ -2500,6 +2533,7 @@ Vanaf dag 21 11:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 8000,
+            "HeightMeters": 2438.4,
             "IsTypeNotObservable": false
           }
         ],
@@ -2723,6 +2757,7 @@ Verwachting geannuleerd
           {
             "Cover": "Broken",
             "HeightFeet": 500,
+            "HeightMeters": 152.4,
             "IsTypeNotObservable": false
           }
         ],

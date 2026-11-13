@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <OutputType>Exe</OutputType>
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
@@ -18,7 +18,7 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <!-- The tests use the net8.0 build of the library. Build with -p:CavokTestTarget=netstandard2.0 to test the
+  <!-- The tests use the net10.0 build of the library. Build with -p:CavokTestTarget=netstandard2.0 to test the
        netstandard2.0 build instead, the one .NET Framework applications load. -->
   <ItemGroup>
     <ProjectReference Include="..\..\src\Cavok\Cavok.csproj">

@@ -56,7 +56,7 @@ jobs:
 
       - uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 9.0.x
+          dotnet-version: 10.0.x
 
       # Trusted publishing (no stored key) needs a one-time policy on nuget.org for this repository and
       # workflow (release.yml), and the nuget.org user name in the NUGET_USER secret. A NUGET_API_KEY secret is
