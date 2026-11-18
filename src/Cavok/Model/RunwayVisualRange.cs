@@ -32,11 +32,17 @@ public sealed record RunwayVisualRange
     /// <summary>The (minimum) visual range; <c>null</c> when missing.</summary>
     public int? Value { get; init; }
 
+    /// <summary>The (minimum) visual range in metres, converting feet when reported in feet; <c>null</c> when missing.</summary>
+    public double? ValueMeters => IsFeet ? Value * UnitConversions.MetersPerFoot : Value;
+
     /// <summary>Qualifier of <see cref="Value"/>.</summary>
     public RvrQualifier? Qualifier { get; init; }
 
     /// <summary>The maximum visual range when the range varies (<c>0800V1200</c>).</summary>
     public int? VariableMax { get; init; }
+
+    /// <summary>The maximum visual range in metres when the range varies, converting feet when reported in feet; <c>null</c> when not reported.</summary>
+    public double? VariableMaxMeters => IsFeet ? VariableMax * UnitConversions.MetersPerFoot : VariableMax;
 
     /// <summary>Qualifier of <see cref="VariableMax"/>.</summary>
     public RvrQualifier? VariableMaxQualifier { get; init; }

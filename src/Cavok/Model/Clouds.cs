@@ -54,6 +54,9 @@ public sealed record CloudLayer
     /// <summary>Height of the cloud base (or vertical visibility) in feet; <c>null</c> when not observable.</summary>
     public int? HeightFeet { get; init; }
 
+    /// <summary>Height of the cloud base (or vertical visibility) in metres; <c>null</c> when not observable.</summary>
+    public double? HeightMeters => HeightFeet * UnitConversions.MetersPerFoot;
+
     /// <summary>Convective cloud type, if reported.</summary>
     public CloudType? Type { get; init; }
 

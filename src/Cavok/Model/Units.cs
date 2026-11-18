@@ -23,10 +23,37 @@ public readonly record struct Speed(int Value, SpeedUnit Unit, bool IsAbove = fa
     /// <returns>The speed in knots.</returns>
     public double ToKnots() => Unit switch
     {
-        SpeedUnit.MetersPerSecond => Value * 1.943844,
-        SpeedUnit.KilometersPerHour => Value / 1.852,
+        SpeedUnit.MetersPerSecond => Value * UnitConversions.KnotsPerMeterPerSecond,
+        SpeedUnit.KilometersPerHour => Value / UnitConversions.KilometersPerHourPerKnot,
         _ => Value,
     };
+
+    /// <summary>The speed converted to metres per second.</summary>
+    /// <returns>The speed in metres per second.</returns>
+    public double ToMetersPerSecond() => Unit switch
+    {
+        SpeedUnit.Knots => Value * UnitConversions.MetersPerSecondPerKnot,
+        SpeedUnit.KilometersPerHour => Value / 3.6,
+        _ => Value,
+    };
+
+    /// <summary>The speed converted to kilometres per hour.</summary>
+    /// <returns>The speed in kilometres per hour.</returns>
+    public double ToKilometersPerHour() => Unit switch
+    {
+        SpeedUnit.Knots => Value * UnitConversions.KilometersPerHourPerKnot,
+        SpeedUnit.MetersPerSecond => Value * 3.6,
+        _ => Value,
+    };
+}
+
+/// <summary>Conversion factors shared by the model types.</summary>
+internal static class UnitConversions
+{
+    internal const double MetersPerFoot = 0.3048;
+    internal const double MetersPerSecondPerKnot = 0.514444;
+    internal const double KnotsPerMeterPerSecond = 1.943844;
+    internal const double KilometersPerHourPerKnot = 1.852;
 }
 
 /// <summary>Unit of a pressure value.</summary>

@@ -54,7 +54,7 @@ groups (`WS020/24040KT`) are not supported yet and are reported as errors.
 - **Never throws on bad input**: one broken group does not stop the rest of the report from being parsed
 - **Flight category** (VFR, MVFR, IFR, LIFR) for observations and every forecast block
 - **Plain-language descriptions** in English and Dutch
-- **No dependencies**; targets .NET Standard 2.0 and .NET 8
+- **No dependencies**; targets .NET Standard 2.0 and .NET 10
 
 ## Install
 

@@ -13,7 +13,14 @@ namespace Cavok;
 /// Thickness of the layer in feet (reported in thousands of feet); 0 means the layer reaches up to the tops of the clouds
 /// (WMO code table 4013).
 /// </param>
-public sealed record IcingLayer(int Type, int BaseFeet, int ThicknessFeet);
+public sealed record IcingLayer(int Type, int BaseFeet, int ThicknessFeet)
+{
+    /// <summary>Height of the base of the layer in metres.</summary>
+    public double BaseMeters => BaseFeet * UnitConversions.MetersPerFoot;
+
+    /// <summary>Thickness of the layer in metres.</summary>
+    public double ThicknessMeters => ThicknessFeet * UnitConversions.MetersPerFoot;
+}
 
 /// <summary>
 /// A forecast turbulence layer in a military TAF, group <c>5BhBhBhBtL</c>: for example <c>520002</c> is occasional
@@ -29,4 +36,11 @@ public sealed record IcingLayer(int Type, int BaseFeet, int ThicknessFeet);
 /// Thickness of the layer in feet (reported in thousands of feet); 0 means the layer reaches up to the tops of the clouds
 /// (WMO code table 4013).
 /// </param>
-public sealed record TurbulenceLayer(int Type, int BaseFeet, int ThicknessFeet);
+public sealed record TurbulenceLayer(int Type, int BaseFeet, int ThicknessFeet)
+{
+    /// <summary>Height of the base of the layer in metres.</summary>
+    public double BaseMeters => BaseFeet * UnitConversions.MetersPerFoot;
+
+    /// <summary>Thickness of the layer in metres.</summary>
+    public double ThicknessMeters => ThicknessFeet * UnitConversions.MetersPerFoot;
+}

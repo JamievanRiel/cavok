@@ -21,6 +21,9 @@ public sealed record SeaCondition
 
     /// <summary>Significant wave height in decimetres.</summary>
     public int? WaveHeightDecimeters { get; init; }
+
+    /// <summary>Significant wave height in metres; <c>null</c> when missing.</summary>
+    public double? WaveHeightMeters => WaveHeightDecimeters / 10.0;
 }
 
 /// <summary>

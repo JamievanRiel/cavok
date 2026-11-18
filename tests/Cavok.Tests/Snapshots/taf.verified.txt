@@ -56,6 +56,7 @@
       {
         "Cover": "Broken",
         "HeightFeet": 3000,
+        "HeightMeters": 914.4000000000001,
         "IsTypeNotObservable": false
       }
     ],
@@ -102,6 +103,7 @@
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -236,11 +238,13 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 800,
+        "HeightMeters": 243.84,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Broken",
         "HeightFeet": 1500,
+        "HeightMeters": 457.20000000000005,
         "IsTypeNotObservable": false
       }
     ],
@@ -270,6 +274,7 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -317,11 +322,13 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Few",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -375,6 +382,7 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 300,
+            "HeightMeters": 91.44,
             "IsTypeNotObservable": false
           }
         ],
@@ -421,6 +429,7 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "VerticalVisibility",
             "HeightFeet": 100,
+            "HeightMeters": 30.48,
             "IsTypeNotObservable": false
           }
         ],
@@ -477,6 +486,7 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "IsTypeNotObservable": false
           }
         ],
@@ -523,11 +533,13 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 400,
+            "HeightMeters": 121.92,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Few",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -666,6 +678,7 @@ Tijdelijk tussen dag 20 04:00 en dag 20 15:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 2500,
+        "HeightMeters": 762,
         "IsTypeNotObservable": false
       }
     ],
@@ -713,6 +726,7 @@ Tijdelijk tussen dag 20 04:00 en dag 20 15:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -743,6 +757,7 @@ Tijdelijk tussen dag 20 04:00 en dag 20 15:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -837,6 +852,7 @@ Tijdelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 1600,
+        "HeightMeters": 487.68,
         "IsTypeNotObservable": false
       }
     ],
@@ -899,6 +915,7 @@ Tijdelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -946,6 +963,7 @@ Tijdelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 100,
+            "HeightMeters": 30.48,
             "IsTypeNotObservable": false
           }
         ],
@@ -1045,6 +1063,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 300,
+        "HeightMeters": 91.44,
         "IsTypeNotObservable": false
       }
     ],
@@ -1097,6 +1116,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 300,
+            "HeightMeters": 91.44,
             "IsTypeNotObservable": false
           }
         ],
@@ -1143,6 +1163,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 100,
+            "HeightMeters": 30.48,
             "IsTypeNotObservable": false
           }
         ],
@@ -1173,6 +1194,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "IsTypeNotObservable": false
           }
         ],
@@ -1234,6 +1256,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "IsTypeNotObservable": false
           }
         ],
@@ -1281,6 +1304,7 @@ Tijdelijk tussen dag 19 09:00 en dag 19 19:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -1530,11 +1554,13 @@ Tijdelijk tussen dag 23 00:00 en dag 23 06:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 900,
+            "HeightMeters": 274.32,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -1759,11 +1785,13 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 3000,
+        "HeightMeters": 914.4000000000001,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Broken",
         "HeightFeet": 5000,
+        "HeightMeters": 1524,
         "IsTypeNotObservable": false
       }
     ],
@@ -1830,11 +1858,13 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -1850,7 +1880,9 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Type": 1,
             "BaseFeet": 0,
-            "ThicknessFeet": 6000
+            "ThicknessFeet": 6000,
+            "BaseMeters": 0,
+            "ThicknessMeters": 1828.8000000000002
           }
         ],
         "FlightCategory": "Vfr"
@@ -1909,6 +1941,7 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Overcast",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -1957,6 +1990,7 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -2016,6 +2050,7 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 14000,
+            "HeightMeters": 4267.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -2031,7 +2066,9 @@ Geleidelijk tussen dag 21 16:00 en dag 21 18:00 UTC:
           {
             "Type": 1,
             "BaseFeet": 0,
-            "ThicknessFeet": 6000
+            "ThicknessFeet": 6000,
+            "BaseMeters": 0,
+            "ThicknessMeters": 1828.8000000000002
           }
         ],
         "FlightCategory": "Vfr"
@@ -2187,11 +2224,13 @@ Opmerkingen:  LAST NO AMDS AFT 2011 NEXT 2103
       {
         "Cover": "Scattered",
         "HeightFeet": 4000,
+        "HeightMeters": 1219.2,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Scattered",
         "HeightFeet": 20000,
+        "HeightMeters": 6096,
         "IsTypeNotObservable": false
       }
     ],
@@ -2280,6 +2319,7 @@ Categorie:    VFR
       {
         "Cover": "Scattered",
         "HeightFeet": 3000,
+        "HeightMeters": 914.4000000000001,
         "IsTypeNotObservable": false
       }
     ],
@@ -2326,6 +2366,7 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -2356,6 +2397,7 @@ Categorie:    VFR
           {
             "Cover": "Scattered",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -2450,6 +2492,7 @@ Tijdelijk tussen dag 21 21:00 en dag 21 24:00 UTC:
       {
         "Cover": "Overcast",
         "HeightFeet": 4000,
+        "HeightMeters": 1219.2,
         "IsTypeNotObservable": false
       }
     ],
@@ -2496,6 +2539,7 @@ Tijdelijk tussen dag 21 21:00 en dag 21 24:00 UTC:
           {
             "Cover": "Overcast",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "IsTypeNotObservable": false
           }
         ],
@@ -2655,6 +2699,7 @@ Geleidelijk tussen dag 20 22:00 en dag 20 24:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 8500,
+        "HeightMeters": 2590.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -2684,6 +2729,7 @@ Geleidelijk tussen dag 20 22:00 en dag 20 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 2200,
+            "HeightMeters": 670.5600000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -2780,6 +2826,7 @@ Geleidelijk tussen dag 20 22:00 en dag 20 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 2200,
+            "HeightMeters": 670.5600000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -2882,11 +2929,13 @@ Tijdelijk tussen dag 21 17:00 en dag 21 18:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 1500,
+        "HeightMeters": 457.20000000000005,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Broken",
         "HeightFeet": 3000,
+        "HeightMeters": 914.4000000000001,
         "IsTypeNotObservable": false
       }
     ],
@@ -2935,6 +2984,7 @@ Tijdelijk tussen dag 21 17:00 en dag 21 18:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -3256,6 +3306,7 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 2200,
+        "HeightMeters": 670.5600000000001,
         "IsTypeNotObservable": false
       }
     ],
@@ -3285,6 +3336,7 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -3332,11 +3384,13 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 900,
+            "HeightMeters": 274.32,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Few",
             "HeightFeet": 1500,
+            "HeightMeters": 457.20000000000005,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -3375,6 +3429,7 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1500,
+            "HeightMeters": 457.20000000000005,
             "IsTypeNotObservable": false
           }
         ],
@@ -3421,11 +3476,13 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -3464,6 +3521,7 @@ Geleidelijk tussen dag 20 07:00 en dag 20 09:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "IsTypeNotObservable": false
           }
         ],
@@ -3587,6 +3645,7 @@ Geleidelijk tussen dag 20 03:00 en dag 20 05:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 2500,
+        "HeightMeters": 762,
         "IsTypeNotObservable": false
       }
     ],
@@ -3616,6 +3675,7 @@ Geleidelijk tussen dag 20 03:00 en dag 20 05:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -3749,6 +3809,7 @@ Tijdelijk tussen dag 21 15:00 en dag 21 18:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 4000,
+        "HeightMeters": 1219.2,
         "IsTypeNotObservable": false
       }
     ],
@@ -3975,6 +4036,7 @@ Geleidelijk tussen dag 22 00:00 en dag 22 03:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 2000,
+        "HeightMeters": 609.6,
         "IsTypeNotObservable": false
       }
     ],
@@ -4020,6 +4082,7 @@ Geleidelijk tussen dag 22 00:00 en dag 22 03:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -4074,6 +4137,7 @@ Geleidelijk tussen dag 22 00:00 en dag 22 03:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 400,
+            "HeightMeters": 121.92,
             "IsTypeNotObservable": false
           }
         ],
@@ -4136,6 +4200,7 @@ Geleidelijk tussen dag 22 00:00 en dag 22 03:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "IsTypeNotObservable": false
           }
         ],
@@ -4182,6 +4247,7 @@ Geleidelijk tussen dag 22 00:00 en dag 22 03:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 900,
+            "HeightMeters": 274.32,
             "IsTypeNotObservable": false
           }
         ],
@@ -4476,11 +4542,13 @@ Tijdelijk tussen dag 21 22:00 en dag 22 06:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -4535,11 +4603,13 @@ Tijdelijk tussen dag 21 22:00 en dag 22 06:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -4593,6 +4663,7 @@ Tijdelijk tussen dag 21 22:00 en dag 22 06:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 5000,
+            "HeightMeters": 1524,
             "IsTypeNotObservable": false
           }
         ],
@@ -4647,11 +4718,13 @@ Tijdelijk tussen dag 21 22:00 en dag 22 06:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 3500,
+            "HeightMeters": 1066.8,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 4500,
+            "HeightMeters": 1371.6000000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -4711,11 +4784,13 @@ Tijdelijk tussen dag 21 22:00 en dag 22 06:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 20000,
+            "HeightMeters": 6096,
             "IsTypeNotObservable": false
           }
         ],
@@ -4882,11 +4957,13 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 2200,
+        "HeightMeters": 670.5600000000001,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Broken",
         "HeightFeet": 3500,
+        "HeightMeters": 1066.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -4967,6 +5044,7 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 2200,
+            "HeightMeters": 670.5600000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -4996,6 +5074,7 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1800,
+            "HeightMeters": 548.64,
             "IsTypeNotObservable": false
           }
         ],
@@ -5043,11 +5122,13 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 600,
+            "HeightMeters": 182.88,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "IsTypeNotObservable": false
           }
         ],
@@ -5167,6 +5248,7 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "IsTypeNotObservable": false
           }
         ],
@@ -5215,6 +5297,7 @@ Geleidelijk tussen dag 23 07:00 en dag 23 08:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 2200,
+            "HeightMeters": 670.5600000000001,
             "IsTypeNotObservable": false
           }
         ],
@@ -5387,6 +5470,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 1800,
+        "HeightMeters": 548.64,
         "IsTypeNotObservable": false
       }
     ],
@@ -5433,6 +5517,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "IsTypeNotObservable": false
           }
         ],
@@ -5480,6 +5565,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -5564,6 +5650,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1400,
+            "HeightMeters": 426.72,
             "IsTypeNotObservable": false
           }
         ],
@@ -5611,6 +5698,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 800,
+            "HeightMeters": 243.84,
             "IsTypeNotObservable": false
           }
         ],
@@ -5740,6 +5828,7 @@ Geleidelijk tussen dag 22 21:00 en dag 22 24:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 1800,
+            "HeightMeters": 548.64,
             "Type": "ToweringCumulus",
             "IsTypeNotObservable": false
           }
@@ -5881,6 +5970,7 @@ Geleidelijk tussen dag 20 07:00 en dag 20 10:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 5500,
+        "HeightMeters": 1676.4,
         "IsTypeNotObservable": false
       }
     ],
@@ -6014,11 +6104,13 @@ Categorie:    VFR
       {
         "Cover": "Few",
         "HeightFeet": 1000,
+        "HeightMeters": 304.8,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Broken",
         "HeightFeet": 1500,
+        "HeightMeters": 457.20000000000005,
         "IsTypeNotObservable": false
       }
     ],
@@ -6096,11 +6188,13 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 1800,
+            "HeightMeters": 548.64,
             "Type": "ToweringCumulus",
             "IsTypeNotObservable": false
           }
@@ -6232,6 +6326,7 @@ Geleidelijk tussen dag 21 09:00 en dag 21 11:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 3500,
+        "HeightMeters": 1066.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -6294,11 +6389,13 @@ Geleidelijk tussen dag 21 09:00 en dag 21 11:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 1000,
+            "HeightMeters": 304.8,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -6404,6 +6501,7 @@ Tijdelijk tussen dag 20 01:00 en dag 20 06:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 3500,
+        "HeightMeters": 1066.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -6466,6 +6564,7 @@ Tijdelijk tussen dag 20 01:00 en dag 20 06:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 500,
+            "HeightMeters": 152.4,
             "IsTypeNotObservable": false
           }
         ],
@@ -6558,6 +6657,7 @@ Tijdelijk tussen dag 20 01:00 en dag 20 06:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 1200,
+            "HeightMeters": 365.76,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -6674,11 +6774,13 @@ Tijdelijk tussen dag 20 06:00 en dag 20 12:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 6000,
+        "HeightMeters": 1828.8000000000002,
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Few",
         "HeightFeet": 20000,
+        "HeightMeters": 6096,
         "IsTypeNotObservable": false
       }
     ],
@@ -6726,11 +6828,13 @@ Tijdelijk tussen dag 20 06:00 en dag 20 12:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 10000,
+            "HeightMeters": 3048,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 20000,
+            "HeightMeters": 6096,
             "IsTypeNotObservable": false
           }
         ],
@@ -6897,12 +7001,14 @@ Tijdelijk tussen dag 19 06:00 en dag 19 07:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 6000,
+            "HeightMeters": 1828.8000000000002,
             "Type": "ToweringCumulus",
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Scattered",
             "HeightFeet": 7000,
+            "HeightMeters": 2133.6,
             "IsTypeNotObservable": false
           }
         ],
@@ -6998,6 +7104,7 @@ Tijdelijk tussen dag 19 06:00 en dag 19 07:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -7099,6 +7206,7 @@ Tijdelijk tussen dag 22 07:00 en dag 22 10:00 UTC:
       {
         "Cover": "Broken",
         "HeightFeet": 3500,
+        "HeightMeters": 1066.8,
         "IsTypeNotObservable": false
       }
     ],
@@ -7201,12 +7309,14 @@ Tijdelijk tussen dag 22 07:00 en dag 22 10:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 6000,
+            "HeightMeters": 1828.8000000000002,
             "IsTypeNotObservable": false
           }
         ],
@@ -7385,12 +7495,14 @@ Tijdelijk tussen dag 21 13:00 en dag 21 15:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 7000,
+            "HeightMeters": 2133.6,
             "IsTypeNotObservable": false
           }
         ],
@@ -7431,6 +7543,7 @@ Tijdelijk tussen dag 21 13:00 en dag 21 15:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -7500,6 +7613,7 @@ Tijdelijk tussen dag 21 13:00 en dag 21 15:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           }
@@ -7606,12 +7720,14 @@ Tijdelijk tussen dag 22 12:00 en dag 22 15:00 UTC:
       {
         "Cover": "Few",
         "HeightFeet": 2000,
+        "HeightMeters": 609.6,
         "Type": "ToweringCumulus",
         "IsTypeNotObservable": false
       },
       {
         "Cover": "Scattered",
         "HeightFeet": 2500,
+        "HeightMeters": 762,
         "IsTypeNotObservable": false
       }
     ],
@@ -7639,12 +7755,14 @@ Tijdelijk tussen dag 22 12:00 en dag 22 15:00 UTC:
           {
             "Cover": "Few",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "IsTypeNotObservable": false
           }
         ],
@@ -7740,6 +7858,7 @@ Categorie:    VFR
       {
         "Cover": "Scattered",
         "HeightFeet": 3000,
+        "HeightMeters": 914.4000000000001,
         "IsTypeNotObservable": false
       }
     ],
@@ -7827,6 +7946,7 @@ Categorie:    VFR
           {
             "Cover": "Broken",
             "HeightFeet": 1000,
+            "HeightMeters": 304.8,
             "IsTypeNotObservable": false
           }
         ],
@@ -7958,6 +8078,7 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
       {
         "Cover": "Scattered",
         "HeightFeet": 2500,
+        "HeightMeters": 762,
         "IsTypeNotObservable": false
       }
     ],
@@ -8039,17 +8160,20 @@ Geleidelijk tussen dag 19 22:00 en dag 19 24:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 2000,
+            "HeightMeters": 609.6,
             "Type": "Cumulonimbus",
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 2500,
+            "HeightMeters": 762,
             "IsTypeNotObservable": false
           },
           {
             "Cover": "Broken",
             "HeightFeet": 4000,
+            "HeightMeters": 1219.2,
             "IsTypeNotObservable": false
           }
         ],
@@ -8214,6 +8338,7 @@ Geleidelijk tussen dag 20 17:00 en dag 20 18:00 UTC:
           {
             "Cover": "Scattered",
             "HeightFeet": 3500,
+            "HeightMeters": 1066.8,
             "IsTypeNotObservable": false
           }
         ],
@@ -8277,6 +8402,7 @@ Geleidelijk tussen dag 20 17:00 en dag 20 18:00 UTC:
           {
             "Cover": "Broken",
             "HeightFeet": 3000,
+            "HeightMeters": 914.4000000000001,
             "Type": "ToweringCumulus",
             "IsTypeNotObservable": false
           }
